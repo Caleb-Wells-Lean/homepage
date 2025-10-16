@@ -1208,3 +1208,17 @@ section + section::before {
 
 /* click cue */
 .cred-item img { cursor: zoom-in; }
+/* Phone tweaks for project scrollers */
+@media (max-width: 680px) {
+  .scroller-wrap { padding: 0 32px; }
+  .carousel-btn { width: 32px; height: 32px; }
+  .projects .cards.scroller { gap: 12px; }
+  .projects .cards.scroller .project-card { min-width: 78vw; }
+  .project-card img { height: auto; max-height: 220px; }
+}
+
+@media (max-width: 440px) {
+  .scroller-wrap { padding: 0 18px; }
+  .projects .cards.scroller .project-card { min-width: 88vw; }
+  .project-card img { max-height: 200px; }
+}
