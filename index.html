@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<!--
+  Portfolio Homepage (Annotated)
+  Overview:
+  - Head: metadata, external icon/font links, and the main stylesheet.
+  - Body:
+    - Nav: name (left) + external links (right).
+    - Hero: headline, quick links, and headshot.
+    - Skills: 4 clickable tiles; clicking reveals a description panel below.
+    - Resume: two-tab view (Education / Experience) with a simple tab switcher.
+    - Projects: Professional and Personal preview grids; each has a link to view more.
+    - Contact: reserved for future content.
+  - Scripts: vanilla JS for Skills interactions and Resume tab switching.
+  Notes:
+  - Some copy contains special characters from prior edits; left intact intentionally.
+  - Styles live in homepage/styles.css and control colors/spacing/responsiveness.
+-->
+<html lang="en">
+<head>
+  <!-- ===============================
+       META & VIEWPORT SETTINGS
+       =============================== -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ===============================
+       GOOGLE FONTS (Poppins)
+       =============================== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- ===============================
+       FONT AWESOME ICONS
+       =============================== -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- ===============================
+       LINK TO EXTERNAL STYLESHEET
+       =============================== -->
+  <link rel="stylesheet" href="styles.css">
+
+  <title>Portfolio</title>
+</head>
+<body>
+
+  <!-- ===============================
+       NAVIGATION BAR
+       =============================== -->
+  <nav>
+    <div class="Left"><a href="/">Caleb Wells</a></div>
+    <div class="Right">
+      <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+        <i class="fa-brands fa-github"></i><span>Github</span>
+      </a>
+      <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+        <i class="fa-brands fa-linkedin"></i><span>LinkedIn</span>
+      </a>
+      <a href="mailto:cbwe228@uky.edu" target="_blank" rel="noopener noreferrer">
+        <i class="fa-solid fa-envelope"></i><span>Email</span>
+      </a>
+    </div>
+  </nav>
+
+  <main>
+    <!-- ===============================
+         HERO
+         =============================== -->
+    <section class="Hero-Section">
+      <div class="Text">
+        <h2>Caleb Wells - Lean Systems Engineer</h2>
+        <p>
+          I’m a Lean Systems Engineering student driven by a passion for creating efficient, practical systems that merge
+          innovation with real-world performance. My work focuses on optimizing processes through automation, lean methodologies,
+          and data-driven design. Whether improving production flow or developing new technologies, I aim to build smarter systems
+          that perform reliably, reduce waste, and drive measurable results across engineering and manufacturing environments.
+        </p>
+
+        <div class="Links">
+          <a href="#Skills"><i class="fa-solid fa-robot"></i><span>Skills</span></a>
+          <a href="#Resume"><i class="fa-solid fa-file"></i><span>Experience</span></a>
+          <a href="#Projects"><i class="fa-solid fa-gears"></i><span>Projects</span></a>
+          <a href="#Credentials"><i class="fa-solid fa-award"></i><span>Credentials</span></a>
+          <a href="#Contact"><i class="fa-solid fa-envelope"></i><span>Contact</span></a>
+        </div>
+      </div>
+
+      <div class="Headshot">
+        <img src="Image/jhon doe.webp" alt="headshot">
+      </div>
+      <!-- Bottom-centered resume download CTA inside the hero -->
+      <div class="hero-footer">
+        <a class="btn-download" href="Caleb%20Wells.pdf" type="application/pdf" download="Caleb_Wells.pdf">
+          <i class="fa-solid fa-download"></i>
+          <span>Download Resume</span>
+        </a>
+      </div>
+    </section>
+
+    
+
+    <!-- ===============================
+         SKILLS
+         =============================== -->
+    <section id="Skills" class="skills-section">
+      <h2>Skills</h2>
+      <div class="text">
+        Explore my technical capabilities — click a skill area below to learn more.
+      </div>
+
+      <div class="Cells" id="skills-cells">
+        <div class="Cell" data-skill="cad">
+          <img src="Image/CAD.webp" alt="CAD">
+          <span>CAD</span>
+        </div>
+        <div class="Cell" data-skill="pro">
+          <img src="Image/professional-skills.webp" alt="Professional Skills">
+          <span>Professional Skills</span>
+        </div>
+        <div class="Cell" data-skill="elec">
+          <img src="Image/engineering-programing.webp" alt="Electrical / Code">
+          <span>Electrical & Code</span>
+        </div>
+        <div class="Cell" data-skill="certs">
+          <img src="Image/certification.webp" alt="Certifications">
+          <span>Certifications</span>
+        </div>
+      </div>
+
+      <div id="skill-info" class="SkillInfo" hidden></div>
+    </section>
+
+    <!-- ===============================
+         RESUME (TOGGLE)
+         =============================== -->
+    <section id="Resume" class="resume-toggle">
+      <!-- Toggle Buttons -->
+      <div class="resume-buttons">
+        <button class="tab-btn active" data-target="education">Education</button>
+        <button class="tab-btn" data-target="experience">Experience</button>
+      </div>
+
+      <!-- Tabs -->
+      <div class="resume-content">
+        <!-- Education Tab -->
+        <div id="education" class="resume-tab active">
+          <h2>Education</h2>
+
+          <div class="job">
+            <div class="job-header">
+              <span class="School">University of Kentucky, College of Engineering</span>
+              <span class="GPA">Program GPA: 3.0</span>
+            </div>
+            <ul>
+              <li>Pursuing a bachelor’s in Lean Systems Engineering Technology</li>
+            </ul>
+          </div>
+
+          <div class="job">
+            <div class="job-header">
+              <span class="School">Bluegrass Community and Technical College</span>
+              <span class="GPA">Program GPA: 3.5</span>
+            </div>
+            <ul>
+              <li>Associates of Applied Science in Integrated Engineering Technology</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Experience Tab -->
+        <div id="experience" class="resume-tab">
+          <h2>Experience</h2>
+
+          <!-- Trane Technologies -->
+          <div class="job">
+            <div class="job-header">
+              <span class="company">Trane Technologies</span>
+              <span class="location">Lexington, KY</span>
+            </div>
+            <div class="job-title">
+              <span>Design Intern</span>
+              <span class="date">January 2025 – September 2025</span>
+            </div>
+            <ul>
+              <li>Engineered custom HVAC units with integrated fabrication logic using parametric 3D modeling, reducing design-to-production time.</li>
+              <li>Optimized designs for automated manufacturing, reducing assembly complexity and improving production efficiency.</li>
+              <li>Collaborated with cross-functional engineering and manufacturing teams to align designs with production requirements.</li>
+              <li>Assisted in troubleshooting and resolving quality issues by adjusting models and refining design specifications.</li>
+            </ul>
+          </div>
+
+          <!-- Overland Conveying — Design Engineer -->
+          <div class="job">
+            <div class="job-header">
+              <span class="company">Overland conveying</span>
+              <span class="location">Madisonville, KY</span>
+            </div>
+            <div class="job-title">
+              <span>Design Engineer</span>
+              <span class="date">May 2024 – October 2024</span>
+            </div>
+            <ul>
+              <li>Oversaw and coordinated multiple projects under the direction of the lead engineer, ensuring timely and efficient completion.</li>
+              <li>Specializing in the design and fabrication of large-scale conveyor belt assemblies, contributing to system optimization.</li>
+              <li>Collaborated in creating proposals by designing 3D models and presentations for new projects.</li>
+              <li>Converted outdated hard-copy engineering drawings into digital formats, streamlining documentation and improving accessibility for future projects.</li>
+            </ul>
+          </div>
+
+          <!-- Overland Conveying — Engineering Student Intern -->
+          <div class="job">
+            <div class="job-header">
+              <span class="company">Overland conveying</span>
+              <span class="location">Madisonville, KY</span>
+            </div>
+            <div class="job-title">
+              <span>Engineering, Student Intern</span>
+              <span class="date">April 2020 – August 2020</span>
+            </div>
+            <ul>
+              <li>Assessed and reported on prototype assemblies to the lead engineer for review.</li>
+              <li>Manufactured custom conveyor belt cover assemblies.</li>
+              <li>Operated industrial machines like shears, presses, and pipe benders for fabrication.</li>
+              <li>Assisted the lead engineer in identifying and implementing solutions for technical issues.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===============================
+         PROJECTS
+         =============================== -->
+    <section id="Projects" class="projects">
+      <h2>Projects</h2>
+
+      <!-- Professional Projects -->
+      <div class="project-group">
+        <div class="group-header">
+          <h3>Professional</h3>
+          <a class="view-more-btn" href="projects.html">View More</a>
+        </div>
+        <div class="cards" id="pro-cards">
+          <!-- Up to 4 previews -->
+          <article class="project-card">
+            <img src="Image\HVAC Example.webp" alt="Project preview">
+            <h4>Industrial HVAC Design</h4>
+            <p>Parametric design flow to cut design-to-production time.</p>
+          </article>
+          <article class="project-card">
+            <img src="Image/industrial-factory-conveyor-belt.webp" alt="Coal chute conveyor preview">
+            <h4>Power plant Coal chute Redesgine</h4>
+            <p>Heavy-duty chute and conveyor design for coal handling.</p>
+          </article>
+        </div>
+        <!-- Hidden extra projects (revealed by View More)
+             Note: To change an item, update the image, title, and text below. -->
+        <div class="cards more" id="pro-more" hidden>
+          <!-- Replaced the misspelled "industrial line proposal" with a real project -->
+          <article class="project-card">
+            <img src="Image/work-progress_24908-53218.webp" alt="Industrial Line Redesign preview">
+            <h4>Industrial Line Redesign (Coming Soon)</h4>
+            <p>Modernized conveyor line layout to improve throughput and serviceability.</p>
+          </article>
+          <article class="project-card">
+            <img src="Image/work-progress_24908-53218.webp" alt="Automation Cell preview">
+            <h4>Automation Cell</h4>
+            <p>PLC-driven process with improved throughput and QA data.</p>
+          </article>
+        </div>
+      </div>
+
+      <!-- Personal Projects -->
+      <div class="project-group">
+        <div class="group-header">
+          <h3>Personal</h3>
+          <a class="view-more-btn" href="projects.html">View More</a>
+        </div>
+        <div class="cards" id="per-cards">
+          <!-- Personal projects: show up to Microcontroller Logger -->
+          <article class="project-card">
+            <img src="Image/code Example.webp" alt="Portfolio Website">
+            <h4>Portfolio Website</h4>
+            <p>Responsive site with skills, resume toggle, and projects.</p>
+          </article>
+          <article class="project-card">
+            <img src="Image/work-progress_24908-53218.webp" alt="Home Server">
+            <h4>Home Server (Coming soon)</h4>
+            <p>Home file sharing, web hosting, and automation hub.</p>
+          </article>
+          <article class="project-card">
+            <img src="Image/work-progress_24908-53218.webp" alt="Robotic Arm">
+            <h4>WIP</h4>
+            <p>Custom arm prototype with joint design and motion study.</p>
+          </article>
+          <article class="project-card">
+            <img src="Image/work-progress_24908-53218.webp" alt="Microcontroller Logger">
+            <h4>WIP</h4>
+            <p>Embedded logger with MATLAB/C++ data pipeline.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+    <!-- ===============================
+         CREDENTIALS
+         =============================== -->
+    <section id="Credentials" class="credentials">
+      <h2>Credentials</h2>
+      <p class="cred-intro">A selection of my certifications and accreditations.</p>
+      <div class="cred-grid">
+        <figure class="cred-item">
+          <img src="Image/met.webp" alt="Certification 1">
+          <figcaption>Mechanical Engineering Technology</figcaption>
+        </figure>
+        <figure class="cred-item">
+          <img src="Image/eet.webp" alt="Certification 2">
+          <figcaption>Electrical Engineering Technology</figcaption>
+          
+          
+        </figure>
+        <figure class="cred-item">
+          <img src="Image/iet.webp" alt="Certification 3">
+          <figcaption>Integrated Engineering Technology</figcaption>
+        </figure>
+        <figure class="cred-item">
+          <img src="Image/professional-skills.webp" alt="Certification 4">
+          <figcaption>Lean Systems</figcaption>
+        </figure>
+        <figure class="cred-item">
+          <img src="Image/associates.webp" alt="Certification 5">
+          <figcaption>Associates</figcaption>
+        </figure>
+        <figure class="cred-item">
+          <img src="Image/six sigma white .webp" alt="Certification 6">
+          <figcaption>Six Sigma WB</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Lightbox for Credentials (modal image preview) -->
+    <div id="lightbox" class="lightbox" hidden aria-modal="true" role="dialog">
+      <button class="lightbox-close" type="button" aria-label="Close preview">&times;</button>
+      <div class="lightbox-content">
+        <img id="lightbox-img" alt="Credential preview">
+        <div id="lightbox-caption" class="lightbox-caption"></div>
+      </div>
+    </div>
+
+    <!-- ===============================
+         CONTACT
+         =============================== -->
+    <section id="Contact" class="contact">
+      <h2>Contact Me</h2>
+      <form class="contact-form" method="post" action="#">
+        <div class="form-row">
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" placeholder="Your name" required>
+        </div>
+        <div class="form-row">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="you@example.com" required>
+        </div>
+        <div class="form-row">
+          <label for="company">Company</label>
+          <input id="company" name="company" type="text" placeholder="Your company">
+        </div>
+        <div class="form-row">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="6" placeholder="How can I help?" required></textarea>
+        </div>
+        <div class="actions">
+          <button type="submit" class="btn-send">
+            <i class="fa-solid fa-paper-plane"></i>
+            <span>Send</span>
+          </button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <!-- ===============================
+       SCRIPTS (BOTTOM = safe DOM access)
+       =============================== -->
+  <script>
+    /*
+      ===============================
+      Skills: Description Toggle Logic
+      - Listens for clicks on any .Cell inside #skills-cells
+      - Shows the matching text inside #skill-info (below the grid)
+      - Clicking the same cell again hides the panel
+    */
+    document.addEventListener('DOMContentLoaded', function () {
+      const DESCRIPTIONS = {
+        cad: "Creo parametric | AutoCAD | Fusion 360 | On shape | Cura | Autodesk Inventor",
+        pro: "Motor Controls | Hydraulics | Pneumatics | Blueprinting | Robotic Maintenance | Drive Systems | Welding | Milling | Machining | 3D Printing",
+        elec: "PLCs | Wiring | Soldering | Microcontrollers | Visual Studios | MATLAB | C++ | HTML | CSS",
+        certs: "Mechanical Engineering Technology Certificate | Electrical Engineering Technology Certificate | Lean Systems Technology Certificate | Six Sigma WhiteBelt | OSHA 10 "
+      };
+
+      const grid = document.getElementById('skills-cells');
+      const info = document.getElementById('skill-info');
+      let activeKey = null, activeCell = null;
+
+      // Update the info panel for the given skill key
+      function showDescription(key, cellEl) {
+        if (activeKey === key) {
+          activeKey = null;
+          if (activeCell) activeCell.classList.remove('active');
+          info.classList.remove('show');
+          info.setAttribute('hidden', 'hidden');
+          info.textContent = "";
+          return;
+        }
+        activeKey = key;
+        if (activeCell) activeCell.classList.remove('active');
+        activeCell = cellEl;
+        activeCell.classList.add('active');
+        info.textContent = DESCRIPTIONS[key] || "";
+        info.removeAttribute('hidden');
+        requestAnimationFrame(() => info.classList.add('show'));
+      }
+
+      grid.addEventListener('click', (e) => {
+        const cell = e.target.closest('.Cell');
+        if (!cell || !grid.contains(cell)) return;
+        const key = cell.getAttribute('data-skill');
+        if (!key) return;
+        showDescription(key, cell);
+      });
+    });
+
+    /*
+      ===============================
+      Resume Tabs (Education / Experience)
+      - Click switches the active tab and button styling
+      - Applies a small fade animation by toggling classes
+      - Syncs URL hash (e.g., #experience) for deep linking
+    */
+    document.addEventListener('DOMContentLoaded', () => {
+      const tabButtons = document.querySelectorAll('.tab-btn');
+      const tabs = document.querySelectorAll('.resume-tab');
+
+      function showTab(id, clickedBtn) {
+        tabButtons.forEach(btn => btn.classList.toggle('active', btn === clickedBtn));
+        tabs.forEach(tab => {
+          tab.classList.remove('active');
+          // restart fade animation each switch
+          tab.style.animation = 'none';
+          // force reflow so CSS animation can restart
+          void tab.offsetWidth;
+          tab.style.animation = null;
+        });
+        const target = document.getElementById(id);
+        if (target) target.classList.add('active');
+        // optional deep-link: #education / #experience
+        history.replaceState(null, "", `#${id}`);
+      }
+
+      tabButtons.forEach(btn => {
+        btn.addEventListener('click', () => showTab(btn.dataset.target, btn));
+      });
+
+      // On page load: if URL contains #education or #experience, open it
+      const initial = location.hash.slice(1);
+      const initialBtn = [...tabButtons].find(b => b.dataset.target === initial);
+      if (initialBtn) showTab(initial, initialBtn);
+    });
+
+    // Projects: 'View More' currently links to YouTube. Toggle logic reserved for a future expansion.
+
+    // ===============================
+    // Contact form: compose an email via mailto
+    // - Opens user's email client with prefilled subject/body
+    // - For server-side sending, consider Formspree/EmailJS integration later
+    // ===============================
+    document.addEventListener('DOMContentLoaded', () => {
+      const form = document.querySelector('.contact-form');
+      if(!form) return;
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const to = 'cbwe228@uky.edu';
+        const name = (form.querySelector('#name')?.value || '').trim();
+        const email = (form.querySelector('#email')?.value || '').trim();
+        const company = (form.querySelector('#company')?.value || '').trim();
+        const message = (form.querySelector('#message')?.value || '').trim();
+
+        const subject = `Portfolio Contact from ${name || 'Website'}`;
+        const body = `Name: ${name}\nEmail: ${email}\nCompany: ${company}\n\nMessage:\n${message}`;
+        const mailto = `mailto:${encodeURIComponent(to)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+        // Open default mail client with pre-filled details
+        window.location.href = mailto;
+      });
+    });
+
+    // ===============================
+    // Credentials lightbox: open on click, close on overlay/close/Escape
+    // ===============================
+    document.addEventListener('DOMContentLoaded', () => {
+      const grid = document.querySelector('.cred-grid');
+      const overlay = document.getElementById('lightbox');
+      const img = document.getElementById('lightbox-img');
+      const cap = document.getElementById('lightbox-caption');
+      const btnClose = document.querySelector('.lightbox-close');
+      if(!grid || !overlay || !img || !cap || !btnClose) return;
+
+      function open(src, alt, caption){
+        // load the image first to get natural dimensions
+        img.onload = () => {
+          const iw = img.naturalWidth || 600;
+          const ih = img.naturalHeight || 400;
+          const targetScale = 2; // 100% bigger (2x)
+          let width = iw * targetScale;
+          let height = ih * targetScale;
+          const wAvail = Math.floor(window.innerWidth * 0.92);
+          const hAvail = Math.floor(window.innerHeight * 0.85);
+          const scaleFit = Math.min(wAvail / width, hAvail / height, 1);
+          img.style.width = Math.floor(width * scaleFit) + 'px';
+          img.style.height = Math.floor(height * scaleFit) + 'px';
+        };
+        img.src = src; img.alt = alt || '';
+        cap.textContent = caption || '';
+        overlay.removeAttribute('hidden');
+        document.body.style.overflow = 'hidden';
+      }
+      function close(){
+        overlay.setAttribute('hidden','hidden');
+        img.src = '';
+        img.style.width = '';
+        img.style.height = '';
+        document.body.style.overflow = '';
+      }
+
+      grid.addEventListener('click', (e) => {
+        const figure = e.target.closest('.cred-item');
+        if(!figure || !grid.contains(figure)) return;
+        const el = figure.querySelector('img');
+        if(!el) return;
+        const caption = figure.querySelector('figcaption')?.textContent || el.alt || '';
+        open(el.src, el.alt, caption);
+      });
+      btnClose.addEventListener('click', close);
+      overlay.addEventListener('click', (e) => { if(e.target === overlay) close(); });
+      document.addEventListener('keydown', (e) => { if(e.key === 'Escape' && !overlay.hasAttribute('hidden')) close(); });
+    });
+  
+    // Make homepage project cards clickable to detail page
+    document.addEventListener('DOMContentLoaded', () => {
+      const projSections = document.querySelectorAll('.projects .project-card');
+      if(!projSections.length) return;
+      function go(card){
+        const img = card.querySelector('img');
+        const title = card.querySelector('h4');
+        const desc = card.querySelector('p');
+        const params = new URLSearchParams({
+          title: (title?.textContent || '').trim(),
+          img: img?.getAttribute('src') || '',
+          desc: (desc?.textContent || '').trim()
+        });
+        // Route known homepage cards to their dedicated pages
+        const titleText = (title?.textContent || '').toLowerCase();
+        const imgSrc = (img?.getAttribute('src') || '').toLowerCase();
+        if(titleText.includes('coal chute') || imgSrc.includes('industrial-factory-conveyor-belt')){
+          window.location.href = 'coal-chute-conveyor.html';
+          return;
+        }
+        if(titleText.includes('hvac')){
+          window.location.href = 'industrial-hvac-design.html';
+          return;
+        }
+        if(titleText.includes('portfolio website')){
+          window.location.href = 'portfolio-website.html';
+          return;
+        }
+        if(titleText.includes('robotic arm')){
+          window.location.href = 'Robot-Arm.html';
+          return;
+        }
+        if(titleText.includes('home server')){
+          window.location.href = 'Home Server.html';
+          return;
+        }
+        window.location.href = `project.html?${params.toString()}`;
+      }
+      projSections.forEach(card => { card.style.cursor='pointer'; card.addEventListener('click', () => go(card)); });
+    });</script>
+</body>
+</html>
