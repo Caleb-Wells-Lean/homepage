@@ -649,7 +649,11 @@ section + section::before {
 }
 /* Horizontal scroller used on projects.html */
 .projects .cards.scroller { display: flex; overflow-x: auto; gap: 16px; scroll-snap-type: x mandatory; padding-bottom: 8px; }
-.projects .cards.scroller .project-card { flex: 0 0 auto; min-width: 260px; scroll-snap-align: start; }
+.projects .cards.scroller .project-card {
+  flex: 0 0 clamp(240px, calc(50% - 24px), 360px);
+  min-width: clamp(240px, calc(50% - 24px), 360px);
+  scroll-snap-align: start;
+}
 .projects .cards.scroller::-webkit-scrollbar { height: 8px; }
 .projects .cards.scroller::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.25); border-radius: 4px; }
 
@@ -1210,15 +1214,21 @@ section + section::before {
 .cred-item img { cursor: zoom-in; }
 /* Phone tweaks for project scrollers */
 @media (max-width: 680px) {
-  .scroller-wrap { padding: 0 32px; }
-  .carousel-btn { width: 32px; height: 32px; }
-  .projects .cards.scroller { gap: 12px; }
-  .projects .cards.scroller .project-card { min-width: 78vw; }
-  .project-card img { height: auto; max-height: 220px; }
+  .scroller-wrap { padding: 0 24px; }
+  .carousel-btn { width: 30px; height: 30px; }
+  .projects .cards.scroller { gap: 10px; }
+  .projects .cards.scroller .project-card {
+    flex: 0 0 48vw;
+    min-width: 48vw;
+  }
+  .project-card img { height: auto; max-height: 190px; }
 }
 
 @media (max-width: 440px) {
-  .scroller-wrap { padding: 0 18px; }
-  .projects .cards.scroller .project-card { min-width: 88vw; }
-  .project-card img { max-height: 200px; }
+  .scroller-wrap { padding: 0 16px; }
+  .projects .cards.scroller .project-card {
+    flex: 0 0 47vw;
+    min-width: 47vw;
+  }
+  .project-card img { max-height: 170px; }
 }
