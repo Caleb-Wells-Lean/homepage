@@ -1214,21 +1214,29 @@ section + section::before {
 .cred-item img { cursor: zoom-in; }
 /* Phone tweaks for project scrollers */
 @media (max-width: 680px) {
-  .scroller-wrap { padding: 0 24px; }
-  .carousel-btn { width: 30px; height: 30px; }
-  .projects .cards.scroller { gap: 10px; }
-  .projects .cards.scroller .project-card {
-    flex: 0 0 48vw;
-    min-width: 48vw;
+  /* Switch to 2-column grid so cards don't stretch in the scroller */
+  .scroller-wrap { padding: 0; }
+  .carousel-btn { display: none; }
+  .projects .cards.scroller {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    overflow: visible;
   }
-  .project-card img { height: auto; max-height: 190px; }
+  .projects .cards.scroller .project-card {
+    min-width: auto;
+    flex: initial;
+  }
+  .project-card img {
+    height: auto;
+    max-height: 200px;
+  }
 }
 
 @media (max-width: 440px) {
-  .scroller-wrap { padding: 0 16px; }
-  .projects .cards.scroller .project-card {
-    flex: 0 0 47vw;
-    min-width: 47vw;
+  /* Stack to single column on very small screens */
+  .projects .cards.scroller {
+    grid-template-columns: 1fr;
   }
-  .project-card img { max-height: 170px; }
+  .project-card img { max-height: 180px; }
 }
