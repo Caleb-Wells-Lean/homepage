@@ -1214,18 +1214,25 @@ section + section::before {
 .cred-item img { cursor: zoom-in; }
 /* Phone tweaks for project scrollers */
 @media (max-width: 680px) {
-  /* Switch to 2-column grid so cards don't stretch in the scroller */
-  .scroller-wrap { padding: 0; }
-  .carousel-btn { display: none; }
+  .scroller-wrap { padding: 0 28px; }
+  .carousel-btn {
+    width: 30px;
+    height: 30px;
+    border-width: 1.5px;
+    background: rgba(58, 80, 107, 0.8);
+    color: var(--link-color);
+    backdrop-filter: blur(3px);
+  }
+  .carousel-btn.prev { left: 4px; }
+  .carousel-btn.next { right: 4px; }
   .projects .cards.scroller {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 16px;
-    overflow: visible;
+    padding-bottom: 10px;
+    -webkit-overflow-scrolling: touch; /* keeps momentum scrolling on iOS */
   }
   .projects .cards.scroller .project-card {
-    min-width: auto;
-    flex: initial;
+    flex: 0 0 clamp(180px, 60vw, 260px);
+    min-width: clamp(180px, 60vw, 260px);
   }
   .project-card img {
     height: auto;
