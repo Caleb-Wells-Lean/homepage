@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
-  <title>Microcontroller Logger — Project</title>
+  <title>Coal Chute Conveyor — Recap</title>
 </head>
 <body>
   <nav>
@@ -17,24 +17,362 @@
   </nav>
 
   <main>
-    <section class="project-detail" style="margin-top:20px">
-      <h2>Microcontroller Logger</h2>
-      <div class="project-sections">
-        <article class="pd-section">
-          <div class="pd-media"><img src="Image/engineering-programing.webp" alt="Logger overview"></div>
-          <div class="pd-copy"><h3>Overview</h3><p>Placeholder: Logging goals, sensors, and sampling requirements.</p></div>
+    <section class="project-hero">
+      <div class="hero-content">
+        <div class="hero-topline">
+          <p class="hero-eyebrow">Industrial Retrofit &middot; Case Study</p>
+          <span class="status-pill status-completed"><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Completed scope</span>
+        </div>
+        <div class="hero-grid">
+          <div class="hero-main">
+            <h1>Coal Chute Conveyor</h1>
+            <p class="hero-tagline">Digitized, redesigned, and supported fabrication for a critical 80-foot chute that links primary conveyors inside a coal-fired power plant.</p>
+            <div class="hero-buttons">
+              <a href="#overview" class="btn primary"><i class="fa-solid fa-circle-info" aria-hidden="true"></i><span>Project Overview</span></a>
+              <a href="#system-architecture" class="btn secondary"><i class="fa-solid fa-cubes-stacked" aria-hidden="true"></i><span>System / Architecture</span></a>
+              <a href="#execution" class="btn secondary"><i class="fa-solid fa-list-check" aria-hidden="true"></i><span>Execution &amp; Log</span></a>
+              <a href="#deliverables" class="btn secondary"><i class="fa-solid fa-diagram-project" aria-hidden="true"></i><span>Deliverables</span></a>
+            </div>
+          </div>
+          <div class="hero-meta">
+            <div class="meta-item">
+              <p class="meta-label">Role</p>
+              <p class="meta-value">Mechanical CAD Lead</p>
+            </div>
+            <div class="meta-item">
+              <p class="meta-label">Timeline</p>
+              <p class="meta-value">May &ndash; Oct 2024</p>
+            </div>
+            <div class="meta-item">
+              <p class="meta-label">Tools</p>
+              <p class="meta-value">AutoCAD, CAD Mgmt</p>
+            </div>
+            <div class="meta-item">
+              <p class="meta-label">Category</p>
+              <p class="meta-value">Industrial Retrofit</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-gallery" id="gallery">
+      <div class="gallery-head">
+        <div>
+          <p class="gallery-label">Photo Library</p>
+          <h2>Project Visuals</h2>
+        </div>
+      </div>
+      <div class="gallery-carousel">
+        <button class="gallery-nav prev" type="button" aria-label="Previous gallery image" data-target="#project-gallery-track">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <div class="gallery-track" id="project-gallery-track">
+          <figure class="gallery-card" role="button" tabindex="0"
+                  data-full="Image/legacy coal chute.webp"
+                  data-caption="Legacy Chute Condition - Initial field walkdowns & wear mapping.">
+            <img class="rotate-90" src="Image/legacy coal chute.webp" alt="Legacy chute inside plant" />
+            <figcaption>
+              <p class="gallery-title">Legacy Chute Condition</p>
+              <p class="gallery-meta">Initial field walkdowns &amp; wear mapping.</p>
+            </figcaption>
+          </figure>
+          <figure class="gallery-card" role="button" tabindex="0"
+                  data-full="Image/Big River Electric Corp coal shoot Overview_recover-Model (2).webp"
+                  data-caption="Full CAD Assembly - baseline AutoCAD model with modular sections.">
+            <img src="Image/Big River Electric Corp coal shoot Overview_recover-Model (2).webp" alt="AutoCAD rebuild of chute assembly" />
+            <figcaption>
+              <p class="gallery-title">Full CAD Assembly</p>
+              <p class="gallery-meta">Baseline AutoCAD model with modular subassemblies.</p>
+            </figcaption>
+          </figure>
+          <figure class="gallery-card" role="button" tabindex="0"
+                  data-full="Image/123.webp"
+                  data-caption="Exploded Fit-Up Views - bolt grids, wear plates, and service panels.">
+            <img src="Image/123.webp" alt="Exploded diagrams for modular sections" />
+            <figcaption>
+              <p class="gallery-title">Exploded Fit-Up Views</p>
+              <p class="gallery-meta">Shop drawings highlighting bolt grids &amp; wear plates.</p>
+            </figcaption>
+          </figure>
+          <figure class="gallery-card" role="button" tabindex="0"
+                  data-full="Image/industrial-factory-conveyor-belt.webp"
+                  data-caption="Installed Alignment - verification during installation support.">
+            <img src="Image/industrial-factory-conveyor-belt.webp" alt="Installed chute operating on conveyor line" />
+            <figcaption>
+              <p class="gallery-title">Installed Alignment</p>
+              <p class="gallery-meta">On-site verification during installation support.</p>
+            </figcaption>
+          </figure>
+        </div>
+        <button class="gallery-nav next" type="button" aria-label="Next gallery image" data-target="#project-gallery-track">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+      </div>
+    </section>
+
+    <section class="project-summary" id="overview">
+      <h2>Overview</h2>
+      <div class="summary-grid">
+        <div class="summary-card">
+          <p>During my internship at Overland Conveying, I was assigned to the redesign and replacement of an existing coal chute conveyor system inside an active coal-fired power plant. The chute, measuring approximately 80 feet in length, transfers raw coal between primary conveyors and downstream processing equipment and is a critical link in the plant’s fuel handling system.</p>
+          <p>The original chute had been in service for decades and showed significant wear, structural fatigue, and flow issues caused by outdated design standards and limited maintenance access. Compounding the issue, the available documentation consisted of incomplete CAD files, deteriorated paper drawings, and handwritten revisions that were never formally incorporated into a controlled drawing set.</p>
+          <p>My responsibility was to fully reverse-engineer the existing system, verify its geometry using field measurements and archived records, and produce a modern, fabrication-ready drawing package. The goal was not only to replace the worn chute, but to improve durability, simplify maintenance, and ensure the new design could be fabricated and installed with minimal disruption to plant operations.</p>
+          <p>This project required careful coordination between design, fabrication, and field installation teams, and served as a practical example of modernizing legacy industrial infrastructure through disciplined documentation and engineering standards.</p>
+        </div>
+        <aside class="assignment-card" aria-label="Assignment Details">
+          <h3>Assignment Details</h3>
+          <div class="assignment-list">
+            <div class="detail-row">
+              <span class="detail-label">Project Type</span>
+              <span class="detail-value">Legacy system replacement / industrial retrofit</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-label">System</span>
+              <span class="detail-value">Coal chute conveyor (fuel handling)</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-label">Scope of Work</span>
+              <span class="detail-value">Reverse-engineer geometry; convert legacy documentation; update design for durability, flow, and maintenance; support fabrication &amp; installation planning</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-label">Primary Responsibilities</span>
+              <span class="detail-value">AutoCAD modeling; drawing verification; connection standardization; coordination with engineers, fabricators, and plant personnel</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-label">Key Constraints</span>
+              <span class="detail-value">Active plant, incomplete documentation, tight fabrication &amp; installation windows</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="project-detail">
+      <h2>Problem / Goals / Requirements</h2>
+      <div class="pgr-grid">
+        <article class="pgr-block">
+          <h3>Problem</h3>
+          <ul>
+            <li>Existing coal chute showed severe wear and was difficult to maintain</li>
+            <li>Legacy drawings were incomplete, inconsistent, and unreliable</li>
+            <li>Outdated design practices slowed fabrication and repairs</li>
+          </ul>
         </article>
-        <article class="pd-section reverse">
-          <div class="pd-media"><img src="Image/CAD.webp" alt="Hardware"></div>
-          <div class="pd-copy"><h3>Hardware</h3><p>Placeholder: MCU choice, wiring, and enclosure details.</p></div>
+        <article class="pgr-block">
+          <h3>Goals</h3>
+          <ul>
+            <li>Digitize and verify the full chute assembly in CAD</li>
+            <li>Improve durability, material flow, and maintenance access</li>
+            <li>Produce clear drawings ready for fabrication and installation</li>
+          </ul>
         </article>
-        <article class="pd-section">
-          <div class="pd-media"><img src="Image/professional-skills.webp" alt="Software"></div>
-          <div class="pd-copy"><h3>Software</h3><p>Placeholder: Firmware, MATLAB/C++ pipeline, and storage.</p></div>
+        <article class="pgr-block">
+          <h3>Requirements</h3>
+          <ul>
+            <li>Accurate reverse-engineering using archived records and field measurements</li>
+            <li>Full compatibility with existing conveyors and support structures</li>
+            <li>Standardized drawings suitable for shop fabrication and field installation</li>
+          </ul>
         </article>
       </div>
     </section>
+
+    <section class="project-detail" id="system-architecture">
+      <h2>System / Architecture</h2>
+      <div class="system-layout">
+        <article class="system-text">
+          <p>The coal chute system was rebuilt digitally as a modular steel assembly designed to integrate with existing conveyor infrastructure. The overall chute was divided into defined subassemblies to simplify fabrication, transport, and on-site installation while maintaining structural continuity.</p>
+          <p>Large welded plate sections were broken into manageable modules connected through standardized bolt patterns and reinforced flanges. These interfaces allowed sections to be aligned, assembled, and serviced more easily than the original monolithic design. Access points and removable panels were added at key locations to support inspection and maintenance without full disassembly.</p>
+          <p>Internal geometry was refined to improve material flow and reduce wear in high-impact areas. Transition zones, corners, and discharge regions were adjusted to minimize coal buildup and abrasion while preserving alignment with upstream and downstream conveyors. All changes were made within the constraints of the existing support structure and mounting locations to avoid unnecessary plant modifications.</p>
+        </article>
+        <aside class="system-visual" aria-label="System architecture placeholder">
+          <div class="visual-frame">
+            <p>CAD / System Diagram Placeholder</p>
+          </div>
+          <p class="visual-note">Illustrates modular subassemblies, bolt interfaces, and flow-aligned geometry.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="project-detail execution-log" id="execution">
+      <h2>Execution &amp; Build Log</h2>
+      <div class="execution-log-grid">
+        <div class="execution-column">
+          <p class="column-label">Execution</p>
+          <article class="exec-phase">
+            <h3>Phase 1 &mdash; Reverse Engineering</h3>
+            <ul>
+              <li>Reviewed paper drawings, scanned files, and handwritten revisions</li>
+              <li>Verified dimensions using records and field measurements</li>
+              <li>Recreated the full assembly in AutoCAD as a baseline</li>
+            </ul>
+          </article>
+          <article class="exec-phase">
+            <h3>Phase 2 &mdash; Design Updates</h3>
+            <ul>
+              <li>Standardized connections and bolt patterns</li>
+              <li>Added wear plates, smoother transitions, and access points</li>
+              <li>Coordinated design decisions with senior engineers</li>
+            </ul>
+          </article>
+          <article class="exec-phase">
+            <h3>Phase 3 &mdash; Fabrication Support</h3>
+            <ul>
+              <li>Produced complete 2D fabrication drawings</li>
+              <li>Reviewed drawings with the shop and clarified fit-up details</li>
+              <li>Issued quick revisions as fabrication constraints appeared</li>
+            </ul>
+          </article>
+          <article class="exec-phase">
+            <h3>Phase 4 &mdash; Installation Support</h3>
+            <ul>
+              <li>Assisted with assembly planning and on-site fit-up</li>
+              <li>Verified alignment and integration during installation</li>
+            </ul>
+          </article>
+        </div>
+        <aside class="build-column">
+          <p class="column-label">Build Log</p>
+          <article class="build-entry">
+            <p><strong>May 2024 &mdash; Project Intake &amp; Legacy Review</strong><br />Reviewed legacy paper drawings, scanned files, and prior revisions to understand existing geometry and known issues.</p>
+          </article>
+          <article class="build-entry">
+            <p><strong>June 2024 &mdash; Reverse Engineering &amp; Baseline CAD</strong><br />Verified dimensions using archived records and field measurements and recreated the full chute assembly in AutoCAD as a digital baseline.</p>
+          </article>
+          <article class="build-entry">
+            <p><strong>July 2024 &mdash; Design Refinement &amp; Standardization</strong><br />Updated connection details, standardized bolt patterns, and refined internal geometry to improve durability and material flow.</p>
+          </article>
+          <article class="build-entry">
+            <p><strong>August 2024 &mdash; Final Drawings &amp; Fabrication Support</strong><br />Completed fabrication-ready drawings and supported the shop with fit-up clarification and targeted revisions.</p>
+          </article>
+          <article class="build-entry">
+            <p><strong>September&ndash;October 2024 &mdash; Project Closeout &amp; Transition</strong><br />Coal chute project was completed and handed off. Shifted focus to an underground line proposal and a supply fan house design while remaining available for follow-up support.</p>
+          </article>
+        </aside>
+      </div>
+    </section>
+
+    <section class="project-detail" id="deliverables">
+      <h2>Deliverables</h2>
+      <div class="deliverables-grid">
+        <article class="deliverable-group">
+          <h3>Drawing &amp; Design Package</h3>
+          <ul>
+            <li>Complete AutoCAD model of the chute assembly</li>
+            <li>Fully dimensioned 2D fabrication drawings</li>
+            <li>Detail views for flanges wear areas and connections</li>
+          </ul>
+        </article>
+        <article class="deliverable-group">
+          <h3>Fabrication &amp; Assembly Support</h3>
+          <ul>
+            <li>Standardized bolt pattern reference</li>
+            <li>Connection detail sheets</li>
+            <li>Fit-up guidance for shop and field crews</li>
+          </ul>
+        </article>
+        <article class="deliverable-group">
+          <h3>Documentation &amp; Handoff</h3>
+          <ul>
+            <li>Consolidated legacy drawing reference set</li>
+            <li>Revision-controlled drawing package</li>
+            <li>Installation documentation for engineering and plant teams</li>
+          </ul>
+        </article>
+        <article class="deliverable-group">
+          <h3>Future-Ready Design</h3>
+          <ul>
+            <li>Modular layout specification for partial replacement and inspection</li>
+            <li>Geometry refinement guidelines for reduced wear</li>
+            <li>Service access notes to simplify inspection and maintenance</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="project-detail">
+      <h2>Results &amp; Outcomes</h2>
+      <div class="results-wrap">
+        <ul>
+          <li>Replaced a critical legacy coal chute with a modernized design</li>
+          <li>Improved material flow and reduced wear in high-impact areas</li>
+          <li>Simplified maintenance through standardized connections and access points</li>
+          <li>Delivered a complete CAD drawing package for long-term plant use</li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="gallery-lightbox" id="gallery-lightbox" aria-hidden="true">
+      <div class="lightbox-backdrop" data-close></div>
+      <div class="lightbox-content" role="dialog" aria-modal="true" aria-label="Expanded project image">
+        <button class="lightbox-close" type="button" aria-label="Close image"><i class="fa-solid fa-xmark"></i></button>
+        <img src="" alt="" id="lightbox-image" />
+        <p id="lightbox-caption"></p>
+      </div>
+    </div>
   </main>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.gallery-nav').forEach(btn => {
+        const targetSel = btn.getAttribute('data-target');
+        const track = targetSel ? document.querySelector(targetSel) : null;
+        if(!track) return;
+        const dir = btn.classList.contains('next') ? 1 : -1;
+        btn.addEventListener('click', () => {
+          const card = track.querySelector('.gallery-card');
+          const styles = window.getComputedStyle(track);
+          const gap = parseFloat(styles.columnGap || styles.gap || 0) || 0;
+          const delta = ((card ? card.clientWidth : track.clientWidth) + gap) * dir;
+          track.scrollBy({ left: delta, behavior: 'smooth' });
+        });
+      });
+
+      const lightbox = document.getElementById('gallery-lightbox');
+      const lightboxImg = document.getElementById('lightbox-image');
+      const lightboxCaption = document.getElementById('lightbox-caption');
+      function openLightbox(src, alt, caption){
+        lightboxImg.src = src;
+        lightboxImg.alt = alt || '';
+        lightboxCaption.textContent = caption || '';
+        lightbox.removeAttribute('aria-hidden');
+        lightbox.classList.add('open');
+      }
+      function closeLightbox(){
+        lightbox.classList.remove('open');
+        lightbox.setAttribute('aria-hidden','true');
+        lightboxImg.src = '';
+        lightboxCaption.textContent = '';
+      }
+      lightbox.addEventListener('click', (e) => {
+        if(e.target.dataset.close !== undefined || e.target.classList.contains('lightbox-close') || e.target.closest('.lightbox-close')){
+          closeLightbox();
+        }
+      });
+      document.addEventListener('keyup', (e) => {
+        if(e.key === 'Escape' && lightbox.classList.contains('open')){
+          closeLightbox();
+        }
+      });
+      document.querySelectorAll('.gallery-card').forEach(card => {
+        const activate = () => {
+          const img = card.querySelector('img');
+          openLightbox(
+            card.dataset.full || img?.src,
+            img?.alt || '',
+            card.dataset.caption || card.querySelector('.gallery-title')?.textContent || ''
+          );
+        };
+        card.addEventListener('click', activate);
+        card.addEventListener('keypress', (e) => {
+          if(e.key === 'Enter' || e.key === ' '){
+            e.preventDefault();
+            activate();
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>
-

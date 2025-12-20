@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
-  <title>Industrial HVAC Design â€” Project</title>
+  <title>Industrial HVAC Design &mdash; Project</title>
 </head>
 <body>
   <nav>
@@ -17,51 +17,353 @@
   </nav>
 
   <main>
-    <section class="project-detail" style="margin-top:20px">
-      <h2>Industrial HVAC Design</h2>
-      <div class="project-sections">
-        <article class="pd-section">
-            <div class="pd-copy">
-            <h3>Overview</h3>
-            <p>Placeholder: Overview of industrial HVAC unit design, goals, and constraints.</p>
+    <section class="project-hero">
+      <div class="hero-content">
+        <div class="hero-topline">
+          <p class="hero-eyebrow">Manufacturing Systems &middot; Industrial HVAC</p>
+          <span class="status-pill status-completed"><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Completed scope</span>
+        </div>
+        <div class="hero-grid">
+          <div class="hero-main">
+            <h1>Industrial HVAC Design Support</h1>
+            <p class="hero-tagline">Supported engineering and production of large, custom HVAC units by maintaining CAD models, improving documentation, and resolving design-to-manufacturing issues across more than 100 builds.</p>
+            <div class="hero-buttons">
+              <a href="#overview" class="btn primary"><i class="fa-solid fa-circle-info" aria-hidden="true"></i><span>Project Overview</span></a>
+              <a href="#system-architecture" class="btn secondary"><i class="fa-solid fa-cubes-stacked" aria-hidden="true"></i><span>System / Architecture</span></a>
+              <a href="#execution" class="btn secondary"><i class="fa-solid fa-list-check" aria-hidden="true"></i><span>Execution &amp; Log</span></a>
+              <a href="#deliverables" class="btn secondary"><i class="fa-solid fa-diagram-project" aria-hidden="true"></i><span>Deliverables</span></a>
+            </div>
           </div>
-          <div class="pd-media">
-            <img class="rotate-90" src="Image/D6V156AA.webp" alt="HVAC design overview">
+          <div class="hero-meta">
+            <div class="meta-item">
+              <p class="meta-label">Role</p>
+              <p class="meta-value">Engineering Intern &mdash; Manufacturing / Systems Support</p>
+            </div>
+            <div class="meta-item">
+              <p class="meta-label">Timeline</p>
+              <p class="meta-value">Internship &mdash; Ongoing (Units completed May 2024 &ndash; Present)</p>
+            </div>
+            <div class="meta-item">
+              <p class="meta-label">Tools</p>
+              <p class="meta-value">Inventor, CAD Management, Fabrication Coordination</p>
+            </div>
+            <div class="meta-item">
+              <p class="meta-label">Category</p>
+              <p class="meta-value">Manufacturing Systems · Industrial HVAC</p>
+            </div>
           </div>
-        
+        </div>
+      </div>
+    </section>
+
+    <section class="project-gallery" id="gallery">
+      <div class="gallery-head">
+        <div>
+          <p class="gallery-label">Photo Library</p>
+          <h2>Project Visuals</h2>
+        </div>
+      </div>
+      <div class="gallery-carousel">
+        <button class="gallery-nav prev" type="button" aria-label="Previous gallery image" data-target="#project-gallery-track">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <div class="gallery-track" id="project-gallery-track">
+          <figure class="gallery-card" role="button" tabindex="0"
+                  data-full="Image/D6V156AA.webp"
+                  data-caption="Legacy cabinet reference">
+            <img class="rotate-90" src="Image/D6V156AA.webp" alt="Legacy HVAC cabinet" />
+            <figcaption>
+              <p class="gallery-title">Legacy Cabinet</p>
+              <p class="gallery-meta">Reference unit before redesign.</p>
+            </figcaption>
+          </figure>
+          <figure class="gallery-card" role="button" tabindex="0"
+                  data-full="Image/CAD.webp"
+                  data-caption="Updated plenum layout">
+            <img src="Image/CAD.webp" alt="HVAC CAD" />
+            <figcaption>
+              <p class="gallery-title">New CAD Layout</p>
+              <p class="gallery-meta">Plenum optimization concepts.</p>
+            </figcaption>
+          </figure>
+          <figure class="gallery-card" role="button" tabindex="0"
+                  data-full="Image/professional-skills.webp"
+                  data-caption="Fabrication planning visuals">
+            <img src="Image/professional-skills.webp" alt="Fabrication planning" />
+            <figcaption>
+              <p class="gallery-title">Fabrication Planning</p>
+              <p class="gallery-meta">Sheet-metal panel breakdown.</p>
+            </figcaption>
+          </figure>
+          <figure class="gallery-card" role="button" tabindex="0"
+                  data-full="Image/engineering-programing.webp"
+                  data-caption="Control cabinet mockup">
+            <img src="Image/engineering-programing.webp" alt="Control mockup" />
+            <figcaption>
+              <p class="gallery-title">Controls Mockup</p>
+              <p class="gallery-meta">Preview of sensor routing.</p>
+            </figcaption>
+          </figure>
+        </div>
+        <button class="gallery-nav next" type="button" aria-label="Next gallery image" data-target="#project-gallery-track">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+      </div>
+    </section>
+
+    <section class="project-summary" id="overview">
+      <h2>Overview</h2>
+      <div class="summary-grid">
+        <div class="summary-card">
+          <p>During my internship at Trane Technologies, I supported the engineering and production of large, custom HVAC units built to meet specific customer, site, and performance requirements. These systems were engineered-to-order and produced at scale, requiring close coordination between design, manufacturing, and operations.</p>
+          <p>My work focused on bridging design intent and shop-floor execution. Rather than working on a single product, I contributed across many units and workstreams, supporting over 100 completed builds. Customers ranged from industrial and commercial facilities to government, healthcare, and high-reliability applications, where accuracy, documentation quality, and manufacturability were critical.</p>
+          <p>The role emphasized practical engineering: maintaining and updating CAD models, improving drawings used directly in production, and resolving design and assembly issues during manufacturing. Each task required balancing customer requirements with real-world fabrication and assembly constraints.</p>
+        </div>
+        <aside class="assignment-card" aria-label="Assignment Details">
+          <h3>Assignment Details</h3>
+          <div class="assignment-list">
+            <div class="detail-row">
+              <span class="detail-label">Project Type</span>
+              <span class="detail-value">High-volume custom manufacturing / production engineering support</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-label">System</span>
+              <span class="detail-value">Large-scale HVAC units (engineered-to-order)</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-label">Scope of Work</span>
+              <span class="detail-value">Support CAD models and drawings; resolve design-to-manufacturing issues; improve documentation clarity; assist production execution</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-label">Primary Responsibilities</span>
+              <span class="detail-value">CAD updates; drawing revisions; manufacturability support; cross-functional coordination</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-label">Key Constraints</span>
+              <span class="detail-value">High throughput, customer-specific requirements, tight schedules, zero-defect expectations</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="project-detail">
+      <h2>Problem / Goals / Requirements</h2>
+      <div class="pgr-grid">
+        <article class="pgr-block">
+          <h3>Problem</h3>
+          <ul>
+            <li>High variation between custom units increased documentation complexity</li>
+            <li>Production teams needed clear accurate drawings to maintain throughput</li>
+            <li>Design clarifications were often required mid-build</li>
+          </ul>
         </article>
-           
-        <article class="pd-section reverse">
-           <div class="pd-copy">
-            <h3>Design & CAD</h3>
-            <p>Placeholder: CAD models, configurator logic, and fabrication-ready outputs.</p>
-          </div>
-          <div class="pd-media">
-            <img src="Image/CAD.webp" alt="CAD modeling">
-          </div>
-         
-         
+        <article class="pgr-block">
+          <h3>Goals</h3>
+          <ul>
+            <li>Ensure CAD models and drawings reflected build intent</li>
+            <li>Improve clarity and consistency of production documentation</li>
+            <li>Support manufacturing teams in completing units efficiently</li>
+          </ul>
         </article>
-        <article class="pd-section">
-          <div class="pd-media">
-            <img src="Image/professional-skills.webp" alt="Assembly planning">
-          </div>
-          <div class="pd-copy">
-            <h3>Implementation</h3>
-            <p>Placeholder: BOM, drawings, assembly, and QA checks.</p>
-          </div>
-        </article>
-        <article class="pd-section reverse">
-          <div class="pd-media">
-            <img src="Image/engineering-programing.webp" alt="Results">
-          </div>
-          <div class="pd-copy">
-            <h3>Results</h3>
-            <p>Placeholder: Time savings, throughput, and serviceability improvements.</p>
-          </div>
+        <article class="pgr-block">
+          <h3>Requirements</h3>
+          <ul>
+            <li>Maintain compatibility with existing manufacturing processes and tooling</li>
+            <li>Respond quickly to production questions and design changes</li>
+            <li>Provide clear controlled documentation suitable for shop-floor use</li>
+          </ul>
         </article>
       </div>
     </section>
+
+    <section class="project-detail" id="system-architecture">
+      <h2>System / Architecture</h2>
+      <div class="system-layout">
+        <article class="system-text">
+          <p>The systems supported during this internship consisted of large, modular HVAC assemblies composed of structural frames, airflow components, mechanical systems, and electrical integrations. Each unit followed a common architectural framework while being customized to meet specific customer requirements.</p>
+          <p>CAD models and drawings served as the central source of truth, linking engineering intent to fabrication and assembly. Changes to one subsystem often affected others, requiring careful coordination to maintain alignment across components and build stages.</p>
+          <p>The overall approach prioritized modularity, standard interfaces, and clear documentation so that variation could be managed without disrupting production flow or quality.</p>
+        </article>
+        <aside class="system-visual" aria-label="System architecture placeholder">
+          <div class="visual-frame">
+            <p>HVAC System Diagram</p>
+          </div>
+          <p class="visual-note">Insert block diagrams or CAD snapshots when available.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="project-detail execution-log" id="execution">
+      <h2>Execution &amp; Build Log</h2>
+      <div class="execution-log-grid">
+        <div class="execution-column">
+          <p class="column-label">Execution</p>
+          <article class="exec-phase">
+            <h3>Phase 1 &mdash; Design &amp; Documentation Support</h3>
+            <ul>
+              <li>Updated and maintained CAD models for custom HVAC units</li>
+              <li>Resolved drawing inconsistencies and clarified build details</li>
+              <li>Tracked revisions so shop documentation stayed current</li>
+            </ul>
+          </article>
+          <article class="exec-phase">
+            <h3>Phase 2 &mdash; Manufacturing Support</h3>
+            <ul>
+              <li>Addressed shop-floor questions on fit-up assembly and sequencing</li>
+              <li>Supported manufacturability improvements and design adjustments</li>
+              <li>Captured production feedback for future builds</li>
+            </ul>
+          </article>
+          <article class="exec-phase">
+            <h3>Phase 3 &mdash; Cross-Functional Coordination</h3>
+            <ul>
+              <li>Worked with engineering manufacturing and operations to resolve issues</li>
+              <li>Incorporated production input into updated documentation</li>
+              <li>Coordinated changes across affected subsystems</li>
+            </ul>
+          </article>
+          <article class="exec-phase">
+            <h3>Phase 4 &mdash; Continuous Throughput Support</h3>
+            <ul>
+              <li>Repeated this workflow across many units to sustain output</li>
+              <li>Balanced speed accuracy and consistency across builds</li>
+              <li>Monitored documentation health as new units entered production</li>
+            </ul>
+          </article>
+        </div>
+        <aside class="build-column">
+          <p class="column-label">Build Log</p>
+          <article class="build-entry">
+            <p><strong>Internship Duration &mdash; Multi-Unit Production Support</strong><br />Contributed to engineering and manufacturing support across more than 100 custom HVAC units, assisting with design updates, documentation control, and production execution as units moved through the build process.</p>
+          </article>
+          <article class="build-entry">
+            <p><strong>Applications Served</strong><br />Supported units for industrial facilities, government and financial institutions, healthcare systems, and other high-reliability environments, each with unique requirements and constraints.</p>
+          </article>
+        </aside>
+      </div>
+    </section>
+
+    <section class="project-detail" id="deliverables">
+      <h2>Deliverables</h2>
+      <div class="deliverables-grid">
+        <article class="deliverable-group">
+          <h3>CAD &amp; Documentation</h3>
+          <ul>
+            <li>Updated CAD models for custom HVAC units</li>
+            <li>Revised production drawings used directly on the shop floor</li>
+            <li>Controlled documentation reflecting build intent</li>
+          </ul>
+        </article>
+        <article class="deliverable-group">
+          <h3>Manufacturing Support</h3>
+          <ul>
+            <li>Clarified assembly and fit-up details</li>
+            <li>Design adjustments to improve manufacturability</li>
+            <li>Support for resolving production issues</li>
+          </ul>
+        </article>
+        <article class="deliverable-group">
+          <h3>Production Outcomes</h3>
+          <ul>
+            <li>Engineering support across 100+ completed units</li>
+            <li>Consistent documentation enabling repeatable builds</li>
+            <li>Improved communication between engineering and manufacturing</li>
+          </ul>
+        </article>
+        <article class="deliverable-group">
+          <h3>Future-Ready Design</h3>
+          <ul>
+            <li>Modular documentation structure for future units</li>
+            <li>Process for rapid updates without disrupting throughput</li>
+            <li>Template-ready layout for new customer requirements</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="project-detail">
+      <h2>Results &amp; Outcomes</h2>
+      <div class="results-wrap">
+        <ul>
+          <li>Supported the successful completion of over 100 custom HVAC units</li>
+          <li>Improved clarity and reliability of production documentation</li>
+          <li>Reduced friction between design intent and manufacturing execution</li>
+          <li>Gained deep experience in high-variation high-throughput industrial engineering</li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="gallery-lightbox" id="gallery-lightbox" aria-hidden="true">
+      <div class="lightbox-backdrop" data-close></div>
+      <div class="lightbox-content" role="dialog" aria-modal="true" aria-label="Expanded project image">
+        <button class="lightbox-close" type="button" aria-label="Close image"><i class="fa-solid fa-xmark"></i></button>
+        <img src="" alt="" id="lightbox-image" />
+        <p id="lightbox-caption"></p>
+      </div>
+    </div>
   </main>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.gallery-nav').forEach(btn => {
+        const targetSel = btn.getAttribute('data-target');
+        const track = targetSel ? document.querySelector(targetSel) : null;
+        if(!track) return;
+        const dir = btn.classList.contains('next') ? 1 : -1;
+        btn.addEventListener('click', () => {
+          const card = track.querySelector('.gallery-card');
+          const styles = window.getComputedStyle(track);
+          const gap = parseFloat(styles.columnGap || styles.gap || 0) || 0;
+          const delta = ((card ? card.clientWidth : track.clientWidth) + gap) * dir;
+          track.scrollBy({ left: delta, behavior: 'smooth' });
+        });
+      });
+
+      const lightbox = document.getElementById('gallery-lightbox');
+      const lightboxImg = document.getElementById('lightbox-image');
+      const lightboxCaption = document.getElementById('lightbox-caption');
+      function openLightbox(src, alt, caption){
+        lightboxImg.src = src;
+        lightboxImg.alt = alt || '';
+        lightboxCaption.textContent = caption || '';
+        lightbox.removeAttribute('aria-hidden');
+        lightbox.classList.add('open');
+      }
+      function closeLightbox(){
+        lightbox.classList.remove('open');
+        lightbox.setAttribute('aria-hidden','true');
+        lightboxImg.src = '';
+        lightboxCaption.textContent = '';
+      }
+      lightbox.addEventListener('click', (e) => {
+        if(e.target.dataset.close !== undefined || e.target.classList.contains('lightbox-close') || e.target.closest('.lightbox-close')){
+          closeLightbox();
+        }
+      });
+      document.addEventListener('keyup', (e) => {
+        if(e.key === 'Escape' && lightbox.classList.contains('open')){
+          closeLightbox();
+        }
+      });
+      document.querySelectorAll('.gallery-card').forEach(card => {
+        const activate = () => {
+          const img = card.querySelector('img');
+          openLightbox(
+            card.dataset.full || img?.src,
+            img?.alt || '',
+            card.dataset.caption || card.querySelector('.gallery-title')?.textContent || ''
+          );
+        };
+        card.addEventListener('click', activate);
+        card.addEventListener('keypress', (e) => {
+          if(e.key === 'Enter' || e.key === ' '){
+            e.preventDefault();
+            activate();
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>

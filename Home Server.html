@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
-  <title>Home server — Project</title>
+  <title>RIFT Home Server - Project</title>
 </head>
 <body>
   <nav>
@@ -17,24 +17,356 @@
   </nav>
 
   <main>
-    <section class="project-detail" style="margin-top:20px">
-      <h2>Cert Prep Toolkit</h2>
-      <div class="project-sections">
-        <article class="pd-section">
-          <div class="pd-media"><img src="Image/certification.webp" alt="Toolkit overview"></div>
-          <div class="pd-copy"><h3>Overview</h3><p>Placeholder: Toolkit goals and supported certifications.</p></div>
+    <section class="project-hero">
+      <div class="hero-content">
+        <div class="hero-topline">
+          <p class="hero-eyebrow">Personal Infrastructure &middot; Case Study</p>
+          <span class="status-pill status-active"><i class="fa-solid fa-spinner" aria-hidden="true"></i> Active build</span>
+        </div>
+        <div class="hero-grid">
+          <div class="hero-main">
+            <h1>RIFT Home Server Platform</h1>
+            <p class="hero-tagline">Modular home server that consolidates storage, self-hosted services, and experimentation into one maintainable system.</p>
+            <div class="hero-buttons">
+              <a href="#overview" class="btn primary"><i class="fa-solid fa-circle-info" aria-hidden="true"></i><span>Project Overview</span></a>
+              <a href="#system-architecture" class="btn secondary"><i class="fa-solid fa-cubes-stacked" aria-hidden="true"></i><span>System / Architecture</span></a>
+              <a href="#execution" class="btn secondary"><i class="fa-solid fa-list-check" aria-hidden="true"></i><span>Execution &amp; Log</span></a>
+              <a href="#deliverables" class="btn secondary"><i class="fa-solid fa-diagram-project" aria-hidden="true"></i><span>Deliverables</span></a>
+            </div>
+          </div>
+          <div class="hero-meta">
+            <div class="meta-item">
+              <p class="meta-label">Role</p>
+              <p class="meta-value">Designer / Builder</p>
+            </div>
+            <div class="meta-item">
+              <p class="meta-label">Timeline</p>
+              <p class="meta-value">Personal Project &mdash; Ongoing</p>
+            </div>
+            <div class="meta-item">
+              <p class="meta-label">Tools</p>
+              <p class="meta-value">Linux, Docker, NAS Stack</p>
+            </div>
+            <div class="meta-item">
+              <p class="meta-label">Category</p>
+              <p class="meta-value">Personal Infrastructure</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-gallery" id="gallery">
+      <div class="gallery-head">
+        <div>
+          <p class="gallery-label">Photo Library</p>
+          <h2>Project Visuals</h2>
+        </div>
+      </div>
+      <div class="gallery-carousel">
+        <button class="gallery-nav prev" type="button" aria-label="Previous gallery image" data-target="#project-gallery-track">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <div class="gallery-track" id="project-gallery-track">
+          <figure class="gallery-card" role="button" tabindex="0"
+                  data-full="Image/work-progress_24908-53218.webp"
+                  data-caption="Initial hardware assembly and chassis layout for the RIFT server stack.">
+            <img src="Image/work-progress_24908-53218.webp" alt="Open server chassis during assembly" />
+            <figcaption>
+              <p class="gallery-title">Core Hardware Build</p>
+              <p class="gallery-meta">Chassis layout and wiring during the first assembly pass.</p>
+            </figcaption>
+          </figure>
+          <figure class="gallery-card" role="button" tabindex="0"
+                  data-full="Image/D6V156AA.webp"
+                  data-caption="Storage planning to separate media, personal files, and project datasets.">
+            <img src="Image/D6V156AA.webp" alt="Diagram highlighting drive allocation" />
+            <figcaption>
+              <p class="gallery-title">Storage Planning</p>
+              <p class="gallery-meta">Partition map outlining media, personal, and project pools.</p>
+            </figcaption>
+          </figure>
+          <figure class="gallery-card" role="button" tabindex="0"
+                  data-full="Image/code Example.webp"
+                  data-caption="Container stack managing media, backup, and experimentation services.">
+            <img src="Image/code Example.webp" alt="Code editor showing container configuration" />
+            <figcaption>
+              <p class="gallery-title">Service Stack</p>
+              <p class="gallery-meta">Container definitions for media, backup, and monitoring.</p>
+            </figcaption>
+          </figure>
+          <figure class="gallery-card" role="button" tabindex="0"
+                  data-full="Image/CAD.webp"
+                  data-caption="Network diagram showing VLANs and access paths for the home lab.">
+            <img src="Image/CAD.webp" alt="Simplified network diagram" />
+            <figcaption>
+              <p class="gallery-title">Network Layout</p>
+              <p class="gallery-meta">Access plan balancing convenience with local security.</p>
+            </figcaption>
+          </figure>
+        </div>
+        <button class="gallery-nav next" type="button" aria-label="Next gallery image" data-target="#project-gallery-track">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+      </div>
+    </section>
+
+    <section class="project-summary" id="overview">
+      <h2>Overview</h2>
+      <div class="summary-grid">
+        <div class="summary-card">
+          <p>RIFT is a personal home server project aimed at centralizing storage, services, and experimentation within one modular platform. It replaces scattered local drives and third-party tools with a controlled environment that can grow over time.</p>
+          <p>The system is treated as infrastructure rather than a single-purpose build. Core priorities include reliability, scalability, and ease of maintenance so that new services can be added without disrupting existing workloads.</p>
+          <p>Throughout the project the focus stays on practical systems engineering lessons: storage planning, service isolation, controlled network access, and long-term maintainability.</p>
+        </div>
+        <aside class="assignment-card" aria-label="Assignment Details">
+          <h3>Assignment Details</h3>
+          <div class="assignment-list">
+            <div class="detail-row">
+              <span class="detail-label">Project Type</span>
+              <span class="detail-value">Personal infrastructure / home lab system</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-label">System</span>
+              <span class="detail-value">Home server for storage, media, and self-hosted services</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-label">Scope of Work</span>
+              <span class="detail-value">Plan architecture, select hardware, configure storage and services, ensure reliability and expandability</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-label">Primary Responsibilities</span>
+              <span class="detail-value">System design, hardware selection, software configuration, documentation and maintenance planning</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-label">Key Constraints</span>
+              <span class="detail-value">Limited space, budget-conscious hardware, low power draw, long-term reliability</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="project-detail">
+      <h2>Problem / Goals / Requirements</h2>
+      <div class="pgr-grid">
+        <article class="pgr-block">
+          <h3>Problem</h3>
+          <ul>
+            <li>Data and media were scattered across multiple devices and drives</li>
+            <li>Third-party services limited control over availability and configuration</li>
+            <li>No centralized platform existed for experimenting with self-hosted tools</li>
+          </ul>
         </article>
-        <article class="pd-section reverse">
-          <div class="pd-media"><img src="Image/professional-skills.webp" alt="Resources"></div>
-          <div class="pd-copy"><h3>Resources</h3><p>Placeholder: Study plans, flashcards, and templates.</p></div>
+        <article class="pgr-block">
+          <h3>Goals</h3>
+          <ul>
+            <li>Centralize storage and core services inside a single system</li>
+            <li>Provide reliable media access and organized file management</li>
+            <li>Create a flexible platform for future services and automation work</li>
+          </ul>
         </article>
-        <article class="pd-section">
-          <div class="pd-media"><img src="Image/engineering-programing.webp" alt="Outcomes"></div>
-          <div class="pd-copy"><h3>Outcomes</h3><p>Placeholder: Preparation efficacy and user feedback.</p></div>
+        <article class="pgr-block">
+          <h3>Requirements</h3>
+          <ul>
+            <li>Modular design that supports future expansion</li>
+            <li>Redundant storage to protect critical data</li>
+            <li>Simple maintenance and update process</li>
+          </ul>
         </article>
       </div>
     </section>
+
+    <section class="project-detail" id="system-architecture">
+      <h2>System / Architecture</h2>
+      <div class="system-layout">
+        <article class="system-text">
+          <p>RIFT combines storage, compute, and network management inside a modular enclosure. Storage pools are segmented to isolate media, personal files, and project datasets so that each can be scaled or backed up independently.</p>
+          <p>Services are deployed through containers, allowing individual workloads to be updated, replaced, or paused without impacting the remainder of the system. This isolation keeps experimentation from jeopardizing core functions.</p>
+          <p>Networking, access controls, and monitoring scripts are configured with a focus on clarity rather than complexity to ensure the platform remains maintainable over the long term.</p>
+        </article>
+        <aside class="system-visual" aria-label="System architecture placeholder">
+          <div class="visual-frame">
+            <p>Infrastructure Diagram Placeholder</p>
+          </div>
+          <p class="visual-note">Future diagram will highlight storage tiers, container stacks, and access paths.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="project-detail execution-log" id="execution">
+      <h2>Execution &amp; Build Log</h2>
+      <div class="execution-log-grid">
+        <div class="execution-column">
+          <p class="column-label">Execution</p>
+          <article class="exec-phase">
+            <h3>Phase 1 &mdash; Planning &amp; Research</h3>
+            <ul>
+              <li>Defined storage, media, and experimentation use cases</li>
+              <li>Researched hardware and software options for a small footprint</li>
+              <li>Outlined reliability and expansion requirements</li>
+            </ul>
+          </article>
+          <article class="exec-phase">
+            <h3>Phase 2 &mdash; Hardware Setup</h3>
+            <ul>
+              <li>Selected chassis, storage, and network components</li>
+              <li>Assembled the server and installed the base OS</li>
+              <li>Configured initial networking and remote access</li>
+            </ul>
+          </article>
+          <article class="exec-phase">
+            <h3>Phase 3 &mdash; Storage &amp; Services</h3>
+            <ul>
+              <li>Provisioned storage pools and file shares</li>
+              <li>Deployed core services via container orchestration</li>
+              <li>Documented service layouts and dependencies</li>
+            </ul>
+          </article>
+          <article class="exec-phase">
+            <h3>Phase 4 &mdash; Refinement &amp; Expansion</h3>
+            <ul>
+              <li>Organized data structures and access permissions</li>
+              <li>Planned additional services and monitoring</li>
+              <li>Iterated on backup and maintenance routines</li>
+            </ul>
+          </article>
+        </div>
+        <aside class="build-column">
+          <p class="column-label">Build Log</p>
+          <article class="build-entry">
+            <p><strong>Initial Build &mdash; Core Infrastructure</strong><br />Assembled hardware, installed the operating system, and configured baseline networking and storage.</p>
+          </article>
+          <article class="build-entry">
+            <p><strong>Service Deployment &mdash; Media &amp; File Access</strong><br />Deployed initial containerized services for media streaming, file management, and backups.</p>
+          </article>
+          <article class="build-entry">
+            <p><strong>Ongoing &mdash; Incremental Expansion</strong><br />Adding new services and refining storage plans while monitoring reliability and maintenance effort.</p>
+          </article>
+        </aside>
+      </div>
+    </section>
+
+    <section class="project-detail" id="deliverables">
+      <h2>Deliverables</h2>
+      <div class="deliverables-grid">
+        <article class="deliverable-group">
+          <h3>System Infrastructure</h3>
+          <ul>
+            <li>Fully functional home server platform</li>
+            <li>Centralized storage for media and personal files</li>
+            <li>Documented chassis and network configuration</li>
+          </ul>
+        </article>
+        <article class="deliverable-group">
+          <h3>Service Deployment</h3>
+          <ul>
+            <li>Containerized media and file access services</li>
+            <li>Configured network access for local devices</li>
+            <li>Baseline monitoring and alert scripts</li>
+          </ul>
+        </article>
+        <article class="deliverable-group">
+          <h3>Documentation &amp; Maintenance</h3>
+          <ul>
+            <li>System configuration and service layout notes</li>
+            <li>Defined update, backup, and restore procedures</li>
+            <li>Change log for future additions</li>
+          </ul>
+        </article>
+        <article class="deliverable-group">
+          <h3>Future-Ready Design</h3>
+          <ul>
+            <li>Modular architecture that supports new services</li>
+            <li>Hardware path for incremental upgrades</li>
+            <li>Space and power envelope sized for growth</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="project-detail">
+      <h2>Results &amp; Outcomes</h2>
+      <div class="results-wrap">
+        <ul>
+          <li>Centralized data and services into a single reliable system</li>
+          <li>Gained direct control over media access and experimentation</li>
+          <li>Created a flexible platform for ongoing automation work</li>
+          <li>Built practical experience in systems design and server management</li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="gallery-lightbox" id="gallery-lightbox" aria-hidden="true">
+      <div class="lightbox-backdrop" data-close></div>
+      <div class="lightbox-content" role="dialog" aria-modal="true" aria-label="Expanded project image">
+        <button class="lightbox-close" type="button" aria-label="Close image"><i class="fa-solid fa-xmark"></i></button>
+        <img src="" alt="" id="lightbox-image" />
+        <p id="lightbox-caption"></p>
+      </div>
+    </div>
   </main>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.gallery-nav').forEach(btn => {
+        const targetSel = btn.getAttribute('data-target');
+        const track = targetSel ? document.querySelector(targetSel) : null;
+        if(!track) return;
+        const dir = btn.classList.contains('next') ? 1 : -1;
+        btn.addEventListener('click', () => {
+          const card = track.querySelector('.gallery-card');
+          const styles = window.getComputedStyle(track);
+          const gap = parseFloat(styles.columnGap || styles.gap || 0) || 0;
+          const delta = ((card ? card.clientWidth : track.clientWidth) + gap) * dir;
+          track.scrollBy({ left: delta, behavior: 'smooth' });
+        });
+      });
+
+      const lightbox = document.getElementById('gallery-lightbox');
+      const lightboxImg = document.getElementById('lightbox-image');
+      const lightboxCaption = document.getElementById('lightbox-caption');
+      function openLightbox(src, alt, caption){
+        lightboxImg.src = src;
+        lightboxImg.alt = alt || '';
+        lightboxCaption.textContent = caption || '';
+        lightbox.removeAttribute('aria-hidden');
+        lightbox.classList.add('open');
+      }
+      function closeLightbox(){
+        lightbox.classList.remove('open');
+        lightbox.setAttribute('aria-hidden','true');
+        lightboxImg.src = '';
+        lightboxCaption.textContent = '';
+      }
+      lightbox.addEventListener('click', (e) => {
+        if(e.target.dataset.close !== undefined || e.target.classList.contains('lightbox-close') || e.target.closest('.lightbox-close')){
+          closeLightbox();
+        }
+      });
+      document.addEventListener('keyup', (e) => {
+        if(e.key === 'Escape' && lightbox.classList.contains('open')){
+          closeLightbox();
+        }
+      });
+      document.querySelectorAll('.gallery-card').forEach(card => {
+        const activate = () => {
+          const img = card.querySelector('img');
+          openLightbox(
+            card.dataset.full || img?.src,
+            img?.alt || '',
+            card.dataset.caption || card.querySelector('.gallery-title')?.textContent || ''
+          );
+        };
+        card.addEventListener('click', activate);
+        card.addEventListener('keypress', (e) => {
+          if(e.key === 'Enter' || e.key === ' '){
+            e.preventDefault();
+            activate();
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>
-
