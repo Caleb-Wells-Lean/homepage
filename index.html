@@ -245,14 +245,14 @@
         </div>
         <div class="cards" id="pro-cards">
           <!-- Up to 4 previews -->
-          <article class="project-card">
+          <article class="project-card" data-href="industrial-hvac-design.html">
             <img src="Image\HVAC Example.webp" alt="Project preview">
             <h4>Industrial HVAC Design</h4>
             <p>Parametric design flow to cut design-to-production time.</p>
           </article>
-          <article class="project-card">
+          <article class="project-card" data-href="coal-chute-conveyor.html">
             <img src="Image/industrial-factory-conveyor-belt.webp" alt="Coal chute conveyor preview">
-            <h4>Power plant Coal chute Redesgine</h4>
+            <h4>Coal Chute Conveyor</h4>
             <p>Heavy-duty chute and conveyor design for coal handling.</p>
           </article>
         </div>
@@ -260,12 +260,12 @@
              Note: To change an item, update the image, title, and text below. -->
         <div class="cards more" id="pro-more" hidden>
           <!-- Replaced the misspelled "industrial line proposal" with a real project -->
-          <article class="project-card">
-            <img src="Image/work-progress_24908-53218.webp" alt="Industrial Line Redesign preview">
-            <h4>Industrial Line Redesign (Coming Soon)</h4>
-            <p>Modernized conveyor line layout to improve throughput and serviceability.</p>
+          <article class="project-card" data-href="Industrial Line Redesign Project.html">
+            <img src="Image/work-progress_24908-53218.webp" alt="Industrial line redesign case study preview">
+            <h4>Industrial Line Redesign Project</h4>
+            <p>Lean fireplace-mantle line redesign that cut lead time by 66% and stabilized flow.</p>
           </article>
-          <article class="project-card">
+          <article class="project-card" data-href="automation-cell.html">
             <img src="Image/work-progress_24908-53218.webp" alt="Automation Cell preview">
             <h4>Automation Cell</h4>
             <p>PLC-driven process with improved throughput and QA data.</p>
@@ -280,26 +280,26 @@
           <a class="view-more-btn" href="projects.html">View More</a>
         </div>
         <div class="cards" id="per-cards">
-          <!-- Personal projects: show up to Microcontroller Logger -->
-          <article class="project-card">
+          <!-- Personal projects: curated live projects, others hidden until complete -->
+          <article class="project-card" data-href="portfolio-website.html">
             <img src="Image/code Example.webp" alt="Portfolio Website">
             <h4>Portfolio Website</h4>
             <p>Responsive site with skills, resume toggle, and projects.</p>
           </article>
-          <article class="project-card">
+          <article class="project-card" data-href="Home Server.html">
             <img src="Image/work-progress_24908-53218.webp" alt="Home Server">
-            <h4>Home Server (Coming soon)</h4>
+            <h4>Home Server </h4>
             <p>Home file sharing, web hosting, and automation hub.</p>
           </article>
-          <article class="project-card">
+          <article class="project-card" data-href="Robot-Arm.html">
             <img src="Image/work-progress_24908-53218.webp" alt="Robotic Arm">
-            <h4>WIP</h4>
+            <h4>Robotic Arm</h4>
             <p>Custom arm prototype with joint design and motion study.</p>
           </article>
-          <article class="project-card">
-            <img src="Image/work-progress_24908-53218.webp" alt="Microcontroller Logger">
-            <h4>WIP</h4>
-            <p>Embedded logger with MATLAB/C++ data pipeline.</p>
+          <article class="project-card" data-href="meal-plan-automation.html">
+            <img src="Image/work-progress_24908-53218.webp" alt="Meal Plan Automation Logic preview">
+            <h4>Meal Plan Automation Logic</h4>
+            <p>Python-driven meal planner that balances nutrition targets weekly.</p>
           </article>
         </div>
       </div>
@@ -394,7 +394,7 @@
     */
     document.addEventListener('DOMContentLoaded', function () {
       const DESCRIPTIONS = {
-        cad: "Creo parametric | AutoCAD | Fusion 360 | On shape | Cura | Autodesk Inventor",
+        cad: "Creo parametric | AutoCAD | Fusion 360 | On shape | Cura | Autodesk Inventor | FlexSim | MIFC Maping",
         pro: "Motor Controls | Hydraulics | Pneumatics | Blueprinting | Robotic Maintenance | Drive Systems | Welding | Milling | Machining | 3D Printing",
         elec: "PLCs | Wiring | Soldering | Microcontrollers | Visual Studios | MATLAB | C++ | HTML | CSS",
         certs: "Mechanical Engineering Technology Certificate | Electrical Engineering Technology Certificate | Lean Systems Technology Certificate | Six Sigma WhiteBelt | OSHA 10 "
@@ -552,6 +552,11 @@
       const projSections = document.querySelectorAll('.projects .project-card');
       if(!projSections.length) return;
       function go(card){
+        const direct = card.getAttribute('data-href');
+        if(direct){
+          window.location.href = direct;
+          return;
+        }
         const img = card.querySelector('img');
         const title = card.querySelector('h4');
         const desc = card.querySelector('p');

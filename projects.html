@@ -1,4 +1,15 @@
 <!DOCTYPE html>
+<!--
+  File: projects.html
+  Purpose: Portfolio-wide project index with horizontal carousels for Professional and Personal work.
+  Layout Overview:
+    - Nav: links back to main sections on index.html.
+    - Main: <section class="projects"> containing two scroller groups.
+    - JS: carousel controls, card click navigation (data-href preferred), plus slug fallback.
+  Maintenance Notes:
+    - When adding/removing cards update both the markup and the routes map at the bottom.
+    - Keep Professional and Personal groups balanced for consistent breakpoints.
+-->
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -10,6 +21,7 @@
   <title>Projects</title>
 </head>
 <body>
+  <!-- Global nav reused from homepage -->
   <nav>
     <div class="Left"><a href="index.html">Caleb Wells</a></div>
     <div class="Right">
@@ -22,10 +34,11 @@
   </nav>
 
   <main>
+    <!-- PROJECTS INDEX -->
     <section class="projects" style="margin-top: 20px;">
       <h2>Projects</h2>
 
-      <!-- Professional projects -->
+      <!-- PROFESSIONAL PROJECT CAROUSEL -->
       <div class="project-group">
         <div class="group-header">
           <h3>Professional</h3>
@@ -45,26 +58,17 @@
               <h4>Coal Chute Conveyor</h4>
               <p>Heavy-duty chute redesign with improved wear and flow.</p>
             </article>
-            <article class="project-card" data-href="fixture-optimization.html">
-              <img src="Image/CAD.webp" alt="Fixture optimization">
-              <h4>Fixture Optimization</h4>
-              <p>Lean fixture redesign to reduce cycle time and errors.</p>
+            <article class="project-card" data-href="Industrial Line Redesign Project.html">
+              <img src="Image/work-progress_24908-53218.webp" alt="Industrial line redesign case study preview">
+              <h4>Industrial Line Redesign Project</h4>
+              <p>Lean fireplace-mantle line redesign that stabilized flow and cut lead time.</p>
             </article>
             <article class="project-card" data-href="automation-cell.html">
               <img src="Image/engineering-programing.webp" alt="Automation cell">
               <h4>Automation Cell</h4>
               <p>PLC-driven process for throughput and QA data capture.</p>
             </article>
-            <article class="project-card" data-href="layout-digitization.html">
-              <img src="Image/professional-skills.webp" alt="Layout digitization">
-              <h4>Layout Digitization</h4>
-              <p>Converted legacy hard-copy drawings into digital models.</p>
-            </article>
-            <article class="project-card" data-href="qa-improvements.html">
-              <img src="Image/certification.webp" alt="QA improvements">
-              <h4>QA Improvements</h4>
-              <p>Refined specs and models to resolve quality issues.</p>
-            </article>
+            <!-- Future professional projects (Fixture Optimization, Layout Digitization, QA Improvements) are hidden until completion -->
           </div>
           <button class="carousel-btn next" data-target="#pro-scroller" aria-label="Next projects">
             <i class="fa-solid fa-chevron-right"></i>
@@ -72,7 +76,7 @@
         </div>
       </div>
 
-      <!-- Personal projects -->
+      <!-- PERSONAL PROJECT CAROUSEL -->
       <div class="project-group">
         <div class="group-header">
           <h3>Personal</h3>
@@ -97,21 +101,12 @@
               <h4>Robotic Arm</h4>
               <p>Proof-of-concept arm; joints and motion study.</p>
             </article>
-            <article class="project-card" data-href="microcontroller-logger.html">
-              <img src="Image/engineering-programing.webp" alt="Microcontroller Logger">
-              <h4>Microcontroller Logger</h4>
-              <p>Embedded logger with MATLAB/C++ data pipeline.</p>
+            <article class="project-card" data-href="meal-plan-automation.html">
+              <img src="Image/engineering-programing.webp" alt="Meal plan automation logic">
+              <h4>Meal Plan Automation Logic</h4>
+              <p>Python logic that builds weekly menus from nutrition targets.</p>
             </article>
-            <article class="project-card" data-href="mini-conveyor.html">
-              <img src="Image/industrial-factory-conveyor-belt.webp" alt="Mini conveyor">
-              <h4>Mini Conveyor</h4>
-              <p>Scaled prototype for testing belt tracking and guarding.</p>
-            </article>
-            <article class="project-card" data-href="hvac-mockup.html">
-              <img src="Image/HVAC Example.webp" alt="HVAC mockup">
-              <h4>HVAC Mockup</h4>
-              <p>Showcase mockup for unit layout and access clearances.</p>
-            </article>
+            <!-- Additional personal projects (microcontroller logger, mini conveyor, HVAC mockup, etc.) hidden until complete -->
           </div>
           <button class="carousel-btn next" data-target="#per-scroller" aria-label="Next personal projects">
             <i class="fa-solid fa-chevron-right"></i>
@@ -122,6 +117,7 @@
     </section>
   </main>
 
+  <!-- Carousel + routing helpers -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       function getScrollDelta(scroller){

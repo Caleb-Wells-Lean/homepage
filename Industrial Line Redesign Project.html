@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<!--
+  File: Industrial Line Redesign Project.html
+  Purpose: Standalone page for the Lean Systems fireplace-mantle production-line redesign.
+  Page Anatomy:
+    1. Shared nav (back/home)
+    2. Hero (topline + metadata cards + CTAs)
+    3. Gallery (carousel feeding a JS lightbox)
+    4. Overview + Assignment details
+    5. PGR grid + System write-up
+    6. Execution phases + build log sidebar
+    7. Deliverables + Results summary
+  Maintenance Tips:
+    - When updating stats (e.g., 66% lead-time reduction) update hero tagline + results list together.
+    - Gallery items reuse global images; adjust captions before swapping assets.
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <title>Industrial Line Redesign &middot; Case Study</title>
+</head>
+<body>
+  <!-- Project navigation (consistent across detail views) -->
+  <nav>
+    <div class="Left"><a href="index.html">Caleb Wells</a></div>
+    <div class="Right">
+      <a href="projects.html"><i class="fa-solid fa-arrow-left"></i><span> Back to Projects</span></a>
+      <a href="index.html"><i class="fa-solid fa-house"></i><span> Home</span></a>
+    </div>
+  </nav>
+
+  <main>
+    <!-- HERO -->
+    <section class="project-hero">
+      <div class="hero-content">
+        <div class="hero-topline">
+          <p class="hero-eyebrow">Lean Systems &middot; Case Study</p>
+          <span class="status-pill status-completed"><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Completed scope</span>
+        </div>
+        <div class="hero-grid">
+          <div class="hero-main">
+            <h1>Industrial Line Redesign Project</h1>
+            <p class="hero-tagline">Led a lean systems project to analyze, redesign, and improve material and information flow for an active fireplace mantle production line.</p>
+            <div class="hero-buttons">
+              <a href="#overview" class="btn primary"><i class="fa-solid fa-circle-info" aria-hidden="true"></i><span>Project Overview</span></a>
+              <a href="#system-architecture" class="btn secondary"><i class="fa-solid fa-cubes-stacked" aria-hidden="true"></i><span>System / Architecture</span></a>
+              <a href="#execution" class="btn secondary"><i class="fa-solid fa-list-check" aria-hidden="true"></i><span>Execution &amp; Log</span></a>
+              <a href="#deliverables" class="btn secondary"><i class="fa-solid fa-diagram-project" aria-hidden="true"></i><span>Deliverables</span></a>
+            </div>
+          </div>
+          <div class="hero-meta">
+            <div class="meta-item">
+              <p class="meta-label">Role</p>
+              <p class="meta-value">Team Lead &mdash; Lean Systems Engineering</p>
+            </div>
+            <div class="meta-item">
+              <p class="meta-label">Timeline</p>
+              <p class="meta-value">Academic Project &mdash; Semester-based</p>
+            </div>
+            <div class="meta-item">
+              <p class="meta-label">Tools</p>
+              <p class="meta-value">MIFC, A3, Time Studies, Lean Analysis</p>
+            </div>
+            <div class="meta-item">
+              <p class="meta-label">Category</p>
+              <p class="meta-value">Industrial Line Redesign &middot; Lean Manufacturing</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY / LIGHTBOX SOURCE -->
+    <section class="project-gallery" id="gallery">
+      <div class="gallery-head">
+        <div>
+          <p class="gallery-label">Photo Library</p>
+          <h2>Project Visuals</h2>
+        </div>
+      </div>
+      <div class="gallery-carousel">
+        <button class="gallery-nav prev" type="button" aria-label="Previous gallery image" data-target="#project-gallery-track">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <div class="gallery-track" id="project-gallery-track">
+          <figure class="gallery-card" role="button" tabindex="0"
+                  data-full="Image/work-progress_24908-53218.webp"
+                  data-caption="Current-State Observation &mdash; Documented the true material and information flow for the fireplace mantle line.">
+            <img src="Image/work-progress_24908-53218.webp" alt="Observing operators on the fireplace mantle line" />
+            <figcaption>
+              <p class="gallery-title">Current-State Walkthrough</p>
+              <p class="gallery-meta">Time studies, interviews, and flow mapping.</p>
+            </figcaption>
+          </figure>
+          <figure class="gallery-card" role="button" tabindex="0"
+                  data-full="Image/123.webp"
+                  data-caption="Time Study Capture &mdash; Cycle-time sampling used to feed the current-state MIFC.">
+            <img src="Image/123.webp" alt="Annotated time study notes" />
+            <figcaption>
+              <p class="gallery-title">Cycle-Time Data</p>
+              <p class="gallery-meta">Captured takt, queue lengths, and bottlenecks.</p>
+            </figcaption>
+          </figure>
+          <figure class="gallery-card" role="button" tabindex="0"
+                  data-full="Image/industrial-factory-conveyor-belt.webp"
+                  data-caption="Target-State Concept &mdash; FIFO lanes and WIP limits between major process steps.">
+            <img src="Image/industrial-factory-conveyor-belt.webp" alt="Concept render of a balanced production line" />
+            <figcaption>
+              <p class="gallery-title">Target-State Flow</p>
+              <p class="gallery-meta">FIFO lanes with controlled WIP buffers.</p>
+            </figcaption>
+          </figure>
+          <figure class="gallery-card" role="button" tabindex="0"
+                  data-full="Image/Big River Electric Corp coal shoot Overview_recover-Model (2).webp"
+                  data-caption="Final Presentation &mdash; Summarized the lean analysis and redesign for industry guests.">
+            <img src="Image/Big River Electric Corp coal shoot Overview_recover-Model (2).webp" alt="Presentation slide mock describing improved flow" />
+            <figcaption>
+              <p class="gallery-title">Industry Presentation</p>
+              <p class="gallery-meta">Shared findings with the host manufacturer.</p>
+            </figcaption>
+          </figure>
+        </div>
+        <button class="gallery-nav next" type="button" aria-label="Next gallery image" data-target="#project-gallery-track">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+      </div>
+    </section>
+
+    <!-- OVERVIEW + ASSIGNMENT DETAILS -->
+    <section class="project-summary" id="overview">
+      <h2>Overview</h2>
+      <div class="summary-grid">
+        <div class="summary-card">
+          <p>The Industrial Line Redesign Project was completed as part of a professional Lean Systems Engineering course and focused on improving material and information flow within an active manufacturing operation producing fireplace mantles. The engagement began with an on-site visit to a manufacturer that had recently launched a new production line and was experiencing inefficiencies driven by batching, waiting, and limited flow control.</p>
+          <p>Our team was tasked with documenting the current-state production system and designing a target-state system that improved efficiency and reduced total lead time. Required deliverables included a current-state MIFC, a redesigned target-state MIFC, and a formal A3 summarizing the analysis, countermeasures, and projected outcomes.</p>
+          <p>I served as the team lead for eight students, coordinated fieldwork and analysis, and completed the majority of the technical deliverables. That included developing the target-state MIFC, aligning countermeasures into a cohesive design, and ensuring every recommendation reflected realistic constraints.</p>
+          <p>The project concluded with a formal presentation delivered to the host company and an audience of approximately 50 industry professionals and faculty members, showcasing the lean analysis artifacts and implementation roadmap.</p>
+        </div>
+        <aside class="assignment-card" aria-label="Assignment Details">
+          <h3>Assignment Details</h3>
+          <div class="assignment-list">
+            <div class="detail-row">
+              <span class="detail-label">Project Type</span>
+              <span class="detail-value">Industrial line redesign / lean systems analysis</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-label">System</span>
+              <span class="detail-value">Fireplace mantle production line</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-label">Scope of Work</span>
+              <span class="detail-value">Create current- and target-state MIFCs; identify waste and bottlenecks; design countermeasures; document findings in an A3; present results to industry</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-label">Primary Responsibilities</span>
+              <span class="detail-value">Team leadership; MIFC development; target-state system design; A3 authorship; presentation delivery</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-label">Key Constraints</span>
+              <span class="detail-value">Active production environment, limited observation time, academic schedule, real-world manufacturability limits</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- PROBLEM / GOALS / REQUIREMENTS -->
+    <section class="project-detail">
+      <h2>Problem / Goals / Requirements</h2>
+      <div class="pgr-grid">
+        <article class="pgr-block">
+          <h3>Problem</h3>
+          <ul>
+            <li>Excessive waiting and queue-driven delays between processes</li>
+            <li>Poor information flow and lack of WIP control</li>
+            <li>Long system lead time driven by batching and imbalance</li>
+          </ul>
+        </article>
+        <article class="pgr-block">
+          <h3>Goals</h3>
+          <ul>
+            <li>Accurately document the current-state production flow</li>
+            <li>Design a target-state system with improved flow and efficiency</li>
+            <li>Reduce total system lead time and non-value-added waiting</li>
+          </ul>
+        </article>
+        <article class="pgr-block">
+          <h3>Requirements</h3>
+          <ul>
+            <li>Use standard lean tools and notation (MIFC, A3)</li>
+            <li>Ensure proposed changes were realistic and implementable</li>
+            <li>Clearly communicate findings to academic and industry audiences</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- SYSTEM / ARCHITECTURE -->
+    <section class="project-detail" id="system-architecture">
+      <h2>System / Architecture</h2>
+      <div class="system-layout">
+        <article class="system-text">
+          <p>The production system spanned sequential cutting, assembly, finishing, drying, packing, and shipping operations. Material moved in large batches with minimal visual management, so finished work piled up between stations while upstream teams rushed to meet forecasts, amplifying queues and starving downstream processes.</p>
+          <p>The target-state architecture replaced uncontrolled batching with defined FIFO lanes, smaller lot sizes, and explicit WIP limits between major processes. Information flow was clarified through simple visual controls and standardized handoffs, enabling operators to pull work when capacity was available instead of pushing batches forward blindly.</p>
+          <p>All proposed changes were scoped to fit within existing equipment, layout, and staffing constraints. The redesign emphasized practical sequencing rules, clear ownership of each buffer, and visual indicators that could be implemented quickly without large capital investments.</p>
+        </article>
+        <aside class="system-visual" aria-label="System architecture placeholder">
+          <div class="visual-frame">
+            <p>CAD / System Diagram Placeholder</p>
+          </div>
+          <p class="visual-note">Illustrates FIFO lanes, WIP limits, and updated information flow.</p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- EXECUTION + BUILD LOG -->
+    <section class="project-detail execution-log" id="execution">
+      <h2>Execution &amp; Build Log</h2>
+      <div class="execution-log-grid">
+        <div class="execution-column">
+          <p class="column-label">Execution</p>
+          <article class="exec-phase">
+            <h3>Phase 1 &mdash; Current-State Analysis</h3>
+            <ul>
+              <li>Observed production on site and gathered cycle-time samples for every process.</li>
+              <li>Documented material and information flow to expose bottlenecks and ownership gaps.</li>
+              <li>Built the current-state MIFC highlighting queue drivers and system triggers.</li>
+            </ul>
+          </article>
+          <article class="exec-phase">
+            <h3>Phase 2 &mdash; Target-State Design</h3>
+            <ul>
+              <li>Identified major sources of waste and imbalance across the line.</li>
+              <li>Developed a target-state MIFC with smaller lot sizes, FIFO lanes, and WIP limits.</li>
+              <li>Prioritized countermeasures that respected equipment, staffing, and layout reality.</li>
+            </ul>
+          </article>
+          <article class="exec-phase">
+            <h3>Phase 3 &mdash; A3 Development</h3>
+            <ul>
+              <li>Consolidated the analysis, countermeasures, and projected outcomes into a formal A3.</li>
+              <li>Linked lead-time reductions and queue improvements directly to proposed changes.</li>
+              <li>Captured implementation considerations, owners, and next steps.</li>
+            </ul>
+          </article>
+          <article class="exec-phase">
+            <h3>Phase 4 &mdash; Presentation &amp; Review</h3>
+            <ul>
+              <li>Presented findings to the host company plus an audience of industry professionals.</li>
+              <li>Facilitated Q&amp;A with operations, engineering, and leadership stakeholders.</li>
+              <li>Delivered a concise action plan outlining sequencing and follow-up recommendations.</li>
+            </ul>
+          </article>
+        </div>
+        <aside class="build-column">
+          <p class="column-label">Build Log</p>
+          <article class="build-entry">
+            <p><strong>Plant Visit &amp; Data Collection</strong><br />Conducted on-site observation, time studies, and interviews to capture the true flow of material and information.</p>
+          </article>
+          <article class="build-entry">
+            <p><strong>Current-State MIFC Completion</strong><br />Documented delays, queues, and inefficiencies across cutting, assembly, finishing, drying, packing, and shipping.</p>
+          </article>
+          <article class="build-entry">
+            <p><strong>Target-State Redesign</strong><br />Developed a flow-focused future state with FIFO lanes, smaller lot sizes, and defined WIP limits.</p>
+          </article>
+          <article class="build-entry">
+            <p><strong>Final Presentation</strong><br />Delivered results and recommendations to company leadership, faculty, and an industry audience.</p>
+          </article>
+        </aside>
+      </div>
+    </section>
+
+    <!-- DELIVERABLES -->
+    <section class="project-detail" id="deliverables">
+      <h2>Deliverables</h2>
+      <div class="deliverables-grid">
+        <article class="deliverable-group">
+          <h3>Lean Analysis Artifacts</h3>
+          <ul>
+            <li>Current-state MIFC capturing queues, trigger points, and takt gaps.</li>
+            <li>Target-state MIFC detailing FIFO lanes, WIP limits, and flow sequencing.</li>
+            <li>Supporting time studies and flow calculations to justify the redesign.</li>
+          </ul>
+        </article>
+        <article class="deliverable-group">
+          <h3>A3 Documentation</h3>
+          <ul>
+            <li>Complete A3 summarizing problem, analysis, countermeasures, and outcomes.</li>
+            <li>Storyline linking root causes to action plans and expected metrics.</li>
+            <li>Implementation considerations grounded in host manufacturing constraints.</li>
+          </ul>
+        </article>
+        <article class="deliverable-group">
+          <h3>Presentation Materials</h3>
+          <ul>
+            <li>Final presentation delivered to company leadership, faculty, and industry guests.</li>
+            <li>Talking points covering execution phases, risks, and follow-up opportunities.</li>
+            <li>Leave-behind package bundling visuals, metrics, and recommendations.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- RESULTS -->
+    <section class="project-detail">
+      <h2>Results &amp; Outcomes</h2>
+      <div class="results-wrap">
+        <ul>
+          <li>Reduced total system lead time by approximately 66%.</li>
+          <li>Cut queue-driven delays by roughly 72%.</li>
+          <li>Eliminated two of the three major bottlenecks across the line.</li>
+          <li>Identified drying time as the next primary improvement opportunity.</li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="gallery-lightbox" id="gallery-lightbox" aria-hidden="true">
+      <div class="lightbox-backdrop" data-close></div>
+      <div class="lightbox-content" role="dialog" aria-modal="true" aria-label="Expanded project image">
+        <button class="lightbox-close" type="button" aria-label="Close image"><i class="fa-solid fa-xmark"></i></button>
+        <img src="" alt="" id="lightbox-image" />
+        <p id="lightbox-caption"></p>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.gallery-nav').forEach(btn => {
+        const targetSel = btn.getAttribute('data-target');
+        const track = targetSel ? document.querySelector(targetSel) : null;
+        if(!track) return;
+        const dir = btn.classList.contains('next') ? 1 : -1;
+        btn.addEventListener('click', () => {
+          const card = track.querySelector('.gallery-card');
+          const styles = window.getComputedStyle(track);
+          const gap = parseFloat(styles.columnGap || styles.gap || 0) || 0;
+          const delta = ((card ? card.clientWidth : track.clientWidth) + gap) * dir;
+          track.scrollBy({ left: delta, behavior: 'smooth' });
+        });
+      });
+
+      const lightbox = document.getElementById('gallery-lightbox');
+      const lightboxImg = document.getElementById('lightbox-image');
+      const lightboxCaption = document.getElementById('lightbox-caption');
+      function openLightbox(src, alt, caption){
+        lightboxImg.src = src;
+        lightboxImg.alt = alt || '';
+        lightboxCaption.textContent = caption || '';
+        lightbox.removeAttribute('aria-hidden');
+        lightbox.classList.add('open');
+      }
+      function closeLightbox(){
+        lightbox.classList.remove('open');
+        lightbox.setAttribute('aria-hidden','true');
+        lightboxImg.src = '';
+        lightboxCaption.textContent = '';
+      }
+      lightbox.addEventListener('click', (e) => {
+        if(e.target.dataset.close !== undefined || e.target.classList.contains('lightbox-close') || e.target.closest('.lightbox-close')){
+          closeLightbox();
+        }
+      });
+      document.addEventListener('keyup', (e) => {
+        if(e.key === 'Escape' && lightbox.classList.contains('open')){
+          closeLightbox();
+        }
+      });
+      document.querySelectorAll('.gallery-card').forEach(card => {
+        const activate = () => {
+          const img = card.querySelector('img');
+          openLightbox(
+            card.dataset.full || img?.src,
+            img?.alt || '',
+            card.dataset.caption || card.querySelector('.gallery-title')?.textContent || ''
+          );
+        };
+        card.addEventListener('click', activate);
+        card.addEventListener('keypress', (e) => {
+          if(e.key === 'Enter' || e.key === ' '){
+            e.preventDefault();
+            activate();
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
+

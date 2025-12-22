@@ -1,4 +1,18 @@
 <!DOCTYPE html>
+<!--
+  File: industrial-hvac-design.html
+  Purpose: Detailed case study for the Industrial HVAC Design Support project.
+  Structure Notes:
+    - Nav: consistent back/home links shared by all project pages.
+    - Hero: title/tagline + key metadata cards + quick anchor buttons.
+    - Gallery: image carousel with lightbox hook (JS lives at bottom).
+    - Summary / Details: overview text, assignment table, PGR grid, system architecture.
+    - Execution log: two-column layout for phases + dated build-log cards.
+    - Deliverables + Results: unordered lists that summarize outcomes.
+  Maintenance Tips:
+    - Update hero-meta copy and assignment table together to keep messaging aligned.
+    - Gallery figures must include data-full + data-caption for lightbox accessibility.
+-->
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -8,6 +22,7 @@
   <title>Industrial HVAC Design &mdash; Project</title>
 </head>
 <body>
+  <!-- Shared navigation: brand link on left, project/home links on right -->
   <nav>
     <div class="Left"><a href="index.html">Caleb Wells</a></div>
     <div class="Right">
@@ -17,6 +32,7 @@
   </nav>
 
   <main>
+    <!-- HERO SECTION -->
     <section class="project-hero">
       <div class="hero-content">
         <div class="hero-topline">
@@ -49,13 +65,14 @@
             </div>
             <div class="meta-item">
               <p class="meta-label">Category</p>
-              <p class="meta-value">Manufacturing Systems · Industrial HVAC</p>
+              <p class="meta-value">Manufacturing Systems Â· Industrial HVAC</p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- GALLERY CAROUSEL -->
     <section class="project-gallery" id="gallery">
       <div class="gallery-head">
         <div>
@@ -111,6 +128,7 @@
       </div>
     </section>
 
+    <!-- OVERVIEW + ASSIGNMENT DETAILS -->
     <section class="project-summary" id="overview">
       <h2>Overview</h2>
       <div class="summary-grid">
@@ -147,6 +165,7 @@
       </div>
     </section>
 
+    <!-- PROBLEM / GOALS / REQUIREMENTS MATRIX -->
     <section class="project-detail">
       <h2>Problem / Goals / Requirements</h2>
       <div class="pgr-grid">
@@ -177,6 +196,7 @@
       </div>
     </section>
 
+    <!-- SYSTEM / ARCHITECTURE DESCRIPTION -->
     <section class="project-detail" id="system-architecture">
       <h2>System / Architecture</h2>
       <div class="system-layout">
@@ -194,6 +214,7 @@
       </div>
     </section>
 
+    <!-- EXECUTION PHASES + BUILD LOG -->
     <section class="project-detail execution-log" id="execution">
       <h2>Execution &amp; Build Log</h2>
       <div class="execution-log-grid">
@@ -244,6 +265,7 @@
       </div>
     </section>
 
+    <!-- DELIVERABLES SUMMARY -->
     <section class="project-detail" id="deliverables">
       <h2>Deliverables</h2>
       <div class="deliverables-grid">
@@ -282,6 +304,7 @@
       </div>
     </section>
 
+    <!-- RESULTS / OUTCOMES -->
     <section class="project-detail">
       <h2>Results &amp; Outcomes</h2>
       <div class="results-wrap">
@@ -367,3 +390,4 @@
   </script>
 </body>
 </html>
+
