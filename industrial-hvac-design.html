@@ -86,12 +86,59 @@
         </button>
         <div class="gallery-track" id="project-gallery-track">
           <figure class="gallery-card" role="button" tabindex="0"
-                  data-full="Image/D6V156AA.webp"
-                  data-caption="Legacy cabinet reference">
-            <img class="rotate-90" src="Image/D6V156AA.webp" alt="Legacy HVAC cabinet" />
+                  data-full="Image/industral%20hvac/D6V156AA.webp"
+                  data-caption="Legacy cabinet reference"
+                  data-rotate="rotate-90">
+            <img class="rotate-90" src="Image/industral%20hvac/D6V156AA.webp" alt="Legacy HVAC cabinet" />
             <figcaption>
               <p class="gallery-title">Legacy Cabinet</p>
               <p class="gallery-meta">Reference unit before redesign.</p>
+            </figcaption>
+          </figure>
+          <figure class="gallery-card" role="button" tabindex="0"
+                  data-full="Image/industral%20hvac/Screenshot%202025-09-15%20174638.webp"
+                  data-caption="Industrial HVAC build snapshot captured 2025-09-15 17:46.">
+            <img src="Image/industral%20hvac/Screenshot%202025-09-15%20174638.webp" alt="Industrial HVAC build screenshot 2025-09-15 17:46" />
+            <figcaption>
+              <p class="gallery-title">Build Snapshot 17:46</p>
+              <p class="gallery-meta">Captured 2025-09-15 17:46.</p>
+            </figcaption>
+          </figure>
+          <figure class="gallery-card" role="button" tabindex="0"
+                  data-full="Image/industral%20hvac/Screenshot%202025-09-15%20174801.webp"
+                  data-caption="Industrial HVAC build snapshot captured 2025-09-15 17:48.">
+            <img src="Image/industral%20hvac/Screenshot%202025-09-15%20174801.webp" alt="Industrial HVAC build screenshot 2025-09-15 17:48" />
+            <figcaption>
+              <p class="gallery-title">Build Snapshot 17:48</p>
+              <p class="gallery-meta">Captured 2025-09-15 17:48.</p>
+            </figcaption>
+          </figure>
+          <figure class="gallery-card" role="button" tabindex="0"
+                  data-full="Image/industral%20hvac/Screenshot%202025-09-15%20175101.webp"
+                  data-caption="Industrial HVAC build snapshot captured 2025-09-15 17:51.">
+            <img src="Image/industral%20hvac/Screenshot%202025-09-15%20175101.webp" alt="Industrial HVAC build screenshot 2025-09-15 17:51" />
+            <figcaption>
+              <p class="gallery-title">Build Snapshot 17:51</p>
+              <p class="gallery-meta">Captured 2025-09-15 17:51.</p>
+            </figcaption>
+          </figure>
+          <figure class="gallery-card" role="button" tabindex="0"
+                  data-full="Image/industral%20hvac/Screenshot%202025-09-15%20175203.webp"
+                  data-caption="Industrial HVAC build snapshot captured 2025-09-15 17:52.">
+            <img src="Image/industral%20hvac/Screenshot%202025-09-15%20175203.webp" alt="Industrial HVAC build screenshot 2025-09-15 17:52" />
+            <figcaption>
+              <p class="gallery-title">Build Snapshot 17:52</p>
+              <p class="gallery-meta">Captured 2025-09-15 17:52.</p>
+            </figcaption>
+          </figure>
+          <figure class="gallery-card" role="button" tabindex="0"
+                  data-full="Image/industral%20hvac/space%20X.webp"
+                  data-caption="Space X inspiration reference from the industrial HVAC archive."
+                  data-rotate="rotate-90">
+            <img class="rotate-90" src="Image/industral%20hvac/space%20X.webp" alt="Space X inspiration reference" />
+            <figcaption>
+              <p class="gallery-title">Space X layout </p>
+              <p class="gallery-meta">Pulled from the industrial HVAC archive.</p>
             </figcaption>
           </figure>
           <figure class="gallery-card" role="button" tabindex="0"
@@ -207,7 +254,10 @@
         </article>
         <aside class="system-visual" aria-label="System architecture placeholder">
           <div class="visual-frame">
-            <p>HVAC System Diagram</p>
+            <figure class="system-visual-figure">
+              <img class="rotate-90" src="Image/industral%20hvac/space%20X.webp" alt="Industrial HVAC layout reference from the Space X file" />
+              <figcaption>Space X cabinet used as a visual system diagram reference.</figcaption>
+            </figure>
           </div>
           <p class="visual-note">Insert block diagrams or CAD snapshots when available.</p>
         </aside>
@@ -346,16 +396,29 @@
       const lightbox = document.getElementById('gallery-lightbox');
       const lightboxImg = document.getElementById('lightbox-image');
       const lightboxCaption = document.getElementById('lightbox-caption');
-      function openLightbox(src, alt, caption){
+      const setLightboxRotation = (className) => {
+        const prev = lightboxImg.dataset.rotationClass;
+        if(prev){
+          lightboxImg.classList.remove(prev);
+          delete lightboxImg.dataset.rotationClass;
+        }
+        if(className){
+          lightboxImg.classList.add(className);
+          lightboxImg.dataset.rotationClass = className;
+        }
+      };
+      function openLightbox(src, alt, caption, rotateClass){
         lightboxImg.src = src;
         lightboxImg.alt = alt || '';
         lightboxCaption.textContent = caption || '';
+        setLightboxRotation(rotateClass);
         lightbox.removeAttribute('aria-hidden');
         lightbox.classList.add('open');
       }
       function closeLightbox(){
         lightbox.classList.remove('open');
         lightbox.setAttribute('aria-hidden','true');
+        setLightboxRotation('');
         lightboxImg.src = '';
         lightboxCaption.textContent = '';
       }
@@ -375,7 +438,8 @@
           openLightbox(
             card.dataset.full || img?.src,
             img?.alt || '',
-            card.dataset.caption || card.querySelector('.gallery-title')?.textContent || ''
+            card.dataset.caption || card.querySelector('.gallery-title')?.textContent || '',
+            card.dataset.rotate || ''
           );
         };
         card.addEventListener('click', activate);

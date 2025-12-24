@@ -1441,6 +1441,21 @@ section + section::before {
   text-transform: uppercase;
   color: rgba(230, 234, 238, 0.75);
 }
+.system-visual-figure {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  font-size: 14px;
+  color: rgba(230, 234, 238, 0.85);
+  text-transform: none;
+  letter-spacing: normal;
+}
+.system-visual-figure img {
+  max-height: 260px;
+  object-fit: contain;
+}
 .system-visual .visual-note {
   margin-top: 14px;
   font-size: 14px;
@@ -1530,16 +1545,43 @@ section + section::before {
 .credentials h2 { text-align: center; font-size: 36px; margin-bottom: 10px; color: var(--link-color); }
 .credentials .cred-intro { text-align: center; margin: 0 auto 20px; max-width: 900px; color: var(--text-color); }
 .cred-grid { display: grid; gap: 20px; grid-template-columns: repeat(4, 275px); justify-content: center; max-width: 1300px; margin: 0 auto; }
-.cred-item { width: 275px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.15); border-radius: 12px; padding: 12px; text-align: center; transition: transform .15s ease, border-color .15s ease; }
+.cred-item {
+  width: 275px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 12px;
+  padding: 12px;
+  text-align: center;
+  transition: transform .15s ease, border-color .15s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .cred-item:hover { transform: translateY(-2px); border-color: rgba(255,255,255,0.35); }
-.cred-item img { width: 100%; height: 180px; object-fit: cover; border-radius: 8px; display: block; cursor: zoom-in; }
+.cred-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  border-radius: 8px;
+  display: block;
+  cursor: zoom-in;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 8px;
+}
 .cred-item figcaption { margin-top: 8px; font-size: 16px; color: var(--link-color); }
 
 /* Fallback for narrower screens: auto-fit grid to avoid overflow */
 @media (max-width: 1200px) {
   .cred-grid { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
-  .cred-item { width: auto; }
-  .cred-item img { width: 100%; height: 180px; object-fit: cover; border-radius: 8px; display: block; cursor: zoom-in; }
+  .cred-item {
+    width: auto;
+    align-items: center;
+  }
+  .cred-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+  }
 }
 
 /* Center the bottom two credentials under a 4-column top row */
@@ -1557,8 +1599,16 @@ section + section::before {
     gap: 14px;
     justify-content: center;
   }
-  .cred-item { width: auto; padding: 10px; }
-  .cred-item img { width: 100%; height: 180px; object-fit: cover; border-radius: 8px; display: block; cursor: zoom-in; }
+  .cred-item {
+    width: auto;
+    padding: 10px;
+    align-items: center;
+  }
+  .cred-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+  }
   .cred-item figcaption { font-size: 15px; }
 }
 
