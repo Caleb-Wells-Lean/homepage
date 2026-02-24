@@ -1,0 +1,80 @@
+    <section id="Projects" class="projects" style="margin-top: 20px;">
+      <h2>Projects</h2>
+
+      <!-- PROFESSIONAL PROJECT CAROUSEL -->
+      <div class="project-group">
+        <div class="group-header">
+          <h3>Professional</h3>
+        </div>
+        <div class="scroller-wrap">
+          <button class="carousel-btn prev" data-target="#pro-scroller" aria-label="Previous projects">
+            <i class="fa-solid fa-chevron-left"></i>
+          </button>
+          <div class="cards scroller" id="pro-scroller">
+            <article class="project-card" data-href="industrial-hvac-design.html">
+              <img src="Image/industral%20hvac/Screenshot%202025-09-15%20175101.webp" alt="Industrial HVAC build snapshot preview">
+              <h4>Industrial HVAC Design</h4>
+              <p>Configurator-driven parametric design to accelerate production.</p>
+            </article>
+            <article class="project-card" data-href="coal-chute-conveyor.html">
+              <img src="Image/coal%20chute/industrial-factory-conveyor-belt.webp" alt="Coal chute conveyor">
+              <h4>Coal Chute Conveyor</h4>
+              <p>Heavy-duty chute redesign with improved wear and flow.</p>
+            </article>
+            <article class="project-card" data-href="Industrial Line Redesign Project.html">
+              <img src="Image/industral%20line%20redesgine/A%203.webp" alt="Industrial line redesign A3 summary">
+              <h4>Industrial Line Redesign Project</h4>
+              <p>Lean fireplace-mantle line redesign that stabilized flow and cut lead time.</p>
+            </article>
+            <article class="project-card" data-href="automation-cell.html">
+              <img src="Image/engineering-programing.webp" alt="Automation cell">
+              <h4>Automation Cell</h4>
+              <p>PLC-driven process for throughput and QA data capture.</p>
+            </article>
+            <!-- Future professional projects (Fixture Optimization, Layout Digitization, QA Improvements) are hidden until completion -->
+          </div>
+          <button class="carousel-btn next" data-target="#pro-scroller" aria-label="Next projects">
+            <i class="fa-solid fa-chevron-right"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- PERSONAL PROJECT CAROUSEL -->
+      <div class="project-group">
+        <div class="group-header">
+          <h3>Personal</h3>
+        </div>
+        <div class="scroller-wrap">
+          <button class="carousel-btn prev" data-target="#per-scroller" aria-label="Previous personal projects">
+            <i class="fa-solid fa-chevron-left"></i>
+          </button>
+          <div class="cards scroller" id="per-scroller">
+            <article class="project-card" data-href="portfolio-website.html">
+              <img src="Image/code Example.webp" alt="Portfolio site">
+              <h4>Portfolio Website</h4>
+              <p>Responsive site with skills, resume tabs, and projects.</p>
+            </article>
+            <article class="project-card" data-href="Home%20Server.html">
+              <img src="Image/certification.webp" alt="Home Server">
+              <h4>Home Server</h4>
+              <p>Home file sharing, web hosting, and automation hub.</p>
+            </article>
+            <article class="project-card" data-href="Robot-Arm.html">
+              <img src="Image/CAD.webp" alt="Robotic Arm">
+              <h4>Robotic Arm</h4>
+              <p>Proof-of-concept arm; joints and motion study.</p>
+            </article>
+            <article class="project-card" data-href="meal-plan-automation.html">
+              <img src="Image/engineering-programing.webp" alt="Meal plan automation logic">
+              <h4>Meal Plan Automation Logic</h4>
+              <p>Python logic that builds weekly menus from nutrition targets.</p>
+            </article>
+            <!-- Additional personal projects (microcontroller logger, mini conveyor, HVAC mockup, etc.) hidden until complete -->
+          </div>
+          <button class="carousel-btn next" data-target="#per-scroller" aria-label="Next personal projects">
+            <i class="fa-solid fa-chevron-right"></i>
+          </button>
+        </div>
+      </div>
+
+    </section>

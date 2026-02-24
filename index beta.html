@@ -1,0 +1,1001 @@
+    <!-- ===============================
+         PROJECTS
+         =============================== -->
+    <!-- ===============================
+         CREDENTIALS  <!-- ===============================
+         PROJECTS
+         =============================== -->
+    <!-- ===============================
+         CREDENTIALSDOCTYPE html>
+<!--
+  Portfolio Homepage (Annotated)
+  Overview:
+  - Head: metadata, external icon/font links, and the main stylesheet.
+  - Body:
+    - Nav: name (left) + external links (right).
+    - Hero: headline, quick links, and headshot.
+    - Skills: 4 clickable tiles; clicking reveals a description panel below.
+    - Resume: two-tab view (Education / Experience) with a simple tab switcher.
+    - Projects: Professional and Personal preview grids; each has a link to view more.
+    - Contact: reserved for future content.
+  - Scripts: vanilla JS for Skills interactions and Resume tab switching.
+  Notes:
+  - Some copy contains special characters from prior edits; left intact intentionally.
+  - Styles live in homepage/styles.css and control colors/spacing/responsiveness.
+-->
+<html lang="en">
+<head>
+  <!-- ===============================
+       META & VIEWPORT SETTINGS
+       =============================== -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ===============================
+       GOOGLE FONTS (Poppins)
+       =============================== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- ===============================
+       FONT AWESOME ICONS
+       =============================== -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- ===============================
+       LINK TO EXTERNAL STYLESHEET
+       =============================== -->
+  <link rel="stylesheet" href="styles.css">
+
+  <title>Portfolio</title>
+</head>
+<body>
+
+  <!-- ===============================
+       NAVIGATION BAR
+       =============================== -->
+  <nav>
+    <div class="Left"><a href="index.html">Caleb Wells</a></div>
+    <div class="Right">
+      <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+        <i class="fa-brands fa-github"></i><span>Github</span>
+      </a>
+      <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+        <i class="fa-brands fa-linkedin"></i><span>LinkedIn</span>
+      </a>
+      <a href="mailto:cbwe228@uky.edu" target="_blank" rel="noopener noreferrer">
+        <i class="fa-solid fa-envelope"></i><span>Email</span>
+      </a>
+    </div>
+  </nav>
+
+  <main>
+    <!-- ===============================
+         HERO
+         =============================== -->
+    <section class="Hero-Section">
+      <div class="Text">
+        <h2>Caleb Wells - Lean Systems Engineer</h2>
+        <p>
+          I'm a Lean Systems Engineering student driven by a passion for creating efficient, practical systems that merge
+          innovation with real-world performance. My work focuses on optimizing processes through automation, lean methodologies,
+          and data-driven design. Whether improving production flow or developing new technologies, I aim to build smarter systems
+          that perform reliably, reduce waste, and drive measurable results across engineering and manufacturing environments.
+        </p>
+
+        <div class="Links">
+          <a href="#Skills"><i class="fa-solid fa-robot"></i><span>Skills</span></a>
+          <a href="#Resume"><i class="fa-solid fa-file"></i><span>Experience</span></a>
+          <a href="#Projects"><i class="fa-solid fa-gears"></i><span>Projects</span></a>
+          <a href="#Credentials"><i class="fa-solid fa-award"></i><span>Credentials</span></a>
+          <a href="#Contact"><i class="fa-solid fa-envelope"></i><span>Contact</span></a>
+        </div>
+      </div>
+
+      <div class="Headshot">
+        <img src="Image/caleb wells 2019.webp" alt="headshot">
+      </div>
+      <!-- Bottom-centered resume download CTA inside the hero -->
+      <div class="hero-footer">
+        <a class="btn-download" href="Caleb%20Wells.pdf" type="application/pdf" download="Caleb_Wells.pdf">
+          <i class="fa-solid fa-download"></i>
+          <span>Download Resume</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ===============================
+         SKILLS
+         =============================== -->
+    <section id="Skills" class="skills-section">
+      <h2>Skills</h2>
+      <div class="text">
+        Explore my technical capabilities - click a skill area below to learn more.
+      </div>
+
+      <div class="skill-cabinet" id="skills-cabinet">
+        <div class="cabinet-tabs" id="skills-tabs" role="tablist">
+          <button class="cabinet-tab" type="button" data-skill="cad" data-accent="#6fc5ff" role="tab" aria-selected="false">
+            <span class="tab-icon"><i class="fa-solid fa-cube"></i></span>
+            <div class="tab-text">
+              <span>CAD & Digital Modeling</span>
+              <small>Model-based automation</small>
+            </div>
+          </button>
+          <button class="cabinet-tab" type="button" data-skill="pro" data-accent="#7de0d4" role="tab" aria-selected="false">
+            <span class="tab-icon"><i class="fa-solid fa-helmet-safety"></i></span>
+            <div class="tab-text">
+              <span>Professional & Shop</span>
+              <small>Design-to-floor bridge</small>
+            </div>
+          </button>
+          <button class="cabinet-tab" type="button" data-skill="elec" data-accent="#9c9bff" role="tab" aria-selected="false">
+            <span class="tab-icon"><i class="fa-solid fa-bolt"></i></span>
+            <div class="tab-text">
+              <span>Automation & Code</span>
+              <small>Controls + software sync</small>
+            </div>
+          </button>
+          <button class="cabinet-tab" type="button" data-skill="certs" data-accent="#8fd4ff" role="tab" aria-selected="false">
+            <span class="tab-icon"><i class="fa-solid fa-award"></i></span>
+            <div class="tab-text">
+              <span>Certifications</span>
+              <small>Proof of rigor</small>
+            </div>
+          </button>
+        </div>
+
+        <div id="skill-info" class="SkillInfo" aria-live="polite" role="tabpanel">
+          <div class="skill-placeholder">
+            <p class="skill-chip">Skill Drawer</p>
+            <h3>Pull a tab above to view detailed skill info.</h3>
+            <p>This block lists the focus area, key tasks, and tools employers look for first.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===============================
+         LEAN TOOLS
+         =============================== -->
+    <section id="LeanTools" class="lean-tools">
+      <div class="lean-tools-header">
+        <h2>Lean Tools Toolkit</h2>
+        <p>
+          A snapshot of the lean manufacturing instruments I put into practice during my degree —
+          from classic industrial engineering studies to collaborative Kaizen events that drive measurable results.
+        </p>
+      </div>
+
+      <div class="lean-tool-carousel" data-carousel="lean-tools">
+        <button class="lean-tool-btn prev" type="button" aria-label="Previous lean tool">
+          <i class="fa-solid fa-angle-left"></i>
+        </button>
+        <div class="lean-tool-track" tabindex="0">
+          <article class="lean-tool-card">
+            <div class="tool-icon" aria-hidden="true">
+              <i class="fa-solid fa-chart-column"></i>
+            </div>
+            <h3>Yamazumi Chart</h3>
+            <p>Stacked bars that instantly show which station is overloaded.</p>
+            <ul>
+              <li>Each block = one task</li>
+              <li>Takt line highlights over/under</li>
+              <li>Great for quick rebalance talks</li>
+            </ul>
+          </article>
+
+          <article class="lean-tool-card">
+            <div class="tool-icon" aria-hidden="true">
+              <i class="fa-solid fa-stopwatch"></i>
+            </div>
+            <h3>Time Study Sheet</h3>
+            <p>Times every step so you know the true cycle time, not a guess.</p>
+            <ul>
+              <li>Element-by-element timing table</li>
+              <li>Average and variation shown</li>
+              <li>Calls out gaps vs target time</li>
+            </ul>
+          </article>
+
+          <article class="lean-tool-card">
+            <div class="tool-icon" aria-hidden="true">
+              <i class="fa-solid fa-gauge-high"></i>
+            </div>
+            <h3>Takt Time Calculation Sheet</h3>
+            <p>Converts customer demand into the pace the line must run.</p>
+            <ul>
+              <li>Uses net available minutes</li>
+              <li>Outputs takt + pitch in seconds</li>
+              <li>Flags when output slips behind</li>
+            </ul>
+          </article>
+
+          <article class="lean-tool-card">
+            <div class="tool-icon" aria-hidden="true">
+              <i class="fa-solid fa-layer-group"></i>
+            </div>
+            <h3>Standardized Work Combination Sheet</h3>
+            <p>One line graph that shows work time, machine time, and waiting.</p>
+            <ul>
+              <li>Instant overlap view</li>
+              <li>Highlights idle time</li>
+              <li>Helps right-size headcount</li>
+            </ul>
+          </article>
+
+          <article class="lean-tool-card">
+            <div class="tool-icon" aria-hidden="true">
+              <i class="fa-solid fa-route"></i>
+            </div>
+            <h3>Standardized Work Chart</h3>
+            <p>Simple map of the operator path, machine order, and SWIP limits.</p>
+            <ul>
+              <li>Numbered route arrows</li>
+              <li>Safety and quality callouts</li>
+              <li>Visual SWIP caps on layout</li>
+            </ul>
+          </article>
+
+          <article class="lean-tool-card">
+            <div class="tool-icon" aria-hidden="true">
+              <i class="fa-solid fa-person-running"></i>
+            </div>
+            <h3>Motion Analysis Sheet</h3>
+            <p>Human motion wheel that captures reach, walk, search, and turn counts.</p>
+            <ul>
+              <li>Logs motions by category</li>
+              <li>Flags fatigue or strain points</li>
+              <li>Guides workstation tweaks</li>
+            </ul>
+          </article>
+
+          <article class="lean-tool-card">
+            <div class="tool-icon" aria-hidden="true">
+              <i class="fa-solid fa-industry"></i>
+            </div>
+            <h3>OEE Sheet</h3>
+            <p>One-page scorecard for availability, performance, and quality losses.</p>
+            <ul>
+              <li>Downtime log + reason code</li>
+              <li>Performance vs ideal rate</li>
+              <li>Scrap / rework summary</li>
+            </ul>
+          </article>
+
+          <article class="lean-tool-card">
+            <div class="tool-icon" aria-hidden="true">
+              <i class="fa-solid fa-screwdriver-wrench"></i>
+            </div>
+            <h3>SMED / Changeover Analysis Sheet</h3>
+            <p>Breaks setup into internal vs external steps to slash changeover time.</p>
+            <ul>
+              <li>Setup task checklist</li>
+              <li>Before/after time bar</li>
+              <li>Parallel work action plan</li>
+            </ul>
+          </article>
+
+          <article class="lean-tool-card">
+            <div class="tool-icon" aria-hidden="true">
+              <i class="fa-solid fa-bell"></i>
+            </div>
+            <h3>Andon / Abnormality Tracking Sheet</h3>
+            <p>Quick log for every stop-and-notify event, defect, or operator alert.</p>
+            <ul>
+              <li>Trigger + duration noted</li>
+              <li>Defect code and containment</li>
+              <li>Feeds daily tier boards</li>
+            </ul>
+          </article>
+
+          <article class="lean-tool-card">
+            <div class="tool-icon" aria-hidden="true">
+              <i class="fa-solid fa-shield-halved"></i>
+            </div>
+            <h3>Poka-Yoke Sheet</h3>
+            <p>Lists the failure mode and the simple device that prevents it.</p>
+            <ul>
+              <li>Defect, cause, detection</li>
+              <li>Warning vs shut-down control</li>
+              <li>Verification / test noted</li>
+            </ul>
+          </article>
+
+          <article class="lean-tool-card">
+            <div class="tool-icon" aria-hidden="true">
+              <i class="fa-solid fa-clipboard-check"></i>
+            </div>
+            <h3>DFMEA Worksheet</h3>
+            <p>Ranks design risk by severity, occurrence, and detection in one table.</p>
+            <ul>
+              <li>Severity / occurrence / detection</li>
+              <li>Auto RPN and priority</li>
+              <li>Owner + due date column</li>
+            </ul>
+          </article>
+
+          <article class="lean-tool-card">
+            <div class="tool-icon" aria-hidden="true">
+              <i class="fa-solid fa-file-circle-check"></i>
+            </div>
+            <h3>Kaizen Proposal Sheet</h3>
+            <p>One-page improvement story from current state through measured results.</p>
+            <ul>
+              <li>Current vs target snapshot</li>
+              <li>Root cause + countermeasures</li>
+              <li>Before / after metric box</li>
+            </ul>
+          </article>
+        </div>
+        <button class="lean-tool-btn next" type="button" aria-label="Next lean tool">
+          <i class="fa-solid fa-angle-right"></i>
+        </button>
+      </div>
+    </section>
+    
+
+
+    <!-- ===============================
+         RESUME (TOGGLE)
+         =============================== -->
+    <section id="Resume" class="resume-toggle">
+      <!-- Toggle Buttons -->
+      <div class="resume-buttons">
+        <button class="tab-btn active" data-target="education">Education</button>
+        <button class="tab-btn" data-target="experience">Experience</button>
+      </div>
+
+      <!-- Tabs -->
+      <div class="resume-content">
+        <!-- Education Tab -->
+        <div id="education" class="resume-tab active">
+          <h2>Education</h2>
+
+          <div class="job">
+            <div class="job-header">
+              <span class="School">University of Kentucky, College of Engineering</span>
+              <span class="GPA">Program GPA: 3.0</span>
+            </div>
+            <ul>
+              <li>Pursuing a bachelor's in Lean Systems Engineering Technology</li>
+            </ul>
+          </div>
+
+          <div class="job">
+            <div class="job-header">
+              <span class="School">Bluegrass Community and Technical College</span>
+              <span class="GPA">Program GPA: 3.5</span>
+            </div>
+            <ul>
+              <li>Associates of Applied Science in Integrated Engineering Technology</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Experience Tab -->
+        <div id="experience" class="resume-tab">
+          <h2>Experience</h2>
+
+          <!-- Trane Technologies -->
+          <div class="job">
+            <div class="job-header">
+              <span class="company">Trane Technologies</span>
+              <span class="location">Lexington, KY</span>
+            </div>
+            <div class="job-title">
+              <span>Design Intern</span>
+              <span class="date">January 2025 - September 2025</span>
+            </div>
+            <ul>
+              <li>Engineered custom HVAC units with integrated fabrication logic using parametric 3D modeling, reducing design-to-production time.</li>
+              <li>Optimized designs for automated manufacturing, reducing assembly complexity and improving production efficiency.</li>
+              <li>Collaborated with cross-functional engineering and manufacturing teams to align designs with production requirements.</li>
+              <li>Assisted in troubleshooting and resolving quality issues by adjusting models and refining design specifications.</li>
+            </ul>
+          </div>
+
+          <!-- Overland Conveying - Design Engineer -->
+          <div class="job">
+            <div class="job-header">
+              <span class="company">Overland conveying</span>
+              <span class="location">Madisonville, KY</span>
+            </div>
+            <div class="job-title">
+              <span>Design Engineer</span>
+              <span class="date">May 2024 - October 2024</span>
+            </div>
+            <ul>
+              <li>Oversaw and coordinated multiple projects under the direction of the lead engineer, ensuring timely and efficient completion.</li>
+              <li>Specializing in the design and fabrication of large-scale conveyor belt assemblies, contributing to system optimization.</li>
+              <li>Collaborated in creating proposals by designing 3D models and presentations for new projects.</li>
+              <li>Converted outdated hard-copy engineering drawings into digital formats, streamlining documentation and improving accessibility for future projects.</li>
+            </ul>
+          </div>
+
+          <!-- Overland Conveying - Engineering Student Intern -->
+          <div class="job">
+            <div class="job-header">
+              <span class="company">Overland conveying</span>
+              <span class="location">Madisonville, KY</span>
+            </div>
+            <div class="job-title">
+              <span>Engineering, Student Intern</span>
+              <span class="date">April 2020 - August 2020</span>
+            </div>
+            <ul>
+              <li>Assessed and reported on prototype assemblies to the lead engineer for review.</li>
+              <li>Manufactured custom conveyor belt cover assemblies.</li>
+              <li>Operated industrial machines like shears, presses, and pipe benders for fabrication.</li>
+              <li>Assisted the lead engineer in identifying and implementing solutions for technical issues.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===============================
+         PROJECTS
+         =============================== -->
+    <section id="Projects" class="projects">
+      <h2>Projects</h2>
+      <p class="projects-intro">
+        A quick look at the production work and personal builds that best capture how I take requirements, translate them into
+        manufacturable plans, and close the loop with measurable results. Tap a card or list item to jump into the full write-up.
+      </p>
+
+      <div class="project-feature-grid">
+        <article class="project-card feature" data-href="industrial-hvac-design.html">
+          <img src="Image/industral%20hvac/Screenshot%202025-09-15%20175101.webp" alt="Industrial HVAC build snapshot preview">
+          <div class="project-card-body">
+            <p class="project-eyebrow">HVAC Systems</p>
+            <h3>Industrial HVAC Design</h3>
+            <p>Configurator-driven parametric models that cut design-to-production time for custom rooftop units.</p>
+            <ul class="project-stats">
+              <li>Parametric CAD</li>
+              <li>Fabrication Logic</li>
+              <li>Rapid Quotes</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="project-card feature" data-href="coal-chute-conveyor.html">
+          <img src="Image/coal%20chute/industrial-factory-conveyor-belt.webp" alt="Coal chute conveyor">
+          <div class="project-card-body">
+            <p class="project-eyebrow">Bulk Handling</p>
+            <h3>Coal Chute Conveyor</h3>
+            <p>Heavy-duty chute and conveyor package focused on improved wear surfaces and smoother material flow.</p>
+            <ul class="project-stats">
+              <li>Wear Reduction</li>
+              <li>Flow Modeling</li>
+              <li>Field Install</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="project-card feature" data-href="Industrial%20Line%20Redesign%20Project.html">
+          <img src="Image/industral%20line%20redesgine/A%203.webp" alt="Factory proposal deck preview">
+          <div class="project-card-body">
+            <p class="project-eyebrow">Factory Proposal</p>
+            <h3>Factory Proposal</h3>
+            <p>Executive-ready package covering capacity modeling, future-state layout, and phased investment plan.</p>
+            <ul class="project-stats">
+              <li>Capacity Model</li>
+              <li>Layout Study</li>
+              <li>Executive Brief</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+
+      <div class="project-rows">
+        <div class="project-column">
+          <h3>Professional Rollouts</h3>
+          <ul class="project-list">
+            <li>
+              <div>
+                <span class="project-tag">HVAC</span>
+                <p>Industrial HVAC Design</p>
+                <small>Configurator-driven parametric workflow for custom rooftop units.</small>
+              </div>
+              <a href="industrial-hvac-design.html">View</a>
+            </li>
+            <li>
+              <div>
+                <span class="project-tag">Bulk Handling</span>
+                <p>Coal Chute Conveyor</p>
+                <small>Heavy-duty chute redesign with upgraded wear surfaces and smoother flow.</small>
+              </div>
+              <a href="coal-chute-conveyor.html">View</a>
+            </li>
+            <li>
+              <div>
+                <span class="project-tag">Lean</span>
+                <p>Industrial Line Redesign Project</p>
+                <small>Factory proposal + line-balance package that cut mantel lead time by 66%.</small>
+              </div>
+              <a href="Industrial%20Line%20Redesign%20Project.html">View</a>
+            </li>
+            <li>
+              <div>
+                <span class="project-tag">Automation</span>
+                <p>Automation Cell</p>
+                <small>PLC logic, panel wiring, and inline QA checks to boost throughput.</small>
+              </div>
+              <a href="automation-cell.html">View</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="project-column">
+          <h3>Personal Builds & Experiments</h3>
+          <ul class="project-list">
+            <li>
+              <div>
+                <span class="project-tag">Web</span>
+                <p>Portfolio Website</p>
+                <small>Responsive site with lean tools, skills drawer, resume tabs, and project links.</small>
+              </div>
+              <a href="portfolio-website.html">View</a>
+            </li>
+            <li>
+              <div>
+                <span class="project-tag">Infra</span>
+                <p>Home Server</p>
+                <small>Self-hosted storage, automation hub, and development sandbox.</small>
+              </div>
+              <a href="Home%20Server.html">View</a>
+            </li>
+            <li>
+              <div>
+                <span class="project-tag">R&D</span>
+                <p>Robot Arm</p>
+                <small>Custom joints and motion study to practice robotics layouts.</small>
+              </div>
+              <a href="Robot-Arm.html">View</a>
+            </li>
+            <li>
+              <div>
+                <span class="project-tag">Automation</span>
+                <p>Meal Plan Automation Logic</p>
+                <small>Python workflow that balances macros and schedules weekly prep.</small>
+              </div>
+              <a href="meal-plan-automation.html">View</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="projects-cta">
+        <a class="btn secondary" href="projects.html">
+          <i class="fa-solid fa-up-right-from-square"></i>
+          <span>View Full Project Library</span>
+        </a>
+      </div>
+    </section>
+    <!-- ===============================
+         CREDENTIALS
+         =============================== -->
+    <section id="Credentials" class="credentials">
+      <h2>Credentials</h2>
+      <p class="cred-intro">A selection of my certifications and accreditations.</p>
+      <div class="cred-grid">
+        <figure class="cred-item">
+          <img src="Image/met.webp" alt="Certification 1">
+          <figcaption>Mechanical Engineering Technology</figcaption>
+        </figure>
+        <figure class="cred-item">
+          <img src="Image/eet.webp" alt="Certification 2">
+          <figcaption>Electrical Engineering Technology</figcaption>
+          
+          
+        </figure>
+        <figure class="cred-item">
+          <img src="Image/iet.webp" alt="Certification 3">
+          <figcaption>Integrated Engineering Technology</figcaption>
+        </figure>
+        <figure class="cred-item">
+          <img src="Image/lean%20systems.jpg" alt="Lean Systems certification">
+          <figcaption>Lean Systems</figcaption>
+        </figure>
+        <figure class="cred-item">
+          <img src="Image/associates.webp" alt="Certification 5">
+          <figcaption>Associates</figcaption>
+        </figure>
+        <figure class="cred-item">
+          <img src="Image/six sigma white .webp" alt="Certification 6">
+          <figcaption>Six Sigma WB</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Lightbox for Credentials (modal image preview) -->
+    <div id="lightbox" class="lightbox" hidden aria-modal="true" role="dialog">
+      <button class="lightbox-close" type="button" aria-label="Close preview">&times;</button>
+      <div class="lightbox-content">
+        <img id="lightbox-img" alt="Credential preview">
+        <div id="lightbox-caption" class="lightbox-caption"></div>
+      </div>
+    </div>
+
+    <!-- ===============================
+         CONTACT
+         =============================== -->
+    <section id="Contact" class="contact">
+      <h2>Contact Me</h2>
+      <form class="contact-form" method="post" action="#">
+        <div class="form-row">
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" placeholder="Your name" required>
+        </div>
+        <div class="form-row">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="you@example.com" required>
+        </div>
+        <div class="form-row">
+          <label for="company">Company</label>
+          <input id="company" name="company" type="text" placeholder="Your company">
+        </div>
+        <div class="form-row">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="6" placeholder="How can I help?" required></textarea>
+        </div>
+        <div class="actions">
+          <button type="submit" class="btn-send">
+            <i class="fa-solid fa-paper-plane"></i>
+            <span>Send</span>
+          </button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <!-- ===============================
+       SCRIPTS (BOTTOM = safe DOM access)
+       =============================== -->
+  <script>
+    /*
+      ===============================
+      Skills: Filing-Cabinet Tabs
+      - Tabs across the top reveal a detailed block below
+      - Shows focus area, actions, and tools per skill
+      - Clicking the active tab again collapses to placeholder
+    */
+    document.addEventListener('DOMContentLoaded', function () {
+      const SKILL_DATA = {
+        cad: {
+          title: "CAD & Digital Modeling",
+          lever: "Model-based documentation",
+          summary: "Builds production-ready CAD assemblies, layout drawings, and manufacturing files.",
+          points: [
+            "Create configurable assemblies/sheets in Creo, Inventor, Fusion 360, Onshape",
+            "Produce layout drawings and MIFC overlays in AutoCAD + FlexSim",
+            "Export additive/subtractive files with Cura and CAM toolpaths"
+          ],
+          tools: ["Creo Parametric", "Autodesk Inventor", "Fusion 360", "Onshape", "AutoCAD", "FlexSim", "Cura", "3D Print Toolpaths"]
+        },
+        pro: {
+          title: "Professional & Shop Skills",
+          lever: "Blueprint-to-floor delivery",
+          summary: "Turns engineering intent into fixtures, fabricated parts, and maintained equipment.",
+          points: [
+            "Translate drawings into fixtures, routers, and shop instructions",
+            "Machine, weld, and fabricate prototypes or production-ready parts",
+            "Maintain hydraulics, pneumatics, drive systems, and robots"
+          ],
+          tools: ["Blueprinting", "Hydraulics", "Pneumatics", "Motor Controls", "Welding", "Milling / Machining", "3D Printing", "Robotic Maintenance"]
+        },
+        elec: {
+          title: "Automation, Electrical & Code",
+          lever: "Controls + software integration",
+          summary: "Programs PLC/HMI logic, builds control panels, and writes supporting analysis code.",
+          points: [
+            "Develop PLC and HMI logic, wire panels, and troubleshoot controls",
+            "Prototype embedded hardware with microcontrollers and instrumentation",
+            "Write analysis or interface scripts in MATLAB, C++, HTML/CSS"
+          ],
+          tools: ["PLCs & Ladder Logic", "Panel Wiring", "Microcontrollers", "Soldering / Test", "MATLAB", "C++", "HTML/CSS", "Visual Studio"]
+        },
+        certs: {
+          title: "Certifications & Credentials",
+          lever: "Documented lean & safety training",
+          summary: "Formal credentials covering engineering technology, lean systems, and safety.",
+          points: [
+            "Mechanical, Electrical, and Integrated Engineering Technology certificates",
+            "Lean Systems Technology credential plus Six Sigma White Belt",
+            "OSHA 10 and ongoing professional development workshops"
+          ],
+          tools: ["Mechanical ET", "Electrical ET", "Integrated ET", "Lean Systems Tech", "Six Sigma White Belt", "OSHA 10"]
+        }
+      };
+
+      const tabs = document.getElementById('skills-tabs');
+      const info = document.getElementById('skill-info');
+      if (!tabs || !info) return;
+      const placeholderMarkup = info.innerHTML;
+      tabs.querySelectorAll('.cabinet-tab').forEach(tab => {
+        const key = tab.getAttribute('data-skill');
+        const data = SKILL_DATA[key];
+        if (!data) return;
+        const label = tab.querySelector('small');
+        if (label) label.textContent = data.lever || '';
+        const accent = tab.getAttribute('data-accent');
+        if (accent) tab.style.setProperty('--tab-accent', accent);
+      });
+
+      let activeKey = null, activeTab = null;
+
+      function buildPanel(data) {
+        if (!data) return placeholderMarkup;
+        const points = data.points?.map(item => `<li>${item}</li>`).join("") || "";
+        const leverRow = data.lever ? `
+          <div class="skill-lever-row">
+            <span>Focus Area</span>
+            <p>${data.lever}</p>
+          </div>
+        ` : "";
+        const tools = data.tools?.map(item => `<span class="skill-badge">${item}</span>`).join("") || "";
+        return `
+          <div class="skill-pane">
+            <p class="skill-chip">Toolset</p>
+            <h3>${data.title}</h3>
+            <p>${data.summary}</p>
+            ${leverRow}
+            ${points ? `<ul>${points}</ul>` : ""}
+            ${tools ? `<div class="skill-badges">${tools}</div>` : ""}
+          </div>
+        `;
+      }
+
+      function resetPanel() {
+        if (activeTab) {
+          activeTab.classList.remove('active');
+          activeTab.setAttribute('aria-selected', 'false');
+          activeTab.style.removeProperty('--tab-accent');
+        }
+        activeTab = null;
+        activeKey = null;
+        info.innerHTML = placeholderMarkup;
+        info.style.removeProperty('--skill-accent');
+        info.classList.remove('pop');
+      }
+
+      function showSkill(key, tabEl) {
+        if (activeKey === key) {
+          resetPanel();
+          return;
+        }
+        if (activeTab) {
+          activeTab.classList.remove('active');
+          activeTab.setAttribute('aria-selected', 'false');
+        }
+        activeKey = key;
+        activeTab = tabEl;
+        activeTab.classList.add('active');
+        activeTab.setAttribute('aria-selected', 'true');
+        info.innerHTML = buildPanel(SKILL_DATA[key]);
+        const accent = tabEl.getAttribute('data-accent');
+        if (accent) {
+          info.style.setProperty('--skill-accent', accent);
+          activeTab.style.setProperty('--tab-accent', accent);
+        }
+        info.classList.add('pop');
+      }
+
+      tabs.addEventListener('click', (e) => {
+        const tab = e.target.closest('.cabinet-tab');
+        if (!tab || !tabs.contains(tab)) return;
+        const key = tab.getAttribute('data-skill');
+        if (!key) return;
+        showSkill(key, tab);
+      });
+    });
+
+    /*
+      ===============================
+      Lean tools carousel
+      - Buttons slide the tool cards
+      - Disables controls at bounds
+    */
+    document.addEventListener('DOMContentLoaded', () => {
+      const carousel = document.querySelector('[data-carousel=\"lean-tools\"]');
+      if(!carousel) return;
+      const track = carousel.querySelector('.lean-tool-track');
+      const prev = carousel.querySelector('.lean-tool-btn.prev');
+      const next = carousel.querySelector('.lean-tool-btn.next');
+      if(!track || !prev || !next) return;
+
+      const cardWidth = () => {
+        const card = track.querySelector('.lean-tool-card');
+        return card ? (card.getBoundingClientRect().width + 24) : 320;
+      };
+
+      function updateState(){
+        const maxLeft = Math.max(0, track.scrollWidth - track.clientWidth);
+        const epsilon = 4;
+        const atStart = track.scrollLeft <= epsilon;
+        const atEnd = track.scrollLeft >= (maxLeft - epsilon);
+        prev.disabled = atStart;
+        next.disabled = atEnd;
+      }
+
+      function scrollByCards(dir){
+        track.scrollBy({ left: cardWidth() * dir, behavior: 'smooth' });
+      }
+
+      prev.addEventListener('click', () => scrollByCards(-1));
+      next.addEventListener('click', () => scrollByCards(1));
+      track.addEventListener('scroll', () => requestAnimationFrame(updateState));
+      window.addEventListener('resize', () => requestAnimationFrame(updateState));
+      updateState();
+    });
+
+    /*
+      ===============================
+      Resume Tabs (Education / Experience)
+      - Click switches the active tab and button styling
+      - Applies a small fade animation by toggling classes
+      - Syncs URL hash (e.g., #experience) for deep linking
+    */
+    document.addEventListener('DOMContentLoaded', () => {
+      const tabButtons = document.querySelectorAll('.tab-btn');
+      const tabs = document.querySelectorAll('.resume-tab');
+
+      function showTab(id, clickedBtn) {
+        tabButtons.forEach(btn => btn.classList.toggle('active', btn === clickedBtn));
+        tabs.forEach(tab => {
+          tab.classList.remove('active');
+          // restart fade animation each switch
+          tab.style.animation = 'none';
+          // force reflow so CSS animation can restart
+          void tab.offsetWidth;
+          tab.style.animation = null;
+        });
+        const target = document.getElementById(id);
+        if (target) target.classList.add('active');
+        // optional deep-link: #education / #experience
+        history.replaceState(null, "", `#${id}`);
+      }
+
+      tabButtons.forEach(btn => {
+        btn.addEventListener('click', () => showTab(btn.dataset.target, btn));
+      });
+
+      // On page load: if URL contains #education or #experience, open it
+      const initial = location.hash.slice(1);
+      const initialBtn = [...tabButtons].find(b => b.dataset.target === initial);
+      if (initialBtn) showTab(initial, initialBtn);
+    });
+
+    // ===============================
+    // Contact form: compose an email via mailto
+    // - Opens user's email client with prefilled subject/body
+    // - For server-side sending, consider Formspree/EmailJS integration later
+    // ===============================
+    document.addEventListener('DOMContentLoaded', () => {
+      const form = document.querySelector('.contact-form');
+      if(!form) return;
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const to = 'cbwe228@uky.edu';
+        const name = (form.querySelector('#name')?.value || '').trim();
+        const email = (form.querySelector('#email')?.value || '').trim();
+        const company = (form.querySelector('#company')?.value || '').trim();
+        const message = (form.querySelector('#message')?.value || '').trim();
+
+        const subject = `Portfolio Contact from ${name || 'Website'}`;
+        const body = `Name: ${name}\nEmail: ${email}\nCompany: ${company}\n\nMessage:\n${message}`;
+        const mailto = `mailto:${encodeURIComponent(to)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+        // Open default mail client with pre-filled details
+        window.location.href = mailto;
+      });
+    });
+
+    // ===============================
+    // Credentials lightbox: open on click, close on overlay/close/Escape
+    // ===============================
+    document.addEventListener('DOMContentLoaded', () => {
+      const grid = document.querySelector('.cred-grid');
+      const overlay = document.getElementById('lightbox');
+      const img = document.getElementById('lightbox-img');
+      const cap = document.getElementById('lightbox-caption');
+      const btnClose = document.querySelector('.lightbox-close');
+      if(!grid || !overlay || !img || !cap || !btnClose) return;
+
+      function open(src, alt, caption){
+        // load the image first to get natural dimensions
+        img.onload = () => {
+          const iw = img.naturalWidth || 600;
+          const ih = img.naturalHeight || 400;
+          const targetScale = 2; // 100% bigger (2x)
+          let width = iw * targetScale;
+          let height = ih * targetScale;
+          const wAvail = Math.floor(window.innerWidth * 0.92);
+          const hAvail = Math.floor(window.innerHeight * 0.85);
+          const scaleFit = Math.min(wAvail / width, hAvail / height, 1);
+          img.style.width = Math.floor(width * scaleFit) + 'px';
+          img.style.height = Math.floor(height * scaleFit) + 'px';
+        };
+        img.src = src; img.alt = alt || '';
+        cap.textContent = caption || '';
+        overlay.removeAttribute('hidden');
+        document.body.style.overflow = 'hidden';
+      }
+      function close(){
+        overlay.setAttribute('hidden','hidden');
+        img.src = '';
+        img.style.width = '';
+        img.style.height = '';
+        document.body.style.overflow = '';
+      }
+
+      grid.addEventListener('click', (e) => {
+        const figure = e.target.closest('.cred-item');
+        if(!figure || !grid.contains(figure)) return;
+        const el = figure.querySelector('img');
+        if(!el) return;
+        const caption = figure.querySelector('figcaption')?.textContent || el.alt || '';
+        open(el.src, el.alt, caption);
+      });
+      btnClose.addEventListener('click', close);
+      overlay.addEventListener('click', (e) => { if(e.target === overlay) close(); });
+      document.addEventListener('keydown', (e) => { if(e.key === 'Escape' && !overlay.hasAttribute('hidden')) close(); });
+    });
+  
+    // Make homepage project cards clickable to detail page
+    document.addEventListener('DOMContentLoaded', () => {
+      const projSections = document.querySelectorAll('.projects .project-card');
+      if(!projSections.length) return;
+      function go(card){
+        const direct = card.getAttribute('data-href');
+        if(direct){
+          window.location.href = direct;
+          return;
+        }
+        const img = card.querySelector('img');
+        const title = card.querySelector('h4, h3');
+        const desc = card.querySelector('.project-summary') || card.querySelector('p');
+        const params = new URLSearchParams({
+          title: (title?.textContent || '').trim(),
+          img: img?.getAttribute('src') || '',
+          desc: (desc?.textContent || '').trim()
+        });
+        // Route known homepage cards to their dedicated pages
+        const titleText = (title?.textContent || '').toLowerCase();
+        const imgSrc = (img?.getAttribute('src') || '').toLowerCase();
+        if(titleText.includes('coal chute') || imgSrc.includes('industrial-factory-conveyor-belt')){
+          window.location.href = 'coal-chute-conveyor.html';
+          return;
+        }
+        if(titleText.includes('hvac')){
+          window.location.href = 'industrial-hvac-design.html';
+          return;
+        }
+        if(titleText.includes('portfolio website')){
+          window.location.href = 'portfolio-website.html';
+          return;
+        }
+        if(titleText.includes('robotic arm')){
+          window.location.href = 'Robot-Arm.html';
+          return;
+        }
+        if(titleText.includes('home server')){
+          window.location.href = 'Home%20Server.html';
+          return;
+        }
+        window.location.href = `project.html?${params.toString()}`;
+      }
+      projSections.forEach(card => { card.style.cursor='pointer'; card.addEventListener('click', () => go(card)); });
+    });</script>
+</body>
+</html>
+
+
+
+
+

@@ -23,50 +23,113 @@
 <body>
   <!-- Global nav reused from homepage -->
   <nav>
-    <div class="Left"><a href="index.html">Caleb Wells</a></div>
+    <div class="Left"><a href="index%20beta.html">Caleb Wells</a></div>
     <div class="Right">
-      <a href="index.html"><i class="fa-solid fa-house"></i><span> Home</span></a>
-      <a href="index.html#Skills"><i class="fa-solid fa-robot"></i><span> Skills</span></a>
-      <a href="index.html#Resume"><i class="fa-solid fa-file"></i><span> Experience</span></a>
-      <a href="index.html#Credentials"><i class="fa-solid fa-award"></i><span> Credentials</span></a>
-      <a href="index.html#Contact"><i class="fa-solid fa-envelope"></i><span> Contact</span></a>
+      <a href="index%20beta.html"><i class="fa-solid fa-house"></i><span> Home</span></a>
+      <a href="index%20beta.html#Skills"><i class="fa-solid fa-robot"></i><span> Skills</span></a>
+      <a href="index%20beta.html#Resume"><i class="fa-solid fa-file"></i><span> Experience</span></a>
+      <a href="index%20beta.html#Credentials"><i class="fa-solid fa-award"></i><span> Credentials</span></a>
+      <a href="index%20beta.html#Contact"><i class="fa-solid fa-envelope"></i><span> Contact</span></a>
     </div>
   </nav>
 
   <main>
     <!-- PROJECTS INDEX -->
-    <section class="projects" style="margin-top: 20px;">
-      <h2>Projects</h2>
+    <section class="projects projects-archive">
+      <header class="projects-hero">
+        <div class="projects-hero__intro">
+          <p class="section-kicker"><i class="fa-solid fa-gears"></i> Case Study Library</p>
+          <h2>Projects</h2>
+          <p class="projects-intro">
+            Browse the full catalog of professional launches and personal sandboxes. Each card links to a dedicated write-up with context, constraints, and measurable outcomes.
+          </p>
+        </div>
+        <ul class="projects-hero__metrics">
+          <li>
+            <span>12</span>
+            <small>Factory Deployments</small>
+          </li>
+          <li>
+            <span>8</span>
+            <small>Automation Builds</small>
+          </li>
+          <li>
+            <span>10+</span>
+            <small>Personal Experiments</small>
+          </li>
+        </ul>
+        <div class="projects-hero__chips" aria-label="Project group quick filters">
+          <span class="projects-chip active"><i class="fa-solid fa-briefcase"></i> Professional</span>
+          <span class="projects-chip"><i class="fa-solid fa-flask"></i> Personal</span>
+          <span class="projects-chip"><i class="fa-solid fa-lightbulb"></i> Research & Concepts</span>
+        </div>
+      </header>
 
       <!-- PROFESSIONAL PROJECT CAROUSEL -->
       <div class="project-group">
         <div class="group-header">
-          <h3>Professional</h3>
+          <div class="group-title">
+            <span class="group-chip"><i class="fa-solid fa-briefcase"></i> Professional</span>
+            <h3>Production Deployments</h3>
+            <p class="group-description">Systems delivered to factories, supply chains, and customers with measurable impact.</p>
+          </div>
         </div>
-        <div class="scroller-wrap">
+        <div class="scroller-wrap" data-scroller-wrap>
           <button class="carousel-btn prev" data-target="#pro-scroller" aria-label="Previous projects">
             <i class="fa-solid fa-chevron-left"></i>
           </button>
           <div class="cards scroller" id="pro-scroller">
             <article class="project-card" data-href="industrial-hvac-design.html">
               <img src="Image/industral%20hvac/Screenshot%202025-09-15%20175101.webp" alt="Industrial HVAC build snapshot preview">
-              <h4>Industrial HVAC Design</h4>
-              <p>Configurator-driven parametric design to accelerate production.</p>
+              <div class="project-card-body">
+                <p class="project-eyebrow">HVAC Systems</p>
+                <h4>Industrial HVAC Design</h4>
+                <p>Configurator-driven parametric design to accelerate production.</p>
+                <ul class="project-stats">
+                  <li>Parametric CAD</li>
+                  <li>Configurator</li>
+                  <li>Custom Fabrication</li>
+                </ul>
+              </div>
             </article>
             <article class="project-card" data-href="coal-chute-conveyor.html">
               <img src="Image/coal%20chute/industrial-factory-conveyor-belt.webp" alt="Coal chute conveyor">
-              <h4>Coal Chute Conveyor</h4>
-              <p>Heavy-duty chute redesign with improved wear and flow.</p>
+              <div class="project-card-body">
+                <p class="project-eyebrow">Bulk Handling</p>
+                <h4>Coal Chute Conveyor</h4>
+                <p>Heavy-duty chute redesign with improved wear and flow.</p>
+                <ul class="project-stats">
+                  <li>Heavy Fabrication</li>
+                  <li>Wear Reduction</li>
+                  <li>Flow Modeling</li>
+                </ul>
+              </div>
             </article>
             <article class="project-card" data-href="Industrial Line Redesign Project.html">
               <img src="Image/industral%20line%20redesgine/A%203.webp" alt="Industrial line redesign A3 summary">
-              <h4>Industrial Line Redesign Project</h4>
-              <p>Lean fireplace-mantle line redesign that stabilized flow and cut lead time.</p>
+              <div class="project-card-body">
+                <p class="project-eyebrow">Lean Transformation</p>
+                <h4>Industrial Line Redesign Project</h4>
+                <p>Lean fireplace-mantle line redesign that stabilized flow and cut lead time.</p>
+                <ul class="project-stats">
+                  <li>MIFC Mapping</li>
+                  <li>Line Balance</li>
+                  <li>Lead Time -66%</li>
+                </ul>
+              </div>
             </article>
             <article class="project-card" data-href="automation-cell.html">
               <img src="Image/engineering-programing.webp" alt="Automation cell">
-              <h4>Automation Cell</h4>
-              <p>PLC-driven process for throughput and QA data capture.</p>
+              <div class="project-card-body">
+                <p class="project-eyebrow">Factory Automation</p>
+                <h4>Automation Cell</h4>
+                <p>PLC-driven process for throughput and QA data capture.</p>
+                <ul class="project-stats">
+                  <li>PLC Controls</li>
+                  <li>Vision Checks</li>
+                  <li>Throughput +20%</li>
+                </ul>
+              </div>
             </article>
             <!-- Future professional projects (Fixture Optimization, Layout Digitization, QA Improvements) are hidden until completion -->
           </div>
@@ -79,32 +142,68 @@
       <!-- PERSONAL PROJECT CAROUSEL -->
       <div class="project-group">
         <div class="group-header">
-          <h3>Personal</h3>
+          <div class="group-title">
+            <span class="group-chip"><i class="fa-solid fa-flask"></i> Personal</span>
+            <h3>Experimental Builds</h3>
+            <p class="group-description">Self-directed experiments to test tech stacks, automation ideas, and rapid prototypes.</p>
+          </div>
         </div>
-        <div class="scroller-wrap">
+        <div class="scroller-wrap" data-scroller-wrap>
           <button class="carousel-btn prev" data-target="#per-scroller" aria-label="Previous personal projects">
             <i class="fa-solid fa-chevron-left"></i>
           </button>
           <div class="cards scroller" id="per-scroller">
             <article class="project-card" data-href="portfolio-website.html">
               <img src="Image/code Example.webp" alt="Portfolio site">
-              <h4>Portfolio Website</h4>
-              <p>Responsive site with skills, resume tabs, and projects.</p>
+              <div class="project-card-body">
+                <p class="project-eyebrow">Web Systems</p>
+                <h4>Portfolio Website</h4>
+                <p>Responsive site with skills, resume tabs, and projects.</p>
+                <ul class="project-stats">
+                  <li>HTML/CSS</li>
+                  <li>Responsive UI</li>
+                  <li>Vanilla JS</li>
+                </ul>
+              </div>
             </article>
             <article class="project-card" data-href="Home%20Server.html">
               <img src="Image/certification.webp" alt="Home Server">
-              <h4>Home Server</h4>
-              <p>Home file sharing, web hosting, and automation hub.</p>
+              <div class="project-card-body">
+                <p class="project-eyebrow">Infrastructure</p>
+                <h4>Home Server</h4>
+                <p>Home file sharing, web hosting, and automation hub.</p>
+                <ul class="project-stats">
+                  <li>Linux</li>
+                  <li>File Sync</li>
+                  <li>Automation Hub</li>
+                </ul>
+              </div>
             </article>
             <article class="project-card" data-href="Robot-Arm.html">
               <img src="Image/CAD.webp" alt="Robotic Arm">
-              <h4>Robotic Arm</h4>
-              <p>Proof-of-concept arm; joints and motion study.</p>
+              <div class="project-card-body">
+                <p class="project-eyebrow">R&D Prototype</p>
+                <h4>Robotic Arm</h4>
+                <p>Proof-of-concept arm; joints and motion study.</p>
+                <ul class="project-stats">
+                  <li>CAD</li>
+                  <li>Motion Study</li>
+                  <li>3D Print Ready</li>
+                </ul>
+              </div>
             </article>
             <article class="project-card" data-href="meal-plan-automation.html">
               <img src="Image/engineering-programing.webp" alt="Meal plan automation logic">
-              <h4>Meal Plan Automation Logic</h4>
-              <p>Python logic that builds weekly menus from nutrition targets.</p>
+              <div class="project-card-body">
+                <p class="project-eyebrow">Automation Script</p>
+                <h4>Meal Plan Automation Logic</h4>
+                <p>Python logic that builds weekly menus from nutrition targets.</p>
+                <ul class="project-stats">
+                  <li>Python</li>
+                  <li>Data Automation</li>
+                  <li>Nutrition Targets</li>
+                </ul>
+              </div>
             </article>
             <!-- Additional personal projects (microcontroller logger, mini conveyor, HVAC mockup, etc.) hidden until complete -->
           </div>
@@ -120,25 +219,34 @@
   <!-- Carousel + routing helpers -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      function getScrollDelta(scroller){
-        const card = scroller.querySelector('.project-card');
-        return card ? (card.offsetWidth + 16) : Math.floor(scroller.clientWidth * 0.9);
-      }
-      function cycleScroll(scroller, dir){
-        const delta = getScrollDelta(scroller) * dir;
-        const maxLeft = scroller.scrollWidth - scroller.clientWidth;
-        const nearStart = scroller.scrollLeft <= 5;
-        const nearEnd = scroller.scrollLeft >= (maxLeft - 5);
-        if(dir > 0 && nearEnd){ scroller.scrollTo({ left: 0, behavior: 'smooth' }); }
-        else if(dir < 0 && nearStart){ scroller.scrollTo({ left: maxLeft, behavior: 'smooth' }); }
-        else { scroller.scrollBy({ left: delta, behavior: 'smooth' }); }
-      }
-      document.querySelectorAll('.carousel-btn').forEach(btn => {
-        const targetSel = btn.getAttribute('data-target');
-        const scroller = targetSel ? document.querySelector(targetSel) : null;
-        if(!scroller) return;
-        const dir = btn.classList.contains('next') ? 1 : -1;
-        btn.addEventListener('click', () => cycleScroll(scroller, dir));
+      const wraps = document.querySelectorAll('[data-scroller-wrap]');
+      wraps.forEach(wrap => {
+        const scroller = wrap.querySelector('.cards.scroller');
+        const prevBtn = wrap.querySelector('.carousel-btn.prev');
+        const nextBtn = wrap.querySelector('.carousel-btn.next');
+        if(!scroller || !prevBtn || !nextBtn) return;
+
+        function getScrollDelta(){
+          const card = scroller.querySelector('.project-card');
+          return card ? (card.offsetWidth + 16) : Math.max(240, Math.floor(scroller.clientWidth * 0.85));
+        }
+        function updateButtons(){
+          const epsilon = 4;
+          const maxLeft = Math.max(0, scroller.scrollWidth - scroller.clientWidth);
+          const atStart = scroller.scrollLeft <= epsilon;
+          const atEnd = scroller.scrollLeft >= (maxLeft - epsilon);
+          prevBtn.disabled = atStart || maxLeft <= epsilon;
+          nextBtn.disabled = atEnd || maxLeft <= epsilon;
+        }
+        function cycle(dir){
+          const delta = getScrollDelta() * dir;
+          scroller.scrollBy({ left: delta, behavior: 'smooth' });
+        }
+        prevBtn.addEventListener('click', () => cycle(-1));
+        nextBtn.addEventListener('click', () => cycle(1));
+        scroller.addEventListener('scroll', () => requestAnimationFrame(updateButtons));
+        window.addEventListener('resize', () => requestAnimationFrame(updateButtons));
+        updateButtons();
       });
 
       function slugify(text){ return (text||'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,''); }
