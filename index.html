@@ -1,27 +1,17 @@
-﻿    <!-- ===============================
-         PROJECTS
-         =============================== -->
-    <!-- ===============================
-         CREDENTIALS  <!-- ===============================
-         PROJECTS
-         =============================== -->
-    <!-- ===============================
-         CREDENTIALSDOCTYPE html>
+<!DOCTYPE html>
 <!--
-  Portfolio Homepage (Annotated)
-  Overview:
-  - Head: metadata, external icon/font links, and the main stylesheet.
-  - Body:
-    - Nav: name (left) + external links (right).
-    - Hero: headline, quick links, and headshot.
-    - Skills: 4 clickable tiles; clicking reveals a description panel below.
-    - Resume: two-tab view (Education / Experience) with a simple tab switcher.
-    - Projects: Professional and Personal preview grids; each has a link to view more.
-    - Contact: reserved for future content.
-  - Scripts: vanilla JS for Skills interactions and Resume tab switching.
-  Notes:
-  - Some copy contains special characters from prior edits; left intact intentionally.
-  - Styles live in homepage/styles.css and control colors/spacing/responsiveness.
+  Caleb Wells Portfolio
+
+  Page structure:
+  1. Navigation and engineering introduction
+  2. Interactive Engineering Skills cabinet
+  3. Lean Engineering toolkit with business-impact dialogs
+  4. Education and Experience tabs
+  5. Selected professional and personal projects
+  6. Credentials gallery and contact form
+
+  The page uses semantic HTML, Font Awesome icons, and vanilla JavaScript.
+  All homepage styling and responsive rules are defined in styles.css.
 -->
 <html lang="en">
 <head>
@@ -67,7 +57,7 @@
       <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
         <i class="fa-brands fa-linkedin"></i><span>LinkedIn</span>
       </a>
-      <a href="mailto:cbwe228@uky.edu" target="_blank" rel="noopener noreferrer">
+      <a href="#Contact">
         <i class="fa-solid fa-envelope"></i><span>Email</span>
       </a>
     </div>
@@ -79,7 +69,8 @@
          =============================== -->
     <section class="Hero-Section">
       <div class="Text">
-        <h2>Caleb Wells - Lean Systems Engineer</h2>
+        <p class="hero-kicker">Lean Systems · Design · Automation</p>
+        <h2>Caleb Wells — Lean Systems Engineer</h2>
         <p>
           I'm a Lean Systems Engineering student driven by a passion for creating efficient, practical systems that merge
           innovation with real-world performance. My work focuses on optimizing processes through automation, lean methodologies,
@@ -97,7 +88,7 @@
       </div>
 
       <div class="Headshot">
-        <img src="Image/caleb wells 2019.webp" alt="headshot">
+        <img src="Image/Image/head%20shot.png" alt="Caleb Wells headshot">
       </div>
       <!-- Bottom-centered resume download CTA inside the hero -->
       <div class="hero-footer">
@@ -112,14 +103,27 @@
          SKILLS
          =============================== -->
     <section id="Skills" class="skills-section">
-      <h2>Skills</h2>
-      <div class="text">
-        Explore my technical capabilities - click a skill area below to learn more.
+      <div class="section-heading">
+        <p class="section-kicker"><i class="fa-solid fa-screwdriver-wrench"></i> Core Capabilities</p>
+        <h2>Engineering Skills</h2>
+        <p>Explore the tools and methods I use to move ideas into production.</p>
       </div>
 
       <div class="skill-cabinet" id="skills-cabinet">
+        <div class="skill-tab-controls">
+          <span>Skill categories</span>
+          <div class="skill-tab-arrows">
+            <button class="skill-tab-arrow skill-tab-prev" type="button" aria-label="Previous skill category">
+              <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+            </button>
+            <button class="skill-tab-arrow skill-tab-next" type="button" aria-label="Next skill category">
+              <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+            </button>
+          </div>
+        </div>
+
         <div class="cabinet-tabs" id="skills-tabs" role="tablist">
-          <button class="cabinet-tab" type="button" data-skill="cad" data-accent="#6fc5ff" role="tab" aria-selected="false">
+          <button class="cabinet-tab active" type="button" data-skill="cad" data-accent="#6fc5ff" role="tab" aria-selected="true">
             <span class="tab-icon"><i class="fa-solid fa-cube"></i></span>
             <div class="tab-text">
               <span>CAD & Digital Modeling</span>
@@ -152,8 +156,8 @@
         <div id="skill-info" class="SkillInfo" aria-live="polite" role="tabpanel">
           <div class="skill-placeholder">
             <p class="skill-chip">Skill Drawer</p>
-            <h3>Pull a tab above to view detailed skill info.</h3>
-            <p>This block lists the focus area, key tasks, and tools employers look for first.</p>
+            <h3>Select a category to explore.</h3>
+            <p>See the tools, tasks, and strengths behind each area.</p>
           </div>
         </div>
       </div>
@@ -164,179 +168,106 @@
          =============================== -->
     <section id="LeanTools" class="lean-tools">
       <div class="lean-tools-header">
-        <h2>Lean Tools Toolkit</h2>
-        <p>
-          A snapshot of the lean manufacturing instruments I put into practice during my degree —
-          from classic industrial engineering studies to collaborative Kaizen events that drive measurable results.
-        </p>
+        <p class="section-kicker"><i class="fa-solid fa-chart-line"></i> Process Improvement</p>
+        <h2>Lean Engineering</h2>
+        <p>Practical methods used to analyze flow, improve quality, reduce waste, and optimize production.</p>
       </div>
 
-      <div class="lean-tool-carousel" data-carousel="lean-tools">
-        <button class="lean-tool-btn prev" type="button" aria-label="Previous lean tool">
-          <i class="fa-solid fa-angle-left"></i>
-        </button>
-        <div class="lean-tool-track" tabindex="0">
-          <article class="lean-tool-card">
-            <div class="tool-icon" aria-hidden="true">
-              <i class="fa-solid fa-chart-column"></i>
-            </div>
-            <h3>Yamazumi Chart</h3>
-            <p>Stacked bars that instantly show which station is overloaded.</p>
-            <ul>
-              <li>Each block = one task</li>
-              <li>Takt line highlights over/under</li>
-              <li>Great for quick rebalance talks</li>
-            </ul>
-          </article>
+      <div class="manufacturing-tool-grid">
+        <article class="manufacturing-tool-card" data-tool-detail="time-study" role="button" tabindex="0" aria-haspopup="dialog">
+          <div class="tool-icon" aria-hidden="true"><i class="fa-solid fa-stopwatch"></i></div>
+          <h3>Time Study</h3>
+          <p><strong>Measure work with confidence.</strong><span>Establish reliable cycle times and expose process variation.</span></p>
+          <div class="tool-card-footer">
+            <div class="tool-tags"><span>Measure</span><span>Standardize</span></div>
+            <i class="fa-solid fa-arrow-right tool-arrow" aria-hidden="true"></i>
+          </div>
+        </article>
 
-          <article class="lean-tool-card">
-            <div class="tool-icon" aria-hidden="true">
-              <i class="fa-solid fa-stopwatch"></i>
-            </div>
-            <h3>Time Study Sheet</h3>
-            <p>Times every step so you know the true cycle time, not a guess.</p>
-            <ul>
-              <li>Element-by-element timing table</li>
-              <li>Average and variation shown</li>
-              <li>Calls out gaps vs target time</li>
-            </ul>
-          </article>
+        <article class="manufacturing-tool-card" data-tool-detail="yamazumi" role="button" tabindex="0" aria-haspopup="dialog">
+          <div class="tool-icon" aria-hidden="true"><i class="fa-solid fa-chart-column"></i></div>
+          <h3>Yamazumi Chart</h3>
+          <p><strong>Balance production flow.</strong><span>Visualize workloads and eliminate bottlenecks across the line.</span></p>
+          <div class="tool-card-footer">
+            <div class="tool-tags"><span>Balance</span><span>Optimize</span></div>
+            <i class="fa-solid fa-arrow-right tool-arrow" aria-hidden="true"></i>
+          </div>
+        </article>
 
-          <article class="lean-tool-card">
-            <div class="tool-icon" aria-hidden="true">
-              <i class="fa-solid fa-gauge-high"></i>
-            </div>
-            <h3>Takt Time Calculation Sheet</h3>
-            <p>Converts customer demand into the pace the line must run.</p>
-            <ul>
-              <li>Uses net available minutes</li>
-              <li>Outputs takt + pitch in seconds</li>
-              <li>Flags when output slips behind</li>
-            </ul>
-          </article>
+        <article class="manufacturing-tool-card" data-tool-detail="takt-time" role="button" tabindex="0" aria-haspopup="dialog">
+          <div class="tool-icon" aria-hidden="true"><i class="fa-solid fa-gauge-high"></i></div>
+          <h3>Takt Time</h3>
+          <p><strong>Match production to demand.</strong><span>Calculate the ideal production pace for customer requirements.</span></p>
+          <div class="tool-card-footer">
+            <div class="tool-tags"><span>Plan</span><span>Control</span></div>
+            <i class="fa-solid fa-arrow-right tool-arrow" aria-hidden="true"></i>
+          </div>
+        </article>
 
-          <article class="lean-tool-card">
-            <div class="tool-icon" aria-hidden="true">
-              <i class="fa-solid fa-layer-group"></i>
-            </div>
-            <h3>Standardized Work Combination Sheet</h3>
-            <p>One line graph that shows work time, machine time, and waiting.</p>
-            <ul>
-              <li>Instant overlap view</li>
-              <li>Highlights idle time</li>
-              <li>Helps right-size headcount</li>
-            </ul>
-          </article>
+        <article class="manufacturing-tool-card" data-tool-detail="oee" role="button" tabindex="0" aria-haspopup="dialog">
+          <div class="tool-icon" aria-hidden="true"><i class="fa-solid fa-industry"></i></div>
+          <h3>OEE Analysis</h3>
+          <p><strong>Monitor manufacturing performance.</strong><span>Measure equipment effectiveness through availability, performance, and quality.</span></p>
+          <div class="tool-card-footer">
+            <div class="tool-tags"><span>Monitor</span><span>Improve</span></div>
+            <i class="fa-solid fa-arrow-right tool-arrow" aria-hidden="true"></i>
+          </div>
+        </article>
 
-          <article class="lean-tool-card">
-            <div class="tool-icon" aria-hidden="true">
-              <i class="fa-solid fa-route"></i>
-            </div>
-            <h3>Standardized Work Chart</h3>
-            <p>Simple map of the operator path, machine order, and SWIP limits.</p>
-            <ul>
-              <li>Numbered route arrows</li>
-              <li>Safety and quality callouts</li>
-              <li>Visual SWIP caps on layout</li>
-            </ul>
-          </article>
+        <article class="manufacturing-tool-card" data-tool-detail="vsm" role="button" tabindex="0" aria-haspopup="dialog">
+          <div class="tool-icon" aria-hidden="true"><i class="fa-solid fa-route"></i></div>
+          <h3>Value Stream Mapping</h3>
+          <p><strong>Optimize the entire process.</strong><span>Visualize material flow and eliminate non-value-added activities.</span></p>
+          <div class="tool-card-footer">
+            <div class="tool-tags"><span>Map</span><span>Streamline</span></div>
+            <i class="fa-solid fa-arrow-right tool-arrow" aria-hidden="true"></i>
+          </div>
+        </article>
 
-          <article class="lean-tool-card">
-            <div class="tool-icon" aria-hidden="true">
-              <i class="fa-solid fa-person-running"></i>
-            </div>
-            <h3>Motion Analysis Sheet</h3>
-            <p>Human motion wheel that captures reach, walk, search, and turn counts.</p>
-            <ul>
-              <li>Logs motions by category</li>
-              <li>Flags fatigue or strain points</li>
-              <li>Guides workstation tweaks</li>
-            </ul>
-          </article>
+        <article class="manufacturing-tool-card" data-tool-detail="standard-work" role="button" tabindex="0" aria-haspopup="dialog">
+          <div class="tool-icon" aria-hidden="true"><i class="fa-solid fa-clipboard-check"></i></div>
+          <h3>Standard Work</h3>
+          <p><strong>Create repeatable processes.</strong><span>Build consistent procedures that improve quality and training.</span></p>
+          <div class="tool-card-footer">
+            <div class="tool-tags"><span>Document</span><span>Sustain</span></div>
+            <i class="fa-solid fa-arrow-right tool-arrow" aria-hidden="true"></i>
+          </div>
+        </article>
 
-          <article class="lean-tool-card">
-            <div class="tool-icon" aria-hidden="true">
-              <i class="fa-solid fa-industry"></i>
-            </div>
-            <h3>OEE Sheet</h3>
-            <p>One-page scorecard for availability, performance, and quality losses.</p>
-            <ul>
-              <li>Downtime log + reason code</li>
-              <li>Performance vs ideal rate</li>
-              <li>Scrap / rework summary</li>
-            </ul>
-          </article>
+        <article class="manufacturing-tool-card" data-tool-detail="root-cause" role="button" tabindex="0" aria-haspopup="dialog">
+          <div class="tool-icon" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+          <h3>Root Cause Analysis</h3>
+          <p><strong>Solve problems permanently.</strong><span>Identify true causes instead of treating symptoms.</span></p>
+          <div class="tool-card-footer">
+            <div class="tool-tags"><span>Analyze</span><span>Correct</span></div>
+            <i class="fa-solid fa-arrow-right tool-arrow" aria-hidden="true"></i>
+          </div>
+        </article>
 
-          <article class="lean-tool-card">
-            <div class="tool-icon" aria-hidden="true">
-              <i class="fa-solid fa-screwdriver-wrench"></i>
-            </div>
-            <h3>SMED / Changeover Analysis Sheet</h3>
-            <p>Breaks setup into internal vs external steps to slash changeover time.</p>
-            <ul>
-              <li>Setup task checklist</li>
-              <li>Before/after time bar</li>
-              <li>Parallel work action plan</li>
-            </ul>
-          </article>
-
-          <article class="lean-tool-card">
-            <div class="tool-icon" aria-hidden="true">
-              <i class="fa-solid fa-bell"></i>
-            </div>
-            <h3>Andon / Abnormality Tracking Sheet</h3>
-            <p>Quick log for every stop-and-notify event, defect, or operator alert.</p>
-            <ul>
-              <li>Trigger + duration noted</li>
-              <li>Defect code and containment</li>
-              <li>Feeds daily tier boards</li>
-            </ul>
-          </article>
-
-          <article class="lean-tool-card">
-            <div class="tool-icon" aria-hidden="true">
-              <i class="fa-solid fa-shield-halved"></i>
-            </div>
-            <h3>Poka-Yoke Sheet</h3>
-            <p>Lists the failure mode and the simple device that prevents it.</p>
-            <ul>
-              <li>Defect, cause, detection</li>
-              <li>Warning vs shut-down control</li>
-              <li>Verification / test noted</li>
-            </ul>
-          </article>
-
-          <article class="lean-tool-card">
-            <div class="tool-icon" aria-hidden="true">
-              <i class="fa-solid fa-clipboard-check"></i>
-            </div>
-            <h3>DFMEA Worksheet</h3>
-            <p>Ranks design risk by severity, occurrence, and detection in one table.</p>
-            <ul>
-              <li>Severity / occurrence / detection</li>
-              <li>Auto RPN and priority</li>
-              <li>Owner + due date column</li>
-            </ul>
-          </article>
-
-          <article class="lean-tool-card">
-            <div class="tool-icon" aria-hidden="true">
-              <i class="fa-solid fa-file-circle-check"></i>
-            </div>
-            <h3>Kaizen Proposal Sheet</h3>
-            <p>One-page improvement story from current state through measured results.</p>
-            <ul>
-              <li>Current vs target snapshot</li>
-              <li>Root cause + countermeasures</li>
-              <li>Before / after metric box</li>
-            </ul>
-          </article>
-        </div>
-        <button class="lean-tool-btn next" type="button" aria-label="Next lean tool">
-          <i class="fa-solid fa-angle-right"></i>
-        </button>
+        <article class="manufacturing-tool-card" data-tool-detail="five-s" role="button" tabindex="0" aria-haspopup="dialog">
+          <div class="tool-icon" aria-hidden="true"><i class="fa-solid fa-list-check"></i></div>
+          <h3>5S Organization</h3>
+          <p><strong>Build efficient workplaces.</strong><span>Create organized, safe, and visually controlled environments.</span></p>
+          <div class="tool-card-footer">
+            <div class="tool-tags"><span>Organize</span><span>Sustain</span></div>
+            <i class="fa-solid fa-arrow-right tool-arrow" aria-hidden="true"></i>
+          </div>
+        </article>
       </div>
     </section>
+
+    <div class="tool-detail-overlay" id="tool-detail-overlay" hidden>
+      <section class="tool-detail-dialog" role="dialog" aria-modal="true" aria-labelledby="tool-detail-title">
+        <button class="tool-detail-close" type="button" aria-label="Close tool details">
+          <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+        </button>
+        <div class="tool-detail-icon" aria-hidden="true"></div>
+        <p class="tool-detail-label">Business Impact</p>
+        <h2 id="tool-detail-title"></h2>
+        <p class="tool-detail-summary"></p>
+        <div class="tool-detail-outcomes" aria-label="Key business outcomes"></div>
+      </section>
+    </div>
     
 
 
@@ -344,95 +275,125 @@
          RESUME (TOGGLE)
          =============================== -->
     <section id="Resume" class="resume-toggle">
-      <!-- Toggle Buttons -->
-      <div class="resume-buttons">
-        <button class="tab-btn active" data-target="education">Education</button>
-        <button class="tab-btn" data-target="experience">Experience</button>
+      <div class="resume-header">
+        <p class="section-kicker"><i class="fa-solid fa-file-lines"></i> Resume Snapshot</p>
+        <h2>Experience & Education</h2>
+        <p>The training and hands-on roles behind my engineering approach.</p>
       </div>
 
-      <!-- Tabs -->
-      <div class="resume-content">
-        <!-- Education Tab -->
-        <div id="education" class="resume-tab active">
-          <h2>Education</h2>
-
-          <div class="job">
-            <div class="job-header">
-              <span class="School">University of Kentucky, College of Engineering</span>
-              <span class="GPA">Program GPA: 3.0</span>
-            </div>
-            <ul>
-              <li>Pursuing a bachelor's in Lean Systems Engineering Technology</li>
-            </ul>
-          </div>
-
-          <div class="job">
-            <div class="job-header">
-              <span class="School">Bluegrass Community and Technical College</span>
-              <span class="GPA">Program GPA: 3.5</span>
-            </div>
-            <ul>
-              <li>Associates of Applied Science in Integrated Engineering Technology</li>
-            </ul>
-          </div>
+      <div class="resume-shell">
+        <!-- Toggle Buttons -->
+        <div class="resume-buttons" role="tablist" aria-label="Resume sections">
+          <button class="tab-btn active" type="button" data-target="education" role="tab" aria-selected="true">
+            <i class="fa-solid fa-graduation-cap"></i>
+            <span>Education</span>
+          </button>
+          <button class="tab-btn" type="button" data-target="experience" role="tab" aria-selected="false">
+            <i class="fa-solid fa-briefcase"></i>
+            <span>Experience</span>
+          </button>
         </div>
 
-        <!-- Experience Tab -->
-        <div id="experience" class="resume-tab">
-          <h2>Experience</h2>
+        <!-- Tabs -->
+        <div class="resume-content">
+          <!-- Education Tab -->
+          <div id="education" class="resume-tab active" role="tabpanel">
+            <div class="resume-tab-heading">
+              <span class="resume-tab-icon"><i class="fa-solid fa-graduation-cap"></i></span>
+              <div>
+                <h3>Education</h3>
+                <p>Degree programs centered on lean systems, manufacturing technology, and applied engineering.</p>
+              </div>
+            </div>
 
-          <!-- Trane Technologies -->
-          <div class="job">
-            <div class="job-header">
-              <span class="company">Trane Technologies</span>
-              <span class="location">Lexington, KY</span>
+            <div class="resume-card-grid education-grid">
+              <article class="job education-card">
+                <div class="job-header">
+                  <span class="School">University of Kentucky, College of Engineering</span>
+                  <span class="GPA">Program GPA: 3.0</span>
+                </div>
+                <ul>
+                  <li>Pursuing a bachelor's in Lean Systems Engineering Technology</li>
+                </ul>
+              </article>
+
+              <article class="job education-card">
+                <div class="job-header">
+                  <span class="School">Bluegrass Community and Technical College</span>
+                  <span class="GPA">Program GPA: 3.5</span>
+                </div>
+                <ul>
+                  <li>Associate of Applied Science in Integrated Engineering Technology</li>
+                </ul>
+              </article>
             </div>
-            <div class="job-title">
-              <span>Design Intern</span>
-              <span class="date">January 2025 - September 2025</span>
-            </div>
-            <ul>
-              <li>Engineered custom HVAC units with integrated fabrication logic using parametric 3D modeling, reducing design-to-production time.</li>
-              <li>Optimized designs for automated manufacturing, reducing assembly complexity and improving production efficiency.</li>
-              <li>Collaborated with cross-functional engineering and manufacturing teams to align designs with production requirements.</li>
-              <li>Assisted in troubleshooting and resolving quality issues by adjusting models and refining design specifications.</li>
-            </ul>
           </div>
 
-          <!-- Overland Conveying - Design Engineer -->
-          <div class="job">
-            <div class="job-header">
-              <span class="company">Overland conveying</span>
-              <span class="location">Madisonville, KY</span>
+          <!-- Experience Tab -->
+          <div id="experience" class="resume-tab" role="tabpanel">
+            <div class="resume-tab-heading">
+              <span class="resume-tab-icon"><i class="fa-solid fa-briefcase"></i></span>
+              <div>
+                <h3>Experience</h3>
+                <p>Hands-on engineering work spanning HVAC design, conveyor systems, documentation, and fabrication support.</p>
+              </div>
             </div>
-            <div class="job-title">
-              <span>Design Engineer</span>
-              <span class="date">May 2024 - October 2024</span>
-            </div>
-            <ul>
-              <li>Oversaw and coordinated multiple projects under the direction of the lead engineer, ensuring timely and efficient completion.</li>
-              <li>Specializing in the design and fabrication of large-scale conveyor belt assemblies, contributing to system optimization.</li>
-              <li>Collaborated in creating proposals by designing 3D models and presentations for new projects.</li>
-              <li>Converted outdated hard-copy engineering drawings into digital formats, streamlining documentation and improving accessibility for future projects.</li>
-            </ul>
-          </div>
 
-          <!-- Overland Conveying - Engineering Student Intern -->
-          <div class="job">
-            <div class="job-header">
-              <span class="company">Overland conveying</span>
-              <span class="location">Madisonville, KY</span>
+            <div class="resume-card-grid">
+              <!-- Trane Technologies -->
+              <article class="job">
+                <div class="job-header">
+                  <span class="company">Trane Technologies</span>
+                  <span class="location">Lexington, KY</span>
+                </div>
+                <div class="job-title">
+                  <span>Design Intern</span>
+                  <span class="date">January 2025 - Current</span>
+                </div>
+                <ul>
+                  <li>Engineered custom HVAC units with integrated fabrication logic using parametric 3D modeling, reducing design-to-production time.</li>
+                  <li>Optimized designs for automated manufacturing, reducing assembly complexity and improving production efficiency.</li>
+                  <li>Collaborated with cross-functional engineering and manufacturing teams to align designs with production requirements.</li>
+                  <li>Assisted in troubleshooting and resolving quality issues by adjusting models and refining design specifications.</li>
+                </ul>
+              </article>
+
+              <!-- Overland Conveying - Design Engineer -->
+              <article class="job">
+                <div class="job-header">
+                  <span class="company">Overland Conveying</span>
+                  <span class="location">Madisonville, KY</span>
+                </div>
+                <div class="job-title">
+                  <span>Design Engineer</span>
+                  <span class="date">May 2024 - October 2024</span>
+                </div>
+                <ul>
+                  <li>Oversaw and coordinated multiple projects under the direction of the lead engineer, ensuring timely and efficient completion.</li>
+                  <li>Specialized in the design and fabrication of large-scale conveyor belt assemblies, contributing to system optimization.</li>
+                  <li>Collaborated in creating proposals by designing 3D models and presentations for new projects.</li>
+                  <li>Converted outdated hard-copy engineering drawings into digital formats, streamlining documentation and improving accessibility for future projects.</li>
+                </ul>
+              </article>
+
+              <!-- Overland Conveying - Engineering Student Intern -->
+              <article class="job">
+                <div class="job-header">
+                  <span class="company">Overland Conveying</span>
+                  <span class="location">Madisonville, KY</span>
+                </div>
+                <div class="job-title">
+                  <span>Engineering Student Intern</span>
+                  <span class="date">April 2020 - August 2020</span>
+                </div>
+                <ul>
+                  <li>Assessed and reported on prototype assemblies to the lead engineer for review.</li>
+                  <li>Manufactured custom conveyor belt cover assemblies.</li>
+                  <li>Operated industrial machines like shears, presses, and pipe benders for fabrication.</li>
+                  <li>Assisted the lead engineer in identifying and implementing solutions for technical issues.</li>
+                </ul>
+              </article>
             </div>
-            <div class="job-title">
-              <span>Engineering, Student Intern</span>
-              <span class="date">April 2020 - August 2020</span>
-            </div>
-            <ul>
-              <li>Assessed and reported on prototype assemblies to the lead engineer for review.</li>
-              <li>Manufactured custom conveyor belt cover assemblies.</li>
-              <li>Operated industrial machines like shears, presses, and pipe benders for fabrication.</li>
-              <li>Assisted the lead engineer in identifying and implementing solutions for technical issues.</li>
-            </ul>
           </div>
         </div>
       </div>
@@ -442,19 +403,26 @@
          PROJECTS
          =============================== -->
     <section id="Projects" class="projects">
-      <h2>Projects</h2>
-      <p class="projects-intro">
-        A quick look at the production work and personal builds that best capture how I take requirements, translate them into
-        manufacturable plans, and close the loop with measurable results. Tap a card or list item to jump into the full write-up.
-      </p>
+      <div class="section-heading">
+        <p class="section-kicker"><i class="fa-solid fa-gears"></i> Built &amp; Tested</p>
+        <h2>Selected Projects</h2>
+        <p>Engineering work that turns requirements into practical results.</p>
+      </div>
 
-      <div class="project-feature-grid">
+      <p class="project-scroll-hint">Featured projects</p>
+
+      <div class="project-feature-carousel">
+        <button class="feature-arrow feature-prev" type="button" aria-label="Previous featured project">
+          <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+        </button>
+
+        <div class="project-feature-grid">
         <article class="project-card feature" data-href="industrial-hvac-design.html">
           <img src="Image/industral%20hvac/Screenshot%202025-09-15%20175101.webp" alt="Industrial HVAC build snapshot preview">
           <div class="project-card-body">
             <p class="project-eyebrow">HVAC Systems</p>
             <h3>Industrial HVAC Design</h3>
-            <p>Configurator-driven parametric models that cut design-to-production time for custom rooftop units.</p>
+            <p>Parametric models that speed up custom rooftop-unit design and production.</p>
             <ul class="project-stats">
               <li>Parametric CAD</li>
               <li>Fabrication Logic</li>
@@ -468,7 +436,7 @@
           <div class="project-card-body">
             <p class="project-eyebrow">Bulk Handling</p>
             <h3>Coal Chute Conveyor</h3>
-            <p>Heavy-duty chute and conveyor package focused on improved wear surfaces and smoother material flow.</p>
+            <p>A durable chute redesign for smoother flow and less wear.</p>
             <ul class="project-stats">
               <li>Wear Reduction</li>
               <li>Flow Modeling</li>
@@ -482,7 +450,7 @@
           <div class="project-card-body">
             <p class="project-eyebrow">Factory Proposal</p>
             <h3>Factory Proposal</h3>
-            <p>Executive-ready package covering capacity modeling, future-state layout, and phased investment plan.</p>
+            <p>A capacity, layout, and investment plan for factory improvements.</p>
             <ul class="project-stats">
               <li>Capacity Model</li>
               <li>Layout Study</li>
@@ -490,10 +458,29 @@
             </ul>
           </div>
         </article>
+        </div>
+
+        <button class="feature-arrow feature-next" type="button" aria-label="Next featured project">
+          <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+        </button>
+      </div>
+
+      <div class="project-group-tabs" role="tablist" aria-label="Project categories">
+        <button class="project-group-tab active" id="professional-projects-tab" type="button" role="tab"
+          aria-selected="true" aria-controls="professional-projects" data-project-target="professional-projects">
+          <i class="fa-solid fa-briefcase" aria-hidden="true"></i>
+          <span>Professional</span>
+        </button>
+        <button class="project-group-tab" id="personal-projects-tab" type="button" role="tab"
+          aria-selected="false" aria-controls="personal-projects" data-project-target="personal-projects" tabindex="-1">
+          <i class="fa-solid fa-flask" aria-hidden="true"></i>
+          <span>Personal</span>
+        </button>
       </div>
 
       <div class="project-rows">
-        <div class="project-column">
+        <div class="project-column is-active" id="professional-projects" role="tabpanel"
+          aria-labelledby="professional-projects-tab">
           <h3>Professional Rollouts</h3>
           <ul class="project-list">
             <li>
@@ -531,7 +518,7 @@
           </ul>
         </div>
 
-        <div class="project-column">
+        <div class="project-column" id="personal-projects" role="tabpanel" aria-labelledby="personal-projects-tab">
           <h3>Personal Builds & Experiments</h3>
           <ul class="project-list">
             <li>
@@ -581,35 +568,61 @@
          CREDENTIALS
          =============================== -->
     <section id="Credentials" class="credentials">
-      <h2>Credentials</h2>
-      <p class="cred-intro">A selection of my certifications and accreditations.</p>
-      <div class="cred-grid">
-        <figure class="cred-item">
-          <img src="Image/met.webp" alt="Certification 1">
-          <figcaption>Mechanical Engineering Technology</figcaption>
-        </figure>
-        <figure class="cred-item">
-          <img src="Image/eet.webp" alt="Certification 2">
-          <figcaption>Electrical Engineering Technology</figcaption>
-          
-          
-        </figure>
-        <figure class="cred-item">
-          <img src="Image/iet.webp" alt="Certification 3">
-          <figcaption>Integrated Engineering Technology</figcaption>
-        </figure>
-        <figure class="cred-item">
-          <img src="Image/lean%20systems.jpg" alt="Lean Systems certification">
-          <figcaption>Lean Systems</figcaption>
-        </figure>
-        <figure class="cred-item">
-          <img src="Image/associates.webp" alt="Certification 5">
-          <figcaption>Associates</figcaption>
-        </figure>
-        <figure class="cred-item">
-          <img src="Image/six sigma white .webp" alt="Certification 6">
-          <figcaption>Six Sigma WB</figcaption>
-        </figure>
+      <div class="section-heading">
+        <p class="section-kicker"><i class="fa-solid fa-award"></i> Qualifications</p>
+        <h2>Degrees &amp; Certifications</h2>
+        <p>Verified academic and professional training.</p>
+      </div>
+
+      <div class="cred-cabinet">
+        <div class="cred-tabs" role="tablist" aria-label="Credential categories">
+          <button class="cred-tab active" id="education-tab" type="button" role="tab"
+            aria-selected="true" aria-controls="education-panel" data-cred-panel="education-panel">
+            <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
+            <span>Educational</span>
+          </button>
+          <button class="cred-tab" id="professional-tab" type="button" role="tab"
+            aria-selected="false" aria-controls="professional-panel" data-cred-panel="professional-panel" tabindex="-1">
+            <i class="fa-solid fa-certificate" aria-hidden="true"></i>
+            <span>Professional</span>
+          </button>
+        </div>
+
+        <div class="cred-panels">
+          <div class="cred-panel" id="education-panel" role="tabpanel" aria-labelledby="education-tab">
+            <div class="cred-grid">
+              <figure class="cred-item">
+                <img src="Image/met.webp" alt="Mechanical Engineering Technology credential">
+                <figcaption>Mechanical Engineering Tech</figcaption>
+              </figure>
+              <figure class="cred-item">
+                <img src="Image/eet.webp" alt="Electrical Engineering Technology credential">
+                <figcaption>Electrical Engineering Tech</figcaption>
+              </figure>
+              <figure class="cred-item">
+                <img src="Image/iet.webp" alt="Integrated Engineering Technology credential">
+                <figcaption>Integrated Engineering Tech</figcaption>
+              </figure>
+              <figure class="cred-item">
+                <img src="Image/associates.webp" alt="Associate degree credential">
+                <figcaption>Associate Degree</figcaption>
+              </figure>
+              <figure class="cred-item">
+                <img src="Image/lean%20systems.jpg" alt="Lean Systems certification">
+                <figcaption>Lean Systems</figcaption>
+              </figure>
+            </div>
+          </div>
+
+          <div class="cred-panel" id="professional-panel" role="tabpanel" aria-labelledby="professional-tab" hidden>
+            <div class="cred-grid">
+              <figure class="cred-item">
+                <img src="Image/six sigma white .webp" alt="Six Sigma White Belt certification">
+                <figcaption>Six Sigma White Belt</figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -626,31 +639,66 @@
          CONTACT
          =============================== -->
     <section id="Contact" class="contact">
-      <h2>Contact Me</h2>
-      <form class="contact-form" method="post" action="#">
-        <div class="form-row">
-          <label for="name">Name</label>
-          <input id="name" name="name" type="text" placeholder="Your name" required>
-        </div>
-        <div class="form-row">
-          <label for="email">Email</label>
-          <input id="email" name="email" type="email" placeholder="you@example.com" required>
-        </div>
-        <div class="form-row">
-          <label for="company">Company</label>
-          <input id="company" name="company" type="text" placeholder="Your company">
-        </div>
-        <div class="form-row">
-          <label for="message">Message</label>
-          <textarea id="message" name="message" rows="6" placeholder="How can I help?" required></textarea>
-        </div>
-        <div class="actions">
-          <button type="submit" class="btn-send">
-            <i class="fa-solid fa-paper-plane"></i>
-            <span>Send</span>
-          </button>
-        </div>
-      </form>
+      <div class="section-heading">
+        <p class="section-kicker"><i class="fa-solid fa-paper-plane"></i> Start a Conversation</p>
+        <h2>Let’s Connect</h2>
+        <p>Have a project or opportunity in mind? Send me a note.</p>
+      </div>
+
+      <div class="contact-shell">
+        <aside class="contact-intro">
+          <p class="contact-eyebrow">Open to Opportunities</p>
+          <h3>Let’s build better systems.</h3>
+          <p>Open to engineering opportunities and practical manufacturing challenges.</p>
+
+          <div class="contact-details">
+            <a href="mailto:cbwe228@uky.edu">
+              <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+              <span>
+                <small>Email</small>
+                cbwe228@uky.edu
+              </span>
+            </a>
+            <p>
+              <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+              <span>
+                <small>Based in</small>
+                Kentucky
+              </span>
+            </p>
+          </div>
+        </aside>
+
+        <!-- FormSubmit forwards messages after one-time inbox activation. -->
+        <form class="contact-form" method="post" action="https://formsubmit.co/cbwe228@uky.edu">
+          <!-- Submission metadata and an off-screen honeypot for basic spam filtering. -->
+          <input type="hidden" name="_subject" value="New portfolio contact">
+          <input type="hidden" name="_template" value="table">
+          <input class="contact-honeypot" type="text" name="_honey" tabindex="-1" autocomplete="off">
+          <div class="form-row">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" placeholder="Your name" required>
+          </div>
+          <div class="form-row">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="you@example.com" required>
+          </div>
+          <div class="form-row company-field">
+            <label for="company">Company</label>
+            <input id="company" name="company" type="text" placeholder="Your company">
+          </div>
+          <div class="form-row message-field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Tell me about the opportunity or project." required></textarea>
+          </div>
+          <div class="actions">
+            <button type="submit" class="btn-send">
+              <span>Send Message</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </form>
+      </div>
     </section>
   </main>
 
@@ -793,45 +841,35 @@
         if (!key) return;
         showSkill(key, tab);
       });
-    });
 
-    /*
-      ===============================
-      Lean tools carousel
-      - Buttons slide the tool cards
-      - Disables controls at bounds
-    */
-    document.addEventListener('DOMContentLoaded', () => {
-      const carousel = document.querySelector('[data-carousel=\"lean-tools\"]');
-      if(!carousel) return;
-      const track = carousel.querySelector('.lean-tool-track');
-      const prev = carousel.querySelector('.lean-tool-btn.prev');
-      const next = carousel.querySelector('.lean-tool-btn.next');
-      if(!track || !prev || !next) return;
+      const defaultTab = tabs.querySelector('[data-skill="cad"]');
+      if (defaultTab) showSkill('cad', defaultTab);
 
-      const cardWidth = () => {
-        const card = track.querySelector('.lean-tool-card');
-        return card ? (card.getBoundingClientRect().width + 24) : 320;
-      };
+      const previous = document.querySelector('.skill-tab-prev');
+      const next = document.querySelector('.skill-tab-next');
+      if (previous && next) {
+        function tabStep() {
+          const tab = tabs.querySelector('.cabinet-tab');
+          const gap = parseFloat(getComputedStyle(tabs).gap) || 0;
+          return (tab?.getBoundingClientRect().width || tabs.clientWidth) + gap;
+        }
 
-      function updateState(){
-        const maxLeft = Math.max(0, track.scrollWidth - track.clientWidth);
-        const epsilon = 4;
-        const atStart = track.scrollLeft <= epsilon;
-        const atEnd = track.scrollLeft >= (maxLeft - epsilon);
-        prev.disabled = atStart;
-        next.disabled = atEnd;
+        function updateSkillArrows() {
+          const maxScroll = Math.max(0, tabs.scrollWidth - tabs.clientWidth);
+          previous.disabled = tabs.scrollLeft <= 2;
+          next.disabled = tabs.scrollLeft >= maxScroll - 2;
+        }
+
+        previous.addEventListener('click', () => {
+          tabs.scrollBy({ left: -tabStep(), behavior: 'smooth' });
+        });
+        next.addEventListener('click', () => {
+          tabs.scrollBy({ left: tabStep(), behavior: 'smooth' });
+        });
+        tabs.addEventListener('scroll', updateSkillArrows, { passive: true });
+        window.addEventListener('resize', updateSkillArrows);
+        updateSkillArrows();
       }
-
-      function scrollByCards(dir){
-        track.scrollBy({ left: cardWidth() * dir, behavior: 'smooth' });
-      }
-
-      prev.addEventListener('click', () => scrollByCards(-1));
-      next.addEventListener('click', () => scrollByCards(1));
-      track.addEventListener('scroll', () => requestAnimationFrame(updateState));
-      window.addEventListener('resize', () => requestAnimationFrame(updateState));
-      updateState();
     });
 
     /*
@@ -846,7 +884,11 @@
       const tabs = document.querySelectorAll('.resume-tab');
 
       function showTab(id, clickedBtn) {
-        tabButtons.forEach(btn => btn.classList.toggle('active', btn === clickedBtn));
+        tabButtons.forEach(btn => {
+          const isActive = btn === clickedBtn;
+          btn.classList.toggle('active', isActive);
+          btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
+        });
         tabs.forEach(tab => {
           tab.classList.remove('active');
           // restart fade animation each switch
@@ -872,40 +914,42 @@
     });
 
     // ===============================
-    // Contact form: compose an email via mailto
-    // - Opens user's email client with prefilled subject/body
-    // - For server-side sending, consider Formspree/EmailJS integration later
-    // ===============================
-    document.addEventListener('DOMContentLoaded', () => {
-      const form = document.querySelector('.contact-form');
-      if(!form) return;
-      form.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const to = 'cbwe228@uky.edu';
-        const name = (form.querySelector('#name')?.value || '').trim();
-        const email = (form.querySelector('#email')?.value || '').trim();
-        const company = (form.querySelector('#company')?.value || '').trim();
-        const message = (form.querySelector('#message')?.value || '').trim();
-
-        const subject = `Portfolio Contact from ${name || 'Website'}`;
-        const body = `Name: ${name}\nEmail: ${email}\nCompany: ${company}\n\nMessage:\n${message}`;
-        const mailto = `mailto:${encodeURIComponent(to)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-
-        // Open default mail client with pre-filled details
-        window.location.href = mailto;
-      });
-    });
-
-    // ===============================
     // Credentials lightbox: open on click, close on overlay/close/Escape
     // ===============================
     document.addEventListener('DOMContentLoaded', () => {
-      const grid = document.querySelector('.cred-grid');
+      const credentials = document.querySelector('.credentials');
       const overlay = document.getElementById('lightbox');
       const img = document.getElementById('lightbox-img');
       const cap = document.getElementById('lightbox-caption');
       const btnClose = document.querySelector('.lightbox-close');
-      if(!grid || !overlay || !img || !cap || !btnClose) return;
+      if(!credentials || !overlay || !img || !cap || !btnClose) return;
+
+      const tabs = [...credentials.querySelectorAll('.cred-tab')];
+      const panels = [...credentials.querySelectorAll('.cred-panel')];
+
+      function selectTab(tab){
+        tabs.forEach((item) => {
+          const selected = item === tab;
+          item.classList.toggle('active', selected);
+          item.setAttribute('aria-selected', String(selected));
+          item.tabIndex = selected ? 0 : -1;
+        });
+        panels.forEach((panel) => {
+          panel.hidden = panel.id !== tab.dataset.credPanel;
+        });
+      }
+
+      tabs.forEach((tab, index) => {
+        tab.addEventListener('click', () => selectTab(tab));
+        tab.addEventListener('keydown', (event) => {
+          if(event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return;
+          event.preventDefault();
+          const direction = event.key === 'ArrowRight' ? 1 : -1;
+          const next = tabs[(index + direction + tabs.length) % tabs.length];
+          selectTab(next);
+          next.focus();
+        });
+      });
 
       function open(src, alt, caption){
         // load the image first to get natural dimensions
@@ -934,9 +978,9 @@
         document.body.style.overflow = '';
       }
 
-      grid.addEventListener('click', (e) => {
+      credentials.addEventListener('click', (e) => {
         const figure = e.target.closest('.cred-item');
-        if(!figure || !grid.contains(figure)) return;
+        if(!figure || !credentials.contains(figure)) return;
         const el = figure.querySelector('img');
         if(!el) return;
         const caption = figure.querySelector('figcaption')?.textContent || el.alt || '';
@@ -945,6 +989,68 @@
       btnClose.addEventListener('click', close);
       overlay.addEventListener('click', (e) => { if(e.target === overlay) close(); });
       document.addEventListener('keydown', (e) => { if(e.key === 'Escape' && !overlay.hasAttribute('hidden')) close(); });
+    });
+
+    // Phone project tabs: switch between professional and personal lists
+    document.addEventListener('DOMContentLoaded', () => {
+      const projects = document.querySelector('.projects');
+      const tabs = [...(projects?.querySelectorAll('.project-group-tab') || [])];
+      const groups = [...(projects?.querySelectorAll('.project-column') || [])];
+      if(tabs.length < 2 || groups.length < 2) return;
+
+      function selectProjectTab(tab){
+        tabs.forEach((item) => {
+          const selected = item === tab;
+          item.classList.toggle('active', selected);
+          item.setAttribute('aria-selected', String(selected));
+          item.tabIndex = selected ? 0 : -1;
+        });
+        groups.forEach((group, groupIndex) => {
+          group.classList.toggle('is-active', group.id === tab.dataset.projectTarget);
+        });
+      }
+
+      tabs.forEach((tab, index) => {
+        tab.addEventListener('click', () => selectProjectTab(tab));
+        tab.addEventListener('keydown', (event) => {
+          if(event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return;
+          event.preventDefault();
+          const direction = event.key === 'ArrowRight' ? 1 : -1;
+          const next = tabs[(index + direction + tabs.length) % tabs.length];
+          selectProjectTab(next);
+          next.focus();
+        });
+      });
+    });
+
+    // Featured projects carousel controls for phone layouts
+    document.addEventListener('DOMContentLoaded', () => {
+      const track = document.querySelector('.project-feature-grid');
+      const previous = document.querySelector('.feature-prev');
+      const next = document.querySelector('.feature-next');
+      if(!track || !previous || !next) return;
+
+      function cardStep(){
+        const card = track.querySelector('.project-card');
+        const gap = parseFloat(getComputedStyle(track).gap) || 0;
+        return (card?.getBoundingClientRect().width || track.clientWidth) + gap;
+      }
+
+      function updateArrows(){
+        const maxScroll = Math.max(0, track.scrollWidth - track.clientWidth);
+        previous.disabled = track.scrollLeft <= 2;
+        next.disabled = track.scrollLeft >= maxScroll - 2;
+      }
+
+      previous.addEventListener('click', () => {
+        track.scrollBy({ left: -cardStep(), behavior: 'smooth' });
+      });
+      next.addEventListener('click', () => {
+        track.scrollBy({ left: cardStep(), behavior: 'smooth' });
+      });
+      track.addEventListener('scroll', updateArrows, { passive: true });
+      window.addEventListener('resize', updateArrows);
+      updateArrows();
     });
   
     // Make homepage project cards clickable to detail page
@@ -990,8 +1096,117 @@
         }
         window.location.href = `project.html?${params.toString()}`;
       }
-      projSections.forEach(card => { card.style.cursor='pointer'; card.addEventListener('click', () => go(card)); });
-    });</script>
+      projSections.forEach(card => {
+        card.style.cursor = 'pointer';
+        card.addEventListener('click', () => go(card));
+      });
+    });
+  </script>
+
+  <script>
+    /*
+      Lean Engineering detail dialog
+      - Opens from a toolkit card by click, Enter, or Space
+      - Populates one reusable dialog from the data map below
+      - Closes by button, backdrop click, or Escape
+      - Returns keyboard focus to the original card
+    */
+    document.addEventListener('DOMContentLoaded', () => {
+      const details = {
+        'time-study': {
+          summary: 'Time studies give a company a defensible basis for labor standards, staffing, scheduling, costing, and capacity decisions. Reliable cycle-time data turns improvement work from opinion into measurable engineering.',
+          outcomes: ['Accurate capacity planning', 'Reliable labor standards', 'Data-backed improvement']
+        },
+        yamazumi: {
+          summary: 'Yamazumi charts make workload imbalance visible before it becomes missed output, excess WIP, or operator overload. They help teams distribute work around takt and improve flow with clear evidence.',
+          outcomes: ['Balanced workloads', 'Higher throughput', 'Fewer bottlenecks']
+        },
+        'takt-time': {
+          summary: 'Takt time connects customer demand directly to the pace of production. It gives operations a shared target for staffing, line design, material delivery, and daily performance control.',
+          outcomes: ['Demand alignment', 'Smarter staffing', 'Controlled production pace']
+        },
+        oee: {
+          summary: 'OEE separates equipment losses into availability, performance, and quality so teams can focus resources on the constraints that matter most. It supports better maintenance priorities and capital decisions.',
+          outcomes: ['Visible equipment losses', 'Focused maintenance', 'Stronger asset utilization']
+        },
+        vsm: {
+          summary: 'Value stream mapping gives leaders an end-to-end view of material and information flow. It prevents local improvements from hiding system-wide delays, inventory, rework, and broken handoffs.',
+          outcomes: ['Shorter lead time', 'Lower work-in-process', 'End-to-end optimization']
+        },
+        'standard-work': {
+          summary: 'Standard work creates a stable operating baseline for quality, safety, training, and continuous improvement. Without a shared best-known method, variation grows and gains are difficult to sustain.',
+          outcomes: ['Consistent execution', 'Faster training', 'Sustainable improvements']
+        },
+        'root-cause': {
+          summary: 'Root cause analysis prevents recurring failures by addressing the system that created the problem rather than its visible symptom. It protects quality, uptime, safety, and customer confidence.',
+          outcomes: ['Fewer repeat failures', 'Lower quality costs', 'Stronger corrective action']
+        },
+        'five-s': {
+          summary: '5S creates a workplace where tools, materials, standards, and abnormal conditions are immediately visible. That foundation reduces wasted motion, improves safety, and makes process control easier.',
+          outcomes: ['Safer work areas', 'Less search and motion', 'Visible abnormalities']
+        }
+      };
+
+      const overlay = document.getElementById('tool-detail-overlay');
+      if (!overlay) return;
+
+      const dialog = overlay.querySelector('.tool-detail-dialog');
+      const closeButton = overlay.querySelector('.tool-detail-close');
+      const icon = overlay.querySelector('.tool-detail-icon');
+      const title = overlay.querySelector('#tool-detail-title');
+      const summary = overlay.querySelector('.tool-detail-summary');
+      const outcomes = overlay.querySelector('.tool-detail-outcomes');
+      let trigger = null;
+
+      function openDetail(card) {
+        const detail = details[card.dataset.toolDetail];
+        if (!detail) return;
+
+        trigger = card;
+        icon.innerHTML = card.querySelector('.tool-icon')?.innerHTML || '';
+        title.textContent = card.querySelector('h3')?.textContent || '';
+        summary.textContent = detail.summary;
+        outcomes.replaceChildren(...detail.outcomes.map(text => {
+          const item = document.createElement('div');
+          item.className = 'tool-detail-outcome';
+          item.textContent = text;
+          return item;
+        }));
+
+        overlay.hidden = false;
+        document.body.style.overflow = 'hidden';
+        closeButton.focus();
+      }
+
+      function closeDetail() {
+        overlay.hidden = true;
+        document.body.style.overflow = '';
+        trigger?.focus();
+      }
+
+      document.querySelectorAll('[data-tool-detail]').forEach(card => {
+        card.addEventListener('click', () => openDetail(card));
+        card.addEventListener('keydown', event => {
+          if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            openDetail(card);
+          }
+        });
+      });
+
+      closeButton.addEventListener('click', closeDetail);
+      overlay.addEventListener('click', event => {
+        if (event.target === overlay) closeDetail();
+      });
+      document.addEventListener('keydown', event => {
+        if (event.key === 'Escape' && !overlay.hidden) closeDetail();
+        if (event.key === 'Tab' && !overlay.hidden && dialog) {
+          event.preventDefault();
+          closeButton.focus();
+        }
+      });
+    });
+  </script>
 </body>
 </html>
 
