@@ -2973,6 +2973,34 @@ section + section::before {
   text-transform: uppercase;
   color: rgba(230, 234, 238, 0.75);
 }
+.process-flow {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 12px;
+  width: min(100%, 420px);
+}
+.process-flow li {
+  position: relative;
+  padding: 10px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.04);
+  color: rgba(230, 234, 238, 0.88);
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.process-flow li + li::before {
+  content: "\2193";
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--link-color);
+  font-size: 13px;
+}
 .system-visual-figure {
   margin: 0;
   display: flex;
