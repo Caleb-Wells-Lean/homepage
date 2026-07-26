@@ -645,7 +645,16 @@
         <p>Have a project or opportunity in mind? Send me a note.</p>
       </div>
 
-      <div class="contact-shell">
+      <div class="contact-reveal">
+        <span class="contact-reveal-line" aria-hidden="true"></span>
+        <button class="contact-toggle" type="button" aria-expanded="false" aria-controls="contact-email-panel">
+          <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+          <span>Show Email Form</span>
+        </button>
+        <span class="contact-reveal-line" aria-hidden="true"></span>
+      </div>
+
+      <div class="contact-shell" id="contact-email-panel" hidden>
         <aside class="contact-intro">
           <p class="contact-eyebrow">Open to Opportunities</p>
           <h3>Let’s build better systems.</h3>
@@ -1099,6 +1108,29 @@
       projSections.forEach(card => {
         card.style.cursor = 'pointer';
         card.addEventListener('click', () => go(card));
+      });
+    });
+  </script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const toggle = document.querySelector('.contact-toggle');
+      const panel = document.getElementById('contact-email-panel');
+      if (!toggle || !panel) return;
+
+      const label = toggle.querySelector('span');
+      const icon = toggle.querySelector('i');
+
+      toggle.addEventListener('click', () => {
+        const willShow = panel.hidden;
+        panel.hidden = !willShow;
+        toggle.setAttribute('aria-expanded', String(willShow));
+        if (label) {
+          label.textContent = willShow ? 'Hide Email Form' : 'Show Email Form';
+        }
+        if (icon) {
+          icon.className = willShow ? 'fa-solid fa-envelope-open-text' : 'fa-solid fa-envelope';
+        }
       });
     });
   </script>

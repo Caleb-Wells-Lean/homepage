@@ -1,14 +1,14 @@
 ﻿<!DOCTYPE html>
 <!--
   File: projects.html
-  Purpose: Portfolio-wide project index with horizontal carousels for Professional and Personal work.
+  Purpose: Portfolio-wide project index for Professional and Personal work.
   Layout Overview:
     - Nav: links back to main sections on index.html.
-    - Main: <section class="projects"> containing two scroller groups.
-    - JS: carousel controls, card click navigation (data-href preferred), plus slug fallback.
+    - Main: <section class="projects"> containing two responsive project grids.
+    - JS: card click navigation (data-href preferred), plus slug fallback.
   Maintenance Notes:
     - When adding/removing cards update both the markup and the routes map at the bottom.
-    - Keep Professional and Personal groups balanced for consistent breakpoints.
+    - Project sections share the same card structure so new work can be added without layout changes.
 -->
 <html lang="en">
 <head>
@@ -20,7 +20,7 @@
   <link rel="stylesheet" href="styles.css" />
   <title>Projects</title>
 </head>
-<body>
+<body class="projects-page">
   <!-- Global nav reused from homepage -->
   <nav>
     <div class="Left"><a href="index.html">Caleb Wells</a></div>
@@ -34,232 +34,370 @@
   </nav>
 
   <main>
-    <!-- PROJECTS INDEX -->
     <section class="projects projects-archive">
       <header class="projects-hero">
         <div class="projects-hero__intro">
           <p class="section-kicker"><i class="fa-solid fa-gears"></i> Case Study Library</p>
           <h2>Projects</h2>
           <p class="projects-intro">
-            Browse the full catalog of professional launches and personal sandboxes. Each card links to a dedicated write-up with context, constraints, and measurable outcomes.
+            Manufacturing, design, automation, and systems work presented as concise case studies.
           </p>
         </div>
-        <ul class="projects-hero__metrics">
-          <li>
-            <span>12</span>
-            <small>Factory Deployments</small>
-          </li>
-          <li>
-            <span>8</span>
-            <small>Automation Builds</small>
-          </li>
-          <li>
-            <span>10+</span>
-            <small>Personal Experiments</small>
-          </li>
-        </ul>
-        <div class="projects-hero__chips" aria-label="Project group quick filters">
-          <span class="projects-chip active"><i class="fa-solid fa-briefcase"></i> Professional</span>
-          <span class="projects-chip"><i class="fa-solid fa-flask"></i> Personal</span>
-          <span class="projects-chip"><i class="fa-solid fa-lightbulb"></i> Research & Concepts</span>
+        <div class="projects-hero__summary" aria-label="Project controls">
+          <label class="project-search" for="project-search-input">
+            <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+            <span class="sr-only">Search projects</span>
+            <input id="project-search-input" type="search" placeholder="Search projects" autocomplete="off">
+          </label>
+          <label class="project-view-switch">
+            <input id="project-view-toggle" type="checkbox" aria-controls="professional-projects personal-projects" aria-label="Toggle between professional and personal projects">
+            <span class="switch-track" aria-hidden="true">
+              <span class="switch-option switch-option-pro"><i class="fa-solid fa-industry"></i> Professional</span>
+              <span class="switch-option switch-option-personal"><i class="fa-solid fa-screwdriver-wrench"></i> Personal</span>
+              <span class="switch-thumb"></span>
+            </span>
+          </label>
         </div>
       </header>
 
-      <!-- PROFESSIONAL PROJECT CAROUSEL -->
-      <div class="project-group">
+      <section class="project-group project-group-featured" id="professional-projects" data-project-panel="professional">
         <div class="group-header">
           <div class="group-title">
-            <span class="group-chip"><i class="fa-solid fa-briefcase"></i> Professional</span>
-            <h3>Production Deployments</h3>
-            <p class="group-description">Systems delivered to factories, supply chains, and customers with measurable impact.</p>
+            <span class="group-chip"><i class="fa-solid fa-industry"></i> Professional</span>
+            <h3 id="professional-heading">Engineering Case Studies</h3>
+            <p class="group-description">Production launch, equipment design, manufacturing support, and lean improvement work.</p>
+          </div>
+          <div class="group-controls">
+            <button class="overview-toggle" type="button" aria-pressed="false" data-overview-toggle>
+              <i class="fa-solid fa-table-list"></i>
+              List Only
+            </button>
           </div>
         </div>
-        <div class="scroller-wrap" data-scroller-wrap>
-          <button class="carousel-btn prev" data-target="#pro-scroller" aria-label="Previous projects">
-            <i class="fa-solid fa-chevron-left"></i>
-          </button>
-          <div class="cards scroller" id="pro-scroller">
-            <article class="project-card" data-href="industrial-hvac-design.html">
+
+        <div class="project-showcase">
+          <article class="project-preview" aria-live="polite">
+            <div class="project-preview-media">
               <img src="Image/industral%20hvac/Screenshot%202025-09-15%20175101.webp" alt="Industrial HVAC build snapshot preview">
-              <div class="project-card-body">
-                <p class="project-eyebrow">HVAC Systems</p>
-                <h4>Industrial HVAC Design</h4>
-                <p>Configurator-driven parametric design to accelerate production.</p>
-                <ul class="project-stats">
-                  <li>Parametric CAD</li>
-                  <li>Configurator</li>
-                  <li>Custom Fabrication</li>
-                </ul>
+            </div>
+            <div class="project-preview-copy">
+              <p class="project-eyebrow">HVAC Systems</p>
+              <h4>Industrial HVAC Design</h4>
+              <p>CAD, drawing, and production support for custom industrial HVAC systems.</p>
+              <ul class="project-stats">
+                <li>CAD Support</li>
+                <li>Documentation</li>
+                <li>Production Support</li>
+              </ul>
+              <dl class="project-preview-meta">
+                <div>
+                  <dt>Role</dt>
+                  <dd>Manufacturing engineering support</dd>
+                </div>
+                <div>
+                  <dt>Focus</dt>
+                  <dd>CAD updates and production documentation</dd>
+                </div>
+                <div>
+                  <dt>Outcome</dt>
+                  <dd>Supported accurate design-to-production execution</dd>
+                </div>
+              </dl>
+              <div class="project-preview-detail">
+                <span>Deeper Look</span>
+                <p>Focused on keeping CAD models, drawings, and production documentation aligned as custom systems moved through manufacturing.</p>
               </div>
-            </article>
-            <article class="project-card" data-href="ai-data-center-cooling-system-production-line.html">
-              <img src="Image/ai-data-center-cooling/production-line-build.svg" alt="Neutral placeholder for AI data center cooling system production line">
-              <div class="project-card-body">
-                <p class="project-eyebrow">New Product Introduction</p>
-                <h4>AI Data Center Cooling System Production Line</h4>
-                <p>Manufacturing line launch support from design through initial production.</p>
-                <ul class="project-stats">
-                  <li>NPI</li>
-                  <li>Line Launch</li>
-                  <li>Documentation</li>
-                </ul>
-              </div>
-            </article>
-            <article class="project-card" data-href="coal-chute-conveyor.html">
-              <img src="Image/coal%20chute/industrial-factory-conveyor-belt.webp" alt="Coal chute conveyor">
-              <div class="project-card-body">
-                <p class="project-eyebrow">Bulk Handling</p>
-                <h4>Coal Chute Conveyor</h4>
-                <p>Heavy-duty chute redesign with improved wear and flow.</p>
-                <ul class="project-stats">
-                  <li>Heavy Fabrication</li>
-                  <li>Wear Reduction</li>
-                  <li>Flow Modeling</li>
-                </ul>
-              </div>
-            </article>
-            <article class="project-card" data-href="Industrial Line Redesign Project.html">
-              <img src="Image/industral%20line%20redesgine/A%203.webp" alt="Industrial line redesign A3 summary">
-              <div class="project-card-body">
-                <p class="project-eyebrow">Lean Transformation</p>
-                <h4>Industrial Line Redesign Project</h4>
-                <p>Lean fireplace-mantle line redesign that stabilized flow and cut lead time.</p>
-                <ul class="project-stats">
-                  <li>MIFC Mapping</li>
-                  <li>Line Balance</li>
-                  <li>Lead Time -66%</li>
-                </ul>
-              </div>
-            </article>
-            <article class="project-card" data-href="automation-cell.html">
-              <img src="Image/engineering-programing.webp" alt="Automation cell">
-              <div class="project-card-body">
-                <p class="project-eyebrow">Factory Automation</p>
-                <h4>Automation Cell</h4>
-                <p>PLC-driven process for throughput and QA data capture.</p>
-                <ul class="project-stats">
-                  <li>PLC Controls</li>
-                  <li>Vision Checks</li>
-                  <li>Throughput +20%</li>
-                </ul>
-              </div>
-            </article>
-            <!-- Future professional projects (Fixture Optimization, Layout Digitization, QA Improvements) are hidden until completion -->
-          </div>
-          <button class="carousel-btn next" data-target="#pro-scroller" aria-label="Next projects">
-            <i class="fa-solid fa-chevron-right"></i>
-          </button>
-        </div>
-      </div>
+            </div>
+          </article>
 
-      <!-- PERSONAL PROJECT CAROUSEL -->
-      <div class="project-group">
+        <div class="cards project-index-list">
+          <article class="project-card" role="link" tabindex="0" data-href="industrial-hvac-design.html" data-role="Manufacturing engineering support" data-focus="CAD updates and production documentation" data-outcome="Supported accurate design-to-production execution">
+            <div class="project-card-media">
+              <img src="Image/industral%20hvac/Screenshot%202025-09-15%20175101.webp" alt="Industrial HVAC build snapshot preview">
+            </div>
+            <div class="project-card-body">
+              <p class="project-eyebrow">HVAC Systems</p>
+              <h4>Industrial HVAC Design</h4>
+              <p>CAD, drawing, and production support for custom industrial HVAC systems.</p>
+              <ul class="project-stats">
+                <li>CAD Support</li>
+                <li>Documentation</li>
+                <li>Production Support</li>
+              </ul>
+              <div class="project-deep-dive">
+                <p>Focused on keeping CAD models, drawings, and production documentation aligned as custom systems moved through manufacturing.</p>
+              </div>
+              <span class="project-card-action">View case study <i class="fa-solid fa-arrow-right"></i></span>
+            </div>
+          </article>
+
+          <article class="project-card" role="link" tabindex="0" data-href="ai-data-center-cooling-system-production-line.html" data-role="Manufacturing Engineering Intern" data-focus="NPI line development and production readiness" data-outcome="Supported launch of a new manufacturing line">
+            <div class="project-card-media">
+              <img src="Image/ai-data-center-cooling/production-line-build.svg" alt="Neutral placeholder for AI data center cooling system production line">
+            </div>
+            <div class="project-card-body">
+              <p class="project-eyebrow">New Product Introduction</p>
+              <h4>AI Data Center Cooling System Production Line</h4>
+              <p>Manufacturing support for a six-month NPI line launch.</p>
+              <ul class="project-stats">
+                <li>NPI</li>
+                <li>Line Launch</li>
+                <li>Readiness</li>
+              </ul>
+              <div class="project-deep-dive">
+                <p>Supported assembly line development, manufacturing documentation, production readiness, and early launch issue resolution.</p>
+              </div>
+              <span class="project-card-action">View case study <i class="fa-solid fa-arrow-right"></i></span>
+            </div>
+          </article>
+
+          <article class="project-card" role="link" tabindex="0" data-href="coal-chute-conveyor.html" data-role="Mechanical design contributor" data-focus="Flow, wear, fabrication, and serviceability" data-outcome="Created a practical industrial conveyor case study">
+            <div class="project-card-media">
+              <img src="Image/coal%20chute/industrial-factory-conveyor-belt.webp" alt="Coal chute conveyor">
+            </div>
+            <div class="project-card-body">
+              <p class="project-eyebrow">Bulk Handling</p>
+              <h4>Coal Chute Conveyor</h4>
+              <p>Chute and conveyor design focused on flow, wear, and fabrication.</p>
+              <ul class="project-stats">
+                <li>Fabrication</li>
+                <li>Flow</li>
+                <li>Wear</li>
+              </ul>
+              <div class="project-deep-dive">
+                <p>Built around practical industrial constraints: material flow, replaceable wear surfaces, fabrication fit-up, and maintainability.</p>
+              </div>
+              <span class="project-card-action">View case study <i class="fa-solid fa-arrow-right"></i></span>
+            </div>
+          </article>
+
+          <article class="project-card" role="link" tabindex="0" data-href="Industrial Line Redesign Project.html" data-role="Lean systems team lead" data-focus="MIFC mapping, bottlenecks, and target-state flow" data-outcome="Proposed a leaner production system with measurable gains">
+            <div class="project-card-media">
+              <img src="Image/industral%20line%20redesgine/A%203.webp" alt="Industrial line redesign A3 summary">
+            </div>
+            <div class="project-card-body">
+              <p class="project-eyebrow">Lean Systems</p>
+              <h4>Factory Proposal</h4>
+              <p>Lean line proposal using MIFC mapping and A3 documentation.</p>
+              <ul class="project-stats">
+                <li>MIFC</li>
+                <li>A3</li>
+                <li>Lead Time</li>
+              </ul>
+              <div class="project-deep-dive">
+                <p>Compared current and future states to reduce waiting, improve WIP control, and present a practical implementation path.</p>
+              </div>
+              <span class="project-card-action">View case study <i class="fa-solid fa-arrow-right"></i></span>
+            </div>
+          </article>
+
+          <article class="project-card" role="link" tabindex="0" data-href="automation-cell.html" data-role="Automation concept developer" data-focus="PLC logic, repeatability, and process data" data-outcome="Built a controls-focused manufacturing concept">
+            <div class="project-card-media">
+              <img src="Image/engineering-programing.webp" alt="Automation cell programming and controls preview">
+            </div>
+            <div class="project-card-body">
+              <p class="project-eyebrow">Factory Automation</p>
+              <h4>Automation Cell</h4>
+              <p>PLC automation concept for repeatable process control.</p>
+              <ul class="project-stats">
+                <li>PLC</li>
+                <li>Controls</li>
+                <li>Data</li>
+              </ul>
+              <div class="project-deep-dive">
+                <p>Explores the connection between controls logic, repeatable production behavior, and traceable manufacturing data.</p>
+              </div>
+              <span class="project-card-action">View case study <i class="fa-solid fa-arrow-right"></i></span>
+            </div>
+          </article>
+          <p class="project-empty" data-empty-state hidden>No projects match your search.</p>
+        </div>
+        </div>
+      </section>
+
+      <section class="project-group" id="personal-projects" data-project-panel="personal" hidden>
         <div class="group-header">
           <div class="group-title">
-            <span class="group-chip"><i class="fa-solid fa-flask"></i> Personal</span>
-            <h3>Experimental Builds</h3>
-            <p class="group-description">Self-directed experiments to test tech stacks, automation ideas, and rapid prototypes.</p>
+            <span class="group-chip"><i class="fa-solid fa-screwdriver-wrench"></i> Personal</span>
+            <h3 id="personal-heading">Builds & Experiments</h3>
+            <p class="group-description">Self-directed projects used to sharpen software, infrastructure, CAD, and automation skills.</p>
+          </div>
+          <div class="group-controls">
+            <button class="overview-toggle" type="button" aria-pressed="false" data-overview-toggle>
+              <i class="fa-solid fa-table-list"></i>
+              List Only
+            </button>
           </div>
         </div>
-        <div class="scroller-wrap" data-scroller-wrap>
-          <button class="carousel-btn prev" data-target="#per-scroller" aria-label="Previous personal projects">
-            <i class="fa-solid fa-chevron-left"></i>
-          </button>
-          <div class="cards scroller" id="per-scroller">
-            <article class="project-card" data-href="portfolio-website.html">
-              <img src="Image/code Example.webp" alt="Portfolio site">
-              <div class="project-card-body">
-                <p class="project-eyebrow">Web Systems</p>
-                <h4>Portfolio Website</h4>
-                <p>Responsive site with skills, resume tabs, and projects.</p>
-                <ul class="project-stats">
-                  <li>HTML/CSS</li>
-                  <li>Responsive UI</li>
-                  <li>Vanilla JS</li>
-                </ul>
-              </div>
-            </article>
-            <article class="project-card" data-href="Home%20Server.html">
-              <img src="Image/certification.webp" alt="Home Server">
-              <div class="project-card-body">
-                <p class="project-eyebrow">Infrastructure</p>
-                <h4>Home Server</h4>
-                <p>Home file sharing, web hosting, and automation hub.</p>
-                <ul class="project-stats">
-                  <li>Linux</li>
-                  <li>File Sync</li>
-                  <li>Automation Hub</li>
-                </ul>
-              </div>
-            </article>
-            <article class="project-card" data-href="Robot-Arm.html">
-              <img src="Image/CAD.webp" alt="Robotic Arm">
-              <div class="project-card-body">
-                <p class="project-eyebrow">R&D Prototype</p>
-                <h4>Robotic Arm</h4>
-                <p>Proof-of-concept arm; joints and motion study.</p>
-                <ul class="project-stats">
-                  <li>CAD</li>
-                  <li>Motion Study</li>
-                  <li>3D Print Ready</li>
-                </ul>
-              </div>
-            </article>
-            <article class="project-card" data-href="meal-plan-automation.html">
-              <img src="Image/engineering-programing.webp" alt="Meal plan automation logic">
-              <div class="project-card-body">
-                <p class="project-eyebrow">Automation Script</p>
-                <h4>Meal Plan Automation Logic</h4>
-                <p>Python logic that builds weekly menus from nutrition targets.</p>
-                <ul class="project-stats">
-                  <li>Python</li>
-                  <li>Data Automation</li>
-                  <li>Nutrition Targets</li>
-                </ul>
-              </div>
-            </article>
-            <!-- Additional personal projects (microcontroller logger, mini conveyor, HVAC mockup, etc.) hidden until complete -->
-          </div>
-          <button class="carousel-btn next" data-target="#per-scroller" aria-label="Next personal projects">
-            <i class="fa-solid fa-chevron-right"></i>
-          </button>
-        </div>
-      </div>
 
+        <div class="project-showcase">
+          <article class="project-preview" aria-live="polite">
+            <div class="project-preview-media">
+              <img src="Image/code Example.webp" alt="Portfolio site">
+            </div>
+            <div class="project-preview-copy">
+              <p class="project-eyebrow">Web Systems</p>
+              <h4>Portfolio Website</h4>
+              <p>Responsive portfolio site with reusable case-study pages.</p>
+              <ul class="project-stats">
+                <li>HTML/CSS</li>
+                <li>Responsive UI</li>
+              </ul>
+              <dl class="project-preview-meta">
+                <div>
+                  <dt>Role</dt>
+                  <dd>Designer and developer</dd>
+                </div>
+                <div>
+                  <dt>Focus</dt>
+                  <dd>Responsive portfolio and case-study structure</dd>
+                </div>
+                <div>
+                  <dt>Outcome</dt>
+                  <dd>Built a maintainable portfolio system</dd>
+                </div>
+              </dl>
+              <div class="project-preview-detail">
+                <span>Deeper Look</span>
+                <p>Built as a living portfolio system with reusable case-study pages, responsive layouts, and project navigation patterns.</p>
+              </div>
+            </div>
+          </article>
+
+        <div class="cards project-index-list">
+          <article class="project-card" role="link" tabindex="0" data-href="portfolio-website.html" data-role="Designer and developer" data-focus="Responsive portfolio and case-study structure" data-outcome="Built a maintainable portfolio system">
+            <div class="project-card-media">
+              <img src="Image/code Example.webp" alt="Portfolio site">
+            </div>
+            <div class="project-card-body">
+              <p class="project-eyebrow">Web Systems</p>
+              <h4>Portfolio Website</h4>
+              <p>Responsive portfolio site with reusable case-study pages.</p>
+              <ul class="project-stats">
+                <li>HTML/CSS</li>
+                <li>Responsive UI</li>
+              </ul>
+              <div class="project-deep-dive">
+                <p>Built as a living portfolio system with reusable case-study pages, responsive layouts, and project navigation patterns.</p>
+              </div>
+              <span class="project-card-action">View project <i class="fa-solid fa-arrow-right"></i></span>
+            </div>
+          </article>
+
+          <article class="project-card" role="link" tabindex="0" data-href="Home%20Server.html" data-role="Self-directed builder" data-focus="Local services, files, hosting, and management" data-outcome="Built practical infrastructure experience">
+            <div class="project-card-media">
+              <img src="Image/certification.webp" alt="Home Server">
+            </div>
+            <div class="project-card-body">
+              <p class="project-eyebrow">Infrastructure</p>
+              <h4>Home Server</h4>
+              <p>Home server for files, hosting, and local services.</p>
+              <ul class="project-stats">
+                <li>Linux</li>
+                <li>File Sync</li>
+              </ul>
+              <div class="project-deep-dive">
+                <p>Designed around practical self-hosting needs: file access, local services, remote management, and learning infrastructure basics.</p>
+              </div>
+              <span class="project-card-action">View project <i class="fa-solid fa-arrow-right"></i></span>
+            </div>
+          </article>
+
+          <article class="project-card" role="link" tabindex="0" data-href="Robot-Arm.html" data-role="Mechanical CAD designer" data-focus="Joint layout, packaging, and motion study" data-outcome="Practiced CAD-driven prototype development">
+            <div class="project-card-media">
+              <img src="Image/CAD.webp" alt="Robotic Arm">
+            </div>
+            <div class="project-card-body">
+              <p class="project-eyebrow">R&D Prototype</p>
+              <h4>Robotic Arm</h4>
+              <p>Robotic arm concept for CAD layout and motion study.</p>
+              <ul class="project-stats">
+                <li>CAD</li>
+                <li>Motion Study</li>
+              </ul>
+              <div class="project-deep-dive">
+                <p>Used to practice mechanical layout, joint packaging, range-of-motion thinking, and CAD-driven prototyping.</p>
+              </div>
+              <span class="project-card-action">View project <i class="fa-solid fa-arrow-right"></i></span>
+            </div>
+          </article>
+
+          <article class="project-card" role="link" tabindex="0" data-href="meal-plan-automation.html" data-role="Automation script developer" data-focus="Python planning logic and repeatable constraints" data-outcome="Converted nutrition goals into reusable planning logic">
+            <div class="project-card-media">
+              <img src="Image/engineering-programing.webp" alt="Meal plan automation logic">
+            </div>
+            <div class="project-card-body">
+              <p class="project-eyebrow">Automation Script</p>
+              <h4>Meal Plan Automation Logic</h4>
+              <p>Python logic for weekly menu planning from nutrition goals.</p>
+              <ul class="project-stats">
+                <li>Python</li>
+                <li>Automation</li>
+              </ul>
+              <div class="project-deep-dive">
+                <p>Turns nutrition goals into structured weekly planning logic using repeatable rules, constraints, and simple automation.</p>
+              </div>
+              <span class="project-card-action">View project <i class="fa-solid fa-arrow-right"></i></span>
+            </div>
+          </article>
+          <p class="project-empty" data-empty-state hidden>No projects match your search.</p>
+        </div>
+        </div>
+      </section>
     </section>
   </main>
 
-  <!-- Carousel + routing helpers -->
+  <!-- Project card routing helpers -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      const wraps = document.querySelectorAll('[data-scroller-wrap]');
-      wraps.forEach(wrap => {
-        const scroller = wrap.querySelector('.cards.scroller');
-        const prevBtn = wrap.querySelector('.carousel-btn.prev');
-        const nextBtn = wrap.querySelector('.carousel-btn.next');
-        if(!scroller || !prevBtn || !nextBtn) return;
+      const viewToggle = document.getElementById('project-view-toggle');
+      const projectSearch = document.getElementById('project-search-input');
+      const overviewToggles = document.querySelectorAll('[data-overview-toggle]');
+      const viewPanels = document.querySelectorAll('[data-project-panel]');
+      const archive = document.querySelector('.projects-archive');
+      let selectedProjectView = viewToggle?.checked ? 'personal' : 'professional';
 
-        function getScrollDelta(){
-          const card = scroller.querySelector('.project-card');
-          return card ? (card.offsetWidth + 16) : Math.max(240, Math.floor(scroller.clientWidth * 0.85));
+      function hasSearchQuery(){
+        return Boolean((projectSearch?.value || '').trim());
+      }
+
+      function setProjectView(view){
+        selectedProjectView = view;
+        const showingPersonal = view === 'personal';
+        if(viewToggle){
+          viewToggle.checked = showingPersonal;
         }
-        function updateButtons(){
-          const epsilon = 4;
-          const maxLeft = Math.max(0, scroller.scrollWidth - scroller.clientWidth);
-          const atStart = scroller.scrollLeft <= epsilon;
-          const atEnd = scroller.scrollLeft >= (maxLeft - epsilon);
-          prevBtn.disabled = atStart || maxLeft <= epsilon;
-          nextBtn.disabled = atEnd || maxLeft <= epsilon;
-        }
-        function cycle(dir){
-          const delta = getScrollDelta() * dir;
-          scroller.scrollBy({ left: delta, behavior: 'smooth' });
-        }
-        prevBtn.addEventListener('click', () => cycle(-1));
-        nextBtn.addEventListener('click', () => cycle(1));
-        scroller.addEventListener('scroll', () => requestAnimationFrame(updateButtons));
-        window.addEventListener('resize', () => requestAnimationFrame(updateButtons));
-        updateButtons();
+
+        viewPanels.forEach(panel => {
+          const active = hasSearchQuery() || panel.dataset.projectPanel === view;
+          panel.hidden = !active;
+          panel.setAttribute('aria-hidden', active ? 'false' : 'true');
+          if(active){
+            applyProjectSearch();
+          }
+        });
+      }
+
+      viewToggle?.addEventListener('change', () => {
+        setProjectView(viewToggle.checked ? 'personal' : 'professional');
+      });
+      setProjectView(viewToggle?.checked ? 'personal' : 'professional');
+
+      function syncOverviewToggles(listOnly){
+        overviewToggles.forEach(toggle => {
+          toggle.setAttribute('aria-pressed', listOnly ? 'true' : 'false');
+          toggle.innerHTML = listOnly
+            ? '<i class="fa-solid fa-window-maximize"></i> Show Overview'
+            : '<i class="fa-solid fa-table-list"></i> List Only';
+        });
+      }
+
+      overviewToggles.forEach(toggle => {
+        toggle.addEventListener('click', () => {
+        const listOnly = !archive?.classList.contains('list-only');
+        archive?.classList.toggle('list-only', listOnly);
+          syncOverviewToggles(listOnly);
+        });
       });
 
       function slugify(text){ return (text||'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,''); }
@@ -293,9 +431,109 @@
         });
         window.location.href = `project.html?${params.toString()}`;
       }
+
+      function updatePreview(card, shouldScroll = true){
+        const showcase = card.closest('.project-showcase');
+        const preview = showcase?.querySelector('.project-preview');
+        if(!preview) return;
+
+        const sourceImg = card.querySelector('img');
+        const sourceEyebrow = card.querySelector('.project-eyebrow');
+        const sourceTitle = card.querySelector('h4');
+        const sourceDesc = card.querySelector('.project-card-body > p:not(.project-eyebrow)');
+        const sourceDetail = card.querySelector('.project-deep-dive p');
+        const sourceStats = card.querySelector('.project-stats');
+        const previewImg = preview.querySelector('img');
+        const previewEyebrow = preview.querySelector('.project-eyebrow');
+        const previewTitle = preview.querySelector('h4');
+        const previewDesc = preview.querySelector('.project-preview-copy > p:not(.project-eyebrow)');
+        const previewDetail = preview.querySelector('.project-preview-detail p');
+        const previewStats = preview.querySelector('.project-stats');
+        const previewMetaItems = preview.querySelectorAll('.project-preview-meta dd');
+
+        if(sourceImg && previewImg){
+          previewImg.src = sourceImg.getAttribute('src') || '';
+          previewImg.alt = sourceImg.getAttribute('alt') || '';
+        }
+        if(sourceEyebrow && previewEyebrow) previewEyebrow.textContent = sourceEyebrow.textContent;
+        if(sourceTitle && previewTitle) previewTitle.textContent = sourceTitle.textContent;
+        if(sourceDesc && previewDesc) previewDesc.textContent = sourceDesc.textContent;
+        if(sourceDetail && previewDetail) previewDetail.textContent = sourceDetail.textContent;
+        if(sourceStats && previewStats) previewStats.innerHTML = sourceStats.innerHTML;
+        if(previewMetaItems.length >= 3){
+          previewMetaItems[0].textContent = card.dataset.role || 'Project contributor';
+          previewMetaItems[1].textContent = card.dataset.focus || sourceEyebrow?.textContent || 'Engineering work';
+          previewMetaItems[2].textContent = card.dataset.outcome || sourceDetail?.textContent || 'Documented project outcome';
+        }
+
+        showcase.querySelectorAll('.project-card').forEach(item => item.classList.toggle('active', item === card));
+        if(shouldScroll){
+          card.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+        }
+      }
+
+      function getCardSearchText(card){
+        return [
+          card.querySelector('.project-eyebrow')?.textContent,
+          card.querySelector('h4')?.textContent,
+          card.querySelector('.project-card-body > p:not(.project-eyebrow)')?.textContent,
+          card.querySelector('.project-deep-dive')?.textContent,
+          card.querySelector('.project-stats')?.textContent,
+          card.dataset.role,
+          card.dataset.focus,
+          card.dataset.outcome
+        ].join(' ').toLowerCase();
+      }
+
+      function applyProjectSearch(){
+        const query = (projectSearch?.value || '').trim().toLowerCase();
+
+        viewPanels.forEach(panel => {
+          const panelSelected = panel.dataset.projectPanel === selectedProjectView;
+          const panelVisible = Boolean(query) || panelSelected;
+          panel.hidden = !panelVisible;
+          panel.setAttribute('aria-hidden', panelVisible ? 'false' : 'true');
+
+          const cards = Array.from(panel.querySelectorAll('.project-card'));
+          cards.forEach(card => {
+            const match = !query || getCardSearchText(card).includes(query);
+            card.hidden = !match;
+            card.classList.toggle('is-filtered', !match);
+          });
+
+          const visibleCards = cards.filter(card => !card.hidden);
+          const preview = panel.querySelector('.project-preview');
+          if(preview){
+            preview.hidden = visibleCards.length === 0;
+          }
+          const emptyState = panel.querySelector('[data-empty-state]');
+          if(emptyState){
+            emptyState.hidden = visibleCards.length !== 0;
+          }
+          if(panelVisible && visibleCards.length){
+            updatePreview(visibleCards[0], false);
+          }
+        });
+      }
+
+      document.querySelectorAll('.project-showcase').forEach(showcase => {
+        const firstCard = showcase.querySelector('.project-card');
+        if(firstCard) updatePreview(firstCard, false);
+      });
+
+      projectSearch?.addEventListener('input', applyProjectSearch);
+
       document.querySelectorAll('.project-card').forEach(card => {
         card.style.cursor = 'pointer';
+        card.addEventListener('mouseenter', () => updatePreview(card));
+        card.addEventListener('focus', () => updatePreview(card));
         card.addEventListener('click', () => navigateToDetail(card));
+        card.addEventListener('keydown', (e) => {
+          if(e.key === 'Enter' || e.key === ' '){
+            e.preventDefault();
+            navigateToDetail(card);
+          }
+        });
       });
     });
   </script>
