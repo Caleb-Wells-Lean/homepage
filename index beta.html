@@ -627,7 +627,7 @@
          =============================== -->
     <section id="Contact" class="contact">
       <h2>Contact Me</h2>
-      <form class="contact-form" method="post" action="#">
+      <form class="contact-form" method="post" action="mailto:cbwe228@uky.edu" enctype="text/plain">
         <div class="form-row">
           <label for="name">Name</label>
           <input id="name" name="name" type="text" placeholder="Your name" required>
@@ -889,7 +889,7 @@
 
         const subject = `Portfolio Contact from ${name || 'Website'}`;
         const body = `Name: ${name}\nEmail: ${email}\nCompany: ${company}\n\nMessage:\n${message}`;
-        const mailto = `mailto:${encodeURIComponent(to)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        const mailto = `mailto:${to}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
         // Open default mail client with pre-filled details
         window.location.href = mailto;
