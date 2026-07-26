@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Design Development Placeholder</title>
+  <desc id="desc">Neutral engineering placeholder for product development.</desc>
+  <rect width="1200" height="760" fill="#151a22"/>
+  <rect x="82" y="82" width="1036" height="596" rx="24" fill="#202733" stroke="#6fc5ff" stroke-opacity=".35" stroke-width="2"/>
+  <path d="M180 560h840M180 478h840M180 396h840M180 314h840M180 232h840" stroke="#ffffff" stroke-opacity=".08" stroke-width="2"/>
+  <path d="M250 540 424 330l138 84 180-218 208 344" fill="none" stroke="#6fc5ff" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="424" cy="330" r="18" fill="#e6eaee"/>
+  <circle cx="562" cy="414" r="18" fill="#e6eaee"/>
+  <circle cx="742" cy="196" r="18" fill="#e6eaee"/>
+  <text x="600" y="650" fill="#e6eaee" font-family="Arial, sans-serif" font-size="42" text-anchor="middle">Design Development</text>
+</svg>
