@@ -1,13 +1,22 @@
 <!DOCTYPE html>
+<!--
+  File: portfolio-website.html
+  Purpose: Detail page describing the build of this portfolio site (personal project).
+  Layout: nav -> hero -> gallery -> overview -> PGR -> system -> execution -> deliverables -> results -> shared lightbox script.
+  Maintenance:
+    - Keep hero metadata + summary paragraphs aligned when updating scope.
+    - Gallery captions should match the supporting copy for accessibility.
+-->
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
-  <title>Portfolio Website — Project</title>
+  <title>Portfolio Website â€” Project</title>
 </head>
 <body>
+  <!-- Shared nav: brand plus quick navigation back to index/projects -->
   <nav>
     <div class="Left"><a href="index.html">Caleb Wells</a></div>
     <div class="Right">
@@ -17,6 +26,7 @@
   </nav>
 
   <main>
+    <!-- HERO -->
     <section class="project-hero">
       <div class="hero-content">
         <div class="hero-topline">
@@ -56,6 +66,7 @@
       </div>
     </section>
 
+    <!-- OVERVIEW + ASSIGNMENT DETAILS -->
     <section class="project-summary" id="overview">
       <h2>Overview</h2>
       <div class="summary-grid">
@@ -92,6 +103,7 @@
       </div>
     </section>
 
+    <!-- PROBLEM / GOALS / REQUIREMENTS -->
     <section class="project-detail">
       <h2>Problem / Goals / Requirements</h2>
       <div class="pgr-grid">
@@ -122,6 +134,7 @@
       </div>
     </section>
 
+    <!-- SYSTEM / ARCHITECTURE -->
     <section class="project-detail" id="system-architecture">
       <h2>System / Architecture</h2>
       <div class="system-layout">
@@ -139,6 +152,7 @@
       </div>
     </section>
 
+    <!-- EXECUTION + BUILD LOG -->
     <section class="project-detail execution-log" id="execution">
       <h2>Execution &amp; Build Log</h2>
       <div class="execution-log-grid">
@@ -195,6 +209,7 @@
       </div>
     </section>
 
+    <!-- DELIVERABLES -->
     <section class="project-detail" id="deliverables">
       <h2>Deliverables</h2>
       <div class="deliverables-grid">
@@ -229,6 +244,7 @@
       </div>
     </section>
 
+    <!-- RESULTS -->
     <section class="project-detail">
       <h2>Results &amp; Outcomes</h2>
       <div class="results-wrap">

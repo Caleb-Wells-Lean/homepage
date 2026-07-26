@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <!--
-  File: Home Server.html
-  Purpose: Project detail for the RIFT Home Server platform (personal infrastructure build).
-  Layout mirrors other project pages: nav, hero, gallery, overview, PGR, system, execution, deliverables, results.
-  Maintenance: update hero metadata + assignment details table together when scope changes; keep gallery captions synchronized with copy.
+  File: meal-plan-automation.html
+  Purpose: Case study documenting the Meal Plan Automation Logic personal project.
+  Structure mirrors other project pages (nav, hero, gallery, overview, PGR, system, execution, deliverables, results, lightbox script).
+  Keep hero stats, overview copy, and results metrics synchronized whenever numbers change.
 -->
 <html lang="en">
 <head>
@@ -11,10 +11,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
-  <title>RIFT Home Server - Project</title>
+  <title>Meal Plan Automation &middot; Case Study</title>
 </head>
 <body>
-  <!-- Shared navigation (brand + back/home shortcuts) -->
+  <!-- Shared navigation -->
   <nav>
     <div class="Left"><a href="index.html">Caleb Wells</a></div>
     <div class="Right">
@@ -28,13 +28,13 @@
     <section class="project-hero">
       <div class="hero-content">
         <div class="hero-topline">
-          <p class="hero-eyebrow">Personal Infrastructure &middot; Case Study</p>
-          <span class="status-pill status-active"><i class="fa-solid fa-spinner" aria-hidden="true"></i> Active build</span>
+          <p class="hero-eyebrow">Personal Automation &middot; Case Study</p>
+          <span class="status-pill status-completed"><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Completed scope</span>
         </div>
         <div class="hero-grid">
           <div class="hero-main">
-            <h1>RIFT Home Server Platform</h1>
-            <p class="hero-tagline">Modular home server that consolidates storage, self-hosted services, and experimentation into one maintainable system.</p>
+            <h1>Meal Plan Automation Logic</h1>
+            <p class="hero-tagline">Python engine that assembles balanced weekly menus using nutrition targets, pantry availability, and prep constraints.</p>
             <div class="hero-buttons">
               <a href="#overview" class="btn primary"><i class="fa-solid fa-circle-info" aria-hidden="true"></i><span>Project Overview</span></a>
               <a href="#system-architecture" class="btn secondary"><i class="fa-solid fa-cubes-stacked" aria-hidden="true"></i><span>System / Architecture</span></a>
@@ -45,19 +45,19 @@
           <div class="hero-meta">
             <div class="meta-item">
               <p class="meta-label">Role</p>
-              <p class="meta-value">Designer / Builder</p>
+              <p class="meta-value">Sole Developer &mdash; Systems + Data</p>
             </div>
             <div class="meta-item">
               <p class="meta-label">Timeline</p>
-              <p class="meta-value">Personal Project &mdash; Ongoing</p>
+              <p class="meta-value">Jan &ndash; Mar 2024</p>
             </div>
             <div class="meta-item">
               <p class="meta-label">Tools</p>
-              <p class="meta-value">Linux, Docker, NAS Stack</p>
+              <p class="meta-value">Python, Pandas, SQLite, Notion API</p>
             </div>
             <div class="meta-item">
               <p class="meta-label">Category</p>
-              <p class="meta-value">Personal Infrastructure</p>
+              <p class="meta-value">Automation &middot; Data Products</p>
             </div>
           </div>
         </div>
@@ -78,39 +78,39 @@
         </button>
         <div class="gallery-track" id="project-gallery-track">
           <figure class="gallery-card" role="button" tabindex="0"
-                  data-full="Image/work-progress_24908-53218.webp"
-                  data-caption="Initial hardware assembly and chassis layout for the RIFT server stack.">
-            <img src="Image/work-progress_24908-53218.webp" alt="Open server chassis during assembly" />
-            <figcaption>
-              <p class="gallery-title">Core Hardware Build</p>
-              <p class="gallery-meta">Chassis layout and wiring during the first assembly pass.</p>
-            </figcaption>
-          </figure>
-          <figure class="gallery-card" role="button" tabindex="0"
-                  data-full="Image/D6V156AA.webp"
-                  data-caption="Storage planning to separate media, personal files, and project datasets.">
-            <img src="Image/D6V156AA.webp" alt="Diagram highlighting drive allocation" />
-            <figcaption>
-              <p class="gallery-title">Storage Planning</p>
-              <p class="gallery-meta">Partition map outlining media, personal, and project pools.</p>
-            </figcaption>
-          </figure>
-          <figure class="gallery-card" role="button" tabindex="0"
                   data-full="Image/code Example.webp"
-                  data-caption="Container stack managing media, backup, and experimentation services.">
-            <img src="Image/code Example.webp" alt="Code editor showing container configuration" />
+                  data-caption="Recipe Knowledge Base &mdash; SQLite dataset with macros, prep times, and tags.">
+            <img src="Image/code Example.webp" alt="Table of recipes and macro data" />
             <figcaption>
-              <p class="gallery-title">Service Stack</p>
-              <p class="gallery-meta">Container definitions for media, backup, and monitoring.</p>
+              <p class="gallery-title">Recipe Library</p>
+              <p class="gallery-meta">Structured nutrient + effort metadata.</p>
             </figcaption>
           </figure>
           <figure class="gallery-card" role="button" tabindex="0"
-                  data-full="Image/CAD.webp"
-                  data-caption="Network diagram showing VLANs and access paths for the home lab.">
-            <img src="Image/CAD.webp" alt="Simplified network diagram" />
+                  data-full="Image/engineering-programing.webp"
+                  data-caption="Macro Solver &mdash; Python script balancing calories, protein, carbs, and fats.">
+            <img src="Image/engineering-programing.webp" alt="Python automation illustration" />
             <figcaption>
-              <p class="gallery-title">Network Layout</p>
-              <p class="gallery-meta">Access plan balancing convenience with local security.</p>
+              <p class="gallery-title">Macro Solver</p>
+              <p class="gallery-meta">Constraint engine calculating servings.</p>
+            </figcaption>
+          </figure>
+          <figure class="gallery-card" role="button" tabindex="0"
+                  data-full="Image/work-progress_24908-53218.webp"
+                  data-caption="Weekly Schedule Output &mdash; Auto-generated calendar of meals and prep blocks.">
+            <img src="Image/work-progress_24908-53218.webp" alt="Weekly meal plan mockup" />
+            <figcaption>
+              <p class="gallery-title">Weekly Planner</p>
+              <p class="gallery-meta">Balanced menus in calendar form.</p>
+            </figcaption>
+          </figure>
+          <figure class="gallery-card" role="button" tabindex="0"
+                  data-full="Image/HVAC Example.webp"
+                  data-caption="Notion Sync &mdash; Publish menus and grocery lists to a shared dashboard.">
+            <img src="Image/HVAC Example.webp" alt="Dashboard style illustration" />
+            <figcaption>
+              <p class="gallery-title">Notion Dashboard</p>
+              <p class="gallery-meta">Live sync for shopping + prep.</p>
             </figcaption>
           </figure>
         </div>
@@ -125,32 +125,32 @@
       <h2>Overview</h2>
       <div class="summary-grid">
         <div class="summary-card">
-          <p>RIFT is a personal home server project aimed at centralizing storage, services, and experimentation within one modular platform. It replaces scattered local drives and third-party tools with a controlled environment that can grow over time.</p>
-          <p>The system is treated as infrastructure rather than a single-purpose build. Core priorities include reliability, scalability, and ease of maintenance so that new services can be added without disrupting existing workloads.</p>
-          <p>Throughout the project the focus stays on practical systems engineering lessons: storage planning, service isolation, controlled network access, and long-term maintainability.</p>
+          <p>I built the Meal Plan Automation Logic after realizing that weekly nutrition planning was consuming several hours every Sunday. Manual spreadsheets tracked calories, macros, and pantry inventory, but lacked constraint handling and often produced repetitive menus that ignored prep effort during busy weeks.</p>
+          <p>The goal was to codify personal nutrition targets and household constraints into a repeatable automation pipeline. Recipes, prep times, and equipment requirements were migrated into a normalized dataset. Python scripts then generated meal schedules that maintained macro compliance, variety, and realistic prep block assignments.</p>
+          <p>The final workflow synthesizes grocery inventory, macro goals, and schedule inputs to output a seven-day menu, supporting grocery lists, and prep instructions. Results sync to Notion so that everyone in the household can review the plan and flag substitutions before ingredients are purchased.</p>
         </div>
         <aside class="assignment-card" aria-label="Assignment Details">
           <h3>Assignment Details</h3>
           <div class="assignment-list">
             <div class="detail-row">
               <span class="detail-label">Project Type</span>
-              <span class="detail-value">Personal infrastructure / home lab system</span>
+              <span class="detail-value">Personal automation / data product</span>
             </div>
             <div class="detail-row">
               <span class="detail-label">System</span>
-              <span class="detail-value">Home server for storage, media, and self-hosted services</span>
+              <span class="detail-value">Python planning engine + Notion dashboard</span>
             </div>
             <div class="detail-row">
               <span class="detail-label">Scope of Work</span>
-              <span class="detail-value">Plan architecture, select hardware, configure storage and services, ensure reliability and expandability</span>
+              <span class="detail-value">Model recipes, build macro solver, automate scheduling, publish results to shared workspace</span>
             </div>
             <div class="detail-row">
               <span class="detail-label">Primary Responsibilities</span>
-              <span class="detail-value">System design, hardware selection, software configuration, documentation and maintenance planning</span>
+              <span class="detail-value">Dataset design; algorithm development; API integration; UX documentation</span>
             </div>
             <div class="detail-row">
               <span class="detail-label">Key Constraints</span>
-              <span class="detail-value">Limited space, budget-conscious hardware, low power draw, long-term reliability</span>
+              <span class="detail-value">Limited prep time on weekdays, macro compliance, pantry availability, dietary variety</span>
             </div>
           </div>
         </aside>
@@ -164,25 +164,25 @@
         <article class="pgr-block">
           <h3>Problem</h3>
           <ul>
-            <li>Data and media were scattered across multiple devices and drives</li>
-            <li>Third-party services limited control over availability and configuration</li>
-            <li>No centralized platform existed for experimenting with self-hosted tools</li>
+            <li>Manual meal planning consumed 2&ndash;3 hours each week.</li>
+            <li>Plans missed macro targets whenever schedule or pantry changed.</li>
+            <li>Repetitive meals and prep fatigue reduced adherence after two weeks.</li>
           </ul>
         </article>
         <article class="pgr-block">
           <h3>Goals</h3>
           <ul>
-            <li>Centralize storage and core services inside a single system</li>
-            <li>Provide reliable media access and organized file management</li>
-            <li>Create a flexible platform for future services and automation work</li>
+            <li>Automate weekly plan creation with < 5 minutes of input.</li>
+            <li>Keep calories and macros within &plusmn;5% of target for each day.</li>
+            <li>Rotate proteins, cuisines, and prep effort to improve adherence.</li>
           </ul>
         </article>
         <article class="pgr-block">
           <h3>Requirements</h3>
           <ul>
-            <li>Modular design that supports future expansion</li>
-            <li>Redundant storage to protect critical data</li>
-            <li>Simple maintenance and update process</li>
+            <li>Maintain a single source of truth for recipes, macros, and pantry stock.</li>
+            <li>Allow quick overrides for allergies, guests, or leftover utilization.</li>
+            <li>Publish readable results to Notion and mobile devices.</li>
           </ul>
         </article>
       </div>
@@ -193,15 +193,15 @@
       <h2>System / Architecture</h2>
       <div class="system-layout">
         <article class="system-text">
-          <p>RIFT combines storage, compute, and network management inside a modular enclosure. Storage pools are segmented to isolate media, personal files, and project datasets so that each can be scaled or backed up independently.</p>
-          <p>Services are deployed through containers, allowing individual workloads to be updated, replaced, or paused without impacting the remainder of the system. This isolation keeps experimentation from jeopardizing core functions.</p>
-          <p>Networking, access controls, and monitoring scripts are configured with a focus on clarity rather than complexity to ensure the platform remains maintainable over the long term.</p>
+          <p>The automation stack revolves around a lightweight SQLite database that stores recipes, macro profiles, prep times, and ingredient tags. Inventory snapshots and household schedule inputs feed into the same data layer so that the solver understands both nutritional demand and practical constraints.</p>
+          <p>The planning engine is a Python script that uses Pandas to evaluate candidate combinations, applies a scoring model for macro accuracy and variety, and schedules prep blocks based on available time. A rules file defines exclusions, repeat windows, and pantry priorities so the plan feels intentional instead of random.</p>
+          <p>Outputs include a finalized weekly plan, grocery list grouped by store section, and prep notes. These artifacts sync to Notion through its API, generating a card per meal plus a consolidated dashboard that can be checked from any device.</p>
         </article>
         <aside class="system-visual" aria-label="System architecture placeholder">
           <div class="visual-frame">
-            <p>Infrastructure Diagram Placeholder</p>
+            <p>Data Pipelines / API Sync</p>
           </div>
-          <p class="visual-note">Future diagram will highlight storage tiers, container stacks, and access paths.</p>
+          <p class="visual-note">Highlights SQLite store, solver engine, and Notion integration.</p>
         </aside>
       </div>
     </section>
@@ -213,48 +213,51 @@
         <div class="execution-column">
           <p class="column-label">Execution</p>
           <article class="exec-phase">
-            <h3>Phase 1 &mdash; Planning &amp; Research</h3>
+            <h3>Phase 1 &mdash; Data Modeling</h3>
             <ul>
-              <li>Defined storage, media, and experimentation use cases</li>
-              <li>Researched hardware and software options for a small footprint</li>
-              <li>Outlined reliability and expansion requirements</li>
+              <li>Audited favorite recipes and standardized macro data per serving.</li>
+              <li>Captured prep effort, equipment, and storage details for each recipe.</li>
+              <li>Designed SQLite schema with tables for recipes, ingredients, and constraints.</li>
             </ul>
           </article>
           <article class="exec-phase">
-            <h3>Phase 2 &mdash; Hardware Setup</h3>
+            <h3>Phase 2 &mdash; Macro Solver</h3>
             <ul>
-              <li>Selected chassis, storage, and network components</li>
-              <li>Assembled the server and installed the base OS</li>
-              <li>Configured initial networking and remote access</li>
+              <li>Built a scoring function that penalizes macro drift and repeated dishes.</li>
+              <li>Implemented greedy + backtracking logic to fill breakfast, lunch, and dinner slots.</li>
+              <li>Added rule files to block allergens, lock special events, and use leftovers.</li>
             </ul>
           </article>
           <article class="exec-phase">
-            <h3>Phase 3 &mdash; Storage &amp; Services</h3>
+            <h3>Phase 3 &mdash; Automation Pipeline</h3>
             <ul>
-              <li>Provisioned storage pools and file shares</li>
-              <li>Deployed core services via container orchestration</li>
-              <li>Documented service layouts and dependencies</li>
+              <li>Automated grocery list creation with aggregate ingredient quantities.</li>
+              <li>Generated prep block schedules aligned with available time windows.</li>
+              <li>Synced outputs to Notion using the beta API for collaborative review.</li>
             </ul>
           </article>
           <article class="exec-phase">
-            <h3>Phase 4 &mdash; Refinement &amp; Expansion</h3>
+            <h3>Phase 4 &mdash; Iteration &amp; QA</h3>
             <ul>
-              <li>Organized data structures and access permissions</li>
-              <li>Planned additional services and monitoring</li>
-              <li>Iterated on backup and maintenance routines</li>
+              <li>Ran four pilot weeks and logged adherence metrics.</li>
+              <li>Tuned scoring weights for variety vs. pantry efficiency.</li>
+              <li>Packaged scripts into a CLI so plans can be regenerated on demand.</li>
             </ul>
           </article>
         </div>
         <aside class="build-column">
           <p class="column-label">Build Log</p>
           <article class="build-entry">
-            <p><strong>Initial Build &mdash; Core Infrastructure</strong><br />Assembled hardware, installed the operating system, and configured baseline networking and storage.</p>
+            <p><strong>Week 1 &mdash; Recipe Migration</strong><br />Cleaned nutrition data, standardized serving sizes, and tagged prep effort.</p>
           </article>
           <article class="build-entry">
-            <p><strong>Service Deployment &mdash; Media &amp; File Access</strong><br />Deployed initial containerized services for media streaming, file management, and backups.</p>
+            <p><strong>Week 2 &mdash; Solver Prototype</strong><br />Wrote the initial Python script and validated macro accuracy against manual plans.</p>
           </article>
           <article class="build-entry">
-            <p><strong>Ongoing &mdash; Incremental Expansion</strong><br />Adding new services and refining storage plans while monitoring reliability and maintenance effort.</p>
+            <p><strong>Week 3 &mdash; Grocery + Notion Output</strong><br />Added list generation and API sync for household visibility.</p>
+          </article>
+          <article class="build-entry">
+            <p><strong>Week 4 &mdash; Optimization</strong><br />Introduced rule overrides, leftover logic, and CLI packaging.</p>
           </article>
         </aside>
       </div>
@@ -265,35 +268,35 @@
       <h2>Deliverables</h2>
       <div class="deliverables-grid">
         <article class="deliverable-group">
-          <h3>System Infrastructure</h3>
+          <h3>Data Assets</h3>
           <ul>
-            <li>Fully functional home server platform</li>
-            <li>Centralized storage for media and personal files</li>
-            <li>Documented chassis and network configuration</li>
+            <li>SQLite database with 70+ recipes and macro metadata.</li>
+            <li>Inventory snapshot template for weekly pantry audits.</li>
+            <li>Rule files for allergies, leftovers, and schedule exceptions.</li>
           </ul>
         </article>
         <article class="deliverable-group">
-          <h3>Service Deployment</h3>
+          <h3>Automation Scripts</h3>
           <ul>
-            <li>Containerized media and file access services</li>
-            <li>Configured network access for local devices</li>
-            <li>Baseline monitoring and alert scripts</li>
+            <li>Python solver that balances macros and prep effort.</li>
+            <li>Grocery list generator grouped by store section.</li>
+            <li>CLI wrapper for quick reruns and parameter overrides.</li>
           </ul>
         </article>
         <article class="deliverable-group">
-          <h3>Documentation &amp; Maintenance</h3>
+          <h3>Integration Package</h3>
           <ul>
-            <li>System configuration and service layout notes</li>
-            <li>Defined update, backup, and restore procedures</li>
-            <li>Change log for future additions</li>
+            <li>Notion API sync for weekly plan cards and dashboard.</li>
+            <li>Email summary for off-platform access.</li>
+            <li>JSON exports for future mobile app experiments.</li>
           </ul>
         </article>
         <article class="deliverable-group">
-          <h3>Future-Ready Design</h3>
+          <h3>Documentation &amp; SOPs</h3>
           <ul>
-            <li>Modular architecture that supports new services</li>
-            <li>Hardware path for incremental upgrades</li>
-            <li>Space and power envelope sized for growth</li>
+            <li>Playbook detailing data updates and troubleshooting.</li>
+            <li>User guide for overriding meals or locking events.</li>
+            <li>Metrics tracker template for adherence and macro drift.</li>
           </ul>
         </article>
       </div>
@@ -304,10 +307,10 @@
       <h2>Results &amp; Outcomes</h2>
       <div class="results-wrap">
         <ul>
-          <li>Centralized data and services into a single reliable system</li>
-          <li>Gained direct control over media access and experimentation</li>
-          <li>Created a flexible platform for ongoing automation work</li>
-          <li>Built practical experience in systems design and server management</li>
+          <li>Reduced weekly planning time from ~150 minutes to under 10.</li>
+          <li>Maintained daily macros within 3% of targets for six consecutive weeks.</li>
+          <li>Increased recipe variety by 42% compared to prior manual plans.</li>
+          <li>Eliminated mid-week grocery trips by aligning plans with pantry data.</li>
         </ul>
       </div>
     </section>
