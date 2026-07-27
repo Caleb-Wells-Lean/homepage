@@ -8,7 +8,20 @@
   --text-color: #e6eaee;
   --link-color: #ffffff;
   --background-color: #2b2d31;
-  --background-gradient: linear-gradient(160deg, #1c1e22, #2a2c31 45%, #3a3c42 90%);
+  --background-gradient:
+    radial-gradient(
+      ellipse 55% 38% at -8% 28%,
+      rgba(238, 244, 250, 0.24) 0%,
+      rgba(164, 183, 201, 0.12) 38%,
+      transparent 76%
+    ),
+    radial-gradient(
+      ellipse 55% 38% at 108% 28%,
+      rgba(238, 244, 250, 0.24) 0%,
+      rgba(164, 183, 201, 0.12) 38%,
+      transparent 76%
+    ),
+    linear-gradient(180deg, #292c31 0%, #202328 48%, #181a1e 100%);
   --panel-color: rgba(78, 86, 100, 0.85);
   --panel-border: rgba(255, 255, 255, 0.2);
 }
@@ -1589,7 +1602,7 @@ section + section::before {
 
 .project-feature-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 18px;
   margin-bottom: 28px;
 }
@@ -1620,6 +1633,10 @@ section + section::before {
   border-radius: 0;
   border-bottom: 1px solid rgba(205, 212, 218, 0.12);
   filter: saturate(0.96) contrast(1.03) brightness(0.98);
+}
+
+.projects .project-card.feature img[src*="A%203"] {
+  filter: saturate(0.7) contrast(0.94) brightness(0.76);
 }
 .projects.projects-archive {
   margin-top: 20px;
@@ -3583,6 +3600,15 @@ section + section::before {
   height: clamp(260px, 45vw, 420px);
   object-fit: cover;
   display: block;
+}
+
+/* Keep the AI cooling-system assembly and factory floor in frame. */
+img[src$="production-line-assembly.png"] {
+  object-position: center 82%;
+}
+
+.projects-page .project-preview-media img[src$="production-line-assembly.png"] {
+  object-position: center 82%;
 }
 .gallery-card img.rotate-90 {
   width: auto !important;
